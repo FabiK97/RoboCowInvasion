@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>bootstrap-test</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/design.css">
+    <script src="js/switchGameStates.js" language="javascript" type="text/javascript"></script>
+</head>
+<body>
+<embed src="./musik/RoyalEntrance.mp3" autostart="true" loop="true" hidden="true" height="0" width="0">
+    <div class="game-box">
+        <div class="header">
+        </div>
+        <div id="m" class="content startMenu">
+            <div class="cowWalk"></div>
+            <div class="roboCowWalk"></div>
+            <div class="playSign">
+                <div class="fld">
+                    <div id="play" class="fbtn"><img src="./img/playButton.png"> </div>
+                    <div class="ftxt" style="font-size: 3em; padding: 10px;">Play</div>
+                </div>
+                <div class="fld">
+                    <div id="score" class="fbtn "><img src="./img/scoreButton.png"></div>
+                    <div class="ftxt">Scoreboard</div>
+                </div>
+                <div id="settings" class="fld">
+                    <div class="fbtn "><img src="./img/optionsButton.png"></div>
+                    <div class="ftxt">Settings</div>
+                </div>
+            </div>
+        </div>
+        <div id="ps" class="content pselect">
+            <div class="pshead">Please Select your Player</div>
+            <div class="farmer"></div>
+            <div class="roboFarmer"></div>
+        </div>
+        <div id="pgs" class="content pgselect">
+            <h1 class="überschrift">Cow-Familiy Setup</h1>
+            <div class="playerfield"></div>
+        </div>
+        <div id="g1" class="content ingame">
+            <div class="sign enemyHits">Hits: 0</div>
+            <div class="sign playerHits">Hits: 0</div>
+            <div class="sign enemyLeft">Left: 0</div>
+            <div class="sign playerLeft">Left: 0</div>
+            <div class="farmerPlayer">player</div>
+            <div class="farmerEnemy"></div>
+            <div class="game"></div>
+        </div>
+    </div>
+
+    <button id="menuButton">Menü</button>
+    <button id="psButton">pselect</button>
+    <button id="pgsButton">pgselect</button>
+    <button id="ingameButton">ingame</button>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

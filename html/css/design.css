@@ -1,0 +1,298 @@
+/*Design*/
+
+body {
+
+    background-image: url("../img/farm.png");
+    background-size: cover;
+}
+
+.game-box {
+    color: white;
+    outline-width: 10px;
+    outline-color: #56791e;
+    outline-style: ridge;
+}
+
+.header {
+    font-size: 3em;
+    background-image: url("../img/logograss.png");
+    background-size: cover;
+}
+
+/*GameStates*/
+
+/*Menu                  GameState: 0*/
+
+.content.startMenu {
+    background-image: url("../img/menu_neu.png");
+    outline-width: 10px;
+    outline-color: #56791e;
+    outline-style: ridge;
+}
+
+.startMenu .fbtn img{
+    padding: 4px 4px;
+    width: 100px;
+    height: 100px;
+}
+
+.startMenu .fbtn img:hover{
+    padding: 0 0;
+    width: 108px;
+    height: 108px;
+}
+
+.cowWalk {
+    background-image: url("../img/cow.png");
+    position: absolute;
+    bottom: 50px;
+    left: 75px;
+    height: 20%;
+    width: 20%;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    animation: cowwalk 2.2s steps(15) infinite;
+}
+
+.roboCowWalk {
+    background-image: url("../img/robo-cow.png");
+    position: absolute;
+    bottom: 50px;
+    left: 400px;
+    height: 20%;
+    width: 20%;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    animation: robocowwalk 2.2s steps(15) infinite;
+
+}
+
+@keyframes cowwalk {
+
+    0% {
+        bottom: 50px;
+        left: 75px;
+
+    }
+
+    10% {
+        left: 90px;
+        bottom: 70px;
+    }
+    20% {
+        left: 100px;
+        bottom: 85px;
+    }
+    30% {
+        left: 110px;
+        bottom: 70px;
+    }
+    40% {
+        left: 120px;
+        bottom: 50px;
+    }
+    /*ein sprung*/
+
+    50% {
+        left: 130px;
+        bottom: 70px;
+    }
+    60% {
+        left: 140px;
+        bottom: 85px;
+    }
+    70% {
+        left: 150px;
+        bottom: 70px;
+    }
+    80% {
+        left: 160px;
+        bottom: 50px;
+
+    }
+    85% {
+        left: 180px;
+        bottom: 65px;
+        /*KuhKollison*/
+
+    }
+
+    95% {
+
+        bottom: 100px;
+        left: 115px;
+
+    }
+
+    100% {
+        bottom: 50px;
+        left: 75px;
+
+    }
+
+}
+
+@keyframes robocowwalk {
+
+    0% {
+        bottom: 50px;
+        left: 400px;
+
+    }
+
+    10% {
+        left: 385px;
+        bottom: 70px;
+    }
+    20% {
+        left: 375px;
+        bottom: 85px;
+    }
+    30% {
+        left: 365px;
+        bottom: 70px;
+    }
+    40% {
+        left: 355px;
+        bottom: 50px;
+    }
+    /*ein sprung*/
+
+    50% {
+        left: 345px;
+        bottom: 70px;
+    }
+    60% {
+        left: 335px;
+        bottom: 85px;
+    }
+    70% {
+        left: 325px;
+        bottom: 70px;
+    }
+    80% {
+        left: 315px;
+        bottom: 50px;
+
+    }
+    85% {
+        left: 290px;
+        bottom: 65px;
+
+    }
+
+    95% {
+
+        bottom: 100px;
+        left: 360px;
+
+    }
+
+    100% {
+        bottom: 50px;
+        left: 400px;
+
+    }
+
+}
+
+
+/*player select         GameState: 1*/
+
+.content.pselect{
+    background-image: url("../img/playerselect-bg.png");
+    background-size: cover;
+    display: none;
+    outline-width: 10px;
+    outline-color: #56791e;
+    outline-style: ridge;
+}
+
+.pselect .farmer {
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-image: url("../img/farmer.png");
+}
+
+.pselect .roboFarmer {
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-image: url("../img/robo-farmer.png");
+    background-position-x: 15px
+}
+
+.pselect .pshead {
+    text-align: center;
+    font-family: myfont, serif;
+    font-weight: bold;
+    color: #af000d;
+    font-size: 3em;
+}
+
+/*playground select     GameState: 2*/
+
+.content.pgselect {
+    background-image: url("../img/playgroundselect-bg.png");
+    background-size: cover;
+    display: none;
+
+    outline-width: 10px;
+    outline-color: #56791e;
+    outline-style: ridge;
+}
+
+.pgselect .playerfield{
+    background-color: red;
+    opacity: 0.5;
+}
+
+.pgselect .überschrift {
+    font-size: 3em;
+    font-family: myfont, serif;
+    color: brown;
+}
+
+/*ingame                GameState: 3*/
+
+.content.ingame {
+    background-image: url("../img/game-bg.png");
+    background-repeat:no-repeat;
+    background-size: cover;
+    display:none;
+
+    outline-width: 10px;
+    outline-color: #56791e;
+    outline-style: ridge;
+}
+
+.ingame .farmerPlayer {
+    background-image: url("../img/farmer.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    color: white;
+}
+
+.ingame .farmerEnemy {
+    background-image: url("../img/robo-farmer.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.ingame .game {
+    background-color: darkgreen;
+    opacity: 0.5;
+}
+
+.ingame .sign {
+    background-image: url("../img/blank-wood-sign-hi.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    font-size: 2em;
+    font-family: myfont, serif;
+    color: black;
+}

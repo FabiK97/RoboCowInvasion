@@ -1,0 +1,80 @@
+.ufocow {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    background-image: url("../img/ufocow2.png");
+    background-repeat:no-repeat;
+    background-size:contain;
+
+    animation: ufocowanim 3s steps(60) infinite;
+}
+
+
+@keyframes ufocowanim {
+
+
+    0%, 100% {
+        transform: rotate(0deg);
+        right: 0px;
+        top: 50px;
+    }
+
+    25% {
+        top: 5%;
+        transform: rotate(-20deg);
+    }
+
+    50% {
+        right: 20%;
+        transform: rotate(0deg);
+    }
+
+    75% {
+        top: 0%;
+        transform: rotate(20deg);
+
+    }
+
+
+
+}
+
+.cow {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    background-image: url("../img/cow.png");
+    background-repeat:no-repeat;
+    background-size:contain;
+    transform-origin: 20% 100%;
+    bottom: 10%;
+    left:5%;
+
+    animation: cowdance .9s steps(20) infinite ;
+
+}
+
+@keyframes cowdance {
+
+    0%,100% {
+
+        transform: rotate(0deg);
+
+
+    }
+
+    25% {
+        transform: rotate(8deg);
+
+    }
+    50%{
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(-8deg);
+
+
+    }
+
+}
