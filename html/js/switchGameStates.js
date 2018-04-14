@@ -2,6 +2,7 @@ var inGame;
 var pgselect;
 var pselect;
 var menu;
+var playfieldSet;
 
 
 var menuButton;
@@ -21,9 +22,11 @@ window.onload = function() {
     pgsButton = document.getElementById("pgsButton");
 
     ingameButton.onclick = function() {show(inGame, pgselect, pselect, menu)};
-    pgsButton.onclick = function() {show(pgselect, inGame, pselect, menu)};
+    pgsButton.onclick = function() {show(pgselect, inGame, pselect, menu); setupPlayfield();};
     psButton.onclick = function() {show(pselect, pgselect, inGame, menu)};
     menuButton.onclick = function() {show(menu, inGame, pgselect, pselect)};
+
+
 };
 
 function show(el1, el2, el3, el4) {
