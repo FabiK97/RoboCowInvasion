@@ -5,6 +5,7 @@ class Field {
         this.posX = posX;
         this.posY = posY;
         this.state = state;
+        this.isShip = false;
     }
 
     set posX(x){
@@ -30,7 +31,6 @@ class Field {
     set state(s) {
         if(this.state == null || this.state < 2) {
             this._state = s;
-            console.log("change state");
         }
     }
 

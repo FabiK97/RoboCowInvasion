@@ -11,7 +11,6 @@ class PlayerField extends Field {
             case 0: this.field.style.backgroundColor = 'green';
                     break;
             case 1: this.field.style.backgroundColor = 'black';
-                    console.log("colored!");
                     break;
             case 2: this.field.style.backgroundColor = 'white';
                     break;
@@ -23,9 +22,6 @@ class PlayerField extends Field {
         this.field.style.width = FIELDSIZE.toString() + 'px';
         this.field.style.height = FIELDSIZE.toString() + 'px';
         this.field.style.position = "absolute";
-        /*this.field.style.outline = "2px";
-        this.field.style.outlineColor = "black";
-        this.field.style.outlineStyle = "solid";*/
         this.field.className = "pgsf";
         this.field.id = this.posX.toString() + '-' + this.posY.toString();
 
@@ -41,9 +37,26 @@ class PlayerField extends Field {
     }
 
     onMouseEvent(type) {
-        this.state = type;
-        console.log(this.state + '-' + type);
-        this.update();
+
+        if(type==1){
+            shipsToPlace[currentShip].x = this.posX;
+            shipsToPlace[currentShip].y = this.posY;
+            shipsToPlace[currentShip].setShip();
+
+        }
+
+        if(type==2){
+            shipsToPlace[currentShip].isPlaced = true;
+            shipsToPlace[currentShip].placeShip();
+            checkStatusPgselect();
+        }
+
+
+        for(var i = 0; i < FY; i++){
+            for(var j = 0; j < FX; j++){
+                playfieldArray[i][j].update();
+            }
+        }
     }
 
 
