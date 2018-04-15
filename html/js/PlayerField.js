@@ -39,15 +39,15 @@ class PlayerField extends Field {
     onMouseEvent(type) {
 
         if(type==1){
-            shipsToPlace[currentShip].x = this.posX;
-            shipsToPlace[currentShip].y = this.posY;
-            shipsToPlace[currentShip].setShip();
+            cowFamiliesToPlace[currentCowFamily].x = this.posX;
+            cowFamiliesToPlace[currentCowFamily].y = this.posY;
+            cowFamiliesToPlace[currentCowFamily].setCowFamily();
 
         }
 
         if(type==2){
-            shipsToPlace[currentShip].isPlaced = true;
-            shipsToPlace[currentShip].placeShip();
+            cowFamiliesToPlace[currentCowFamily].isPlaced = true;
+            cowFamiliesToPlace[currentCowFamily].placeCowFamily();
             checkStatusPgselect();
         }
 

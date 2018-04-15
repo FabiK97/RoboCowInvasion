@@ -3,11 +3,8 @@ var playfieldArray;
 const FX = 12;
 const FY = 7;
 
-var shipsToPlace = new Array(4);
-var currentShip = 0;
-var Ship1;
-
-var allShipsPlaced = false;
+var cowFamiliesToPlace = new Array(4);
+var currentCowFamily = 0;
 
 
 function setupPlayfield() {
@@ -15,7 +12,7 @@ function setupPlayfield() {
 
     //div Box mit Feldern füllen
     createField();
-    window.addEventListener("keydown", changeShipDirection, false);
+    window.addEventListener("keydown", changeCowFamilyDirection, false);
 
     checkStatusPgselect();
 
@@ -36,19 +33,19 @@ function createField() {
 }
 
 function checkStatusPgselect() {
-    console.log(shipsToPlace[currentShip]);
-    console.log(currentShip);
+    console.log(cowFamiliesToPlace[currentCowFamily]);
+    console.log(currentCowFamily);
 
-    if(shipsToPlace[currentShip] == null) {
-        shipsToPlace[currentShip] = new Ship(5, 2, 5 - currentShip, 1);
+    if(cowFamiliesToPlace[currentCowFamily] == null) {
+        cowFamiliesToPlace[currentCowFamily] = new CowFamily(5, 2, 5 - currentCowFamily, 1);
     }
 
-    if(shipsToPlace[currentShip].isPlaced) {
+    if(cowFamiliesToPlace[currentCowFamily].isPlaced) {
         console.log("placed");
-        if(currentShip === shipsToPlace.length - 1 && shipsToPlace[shipsToPlace.length - 1].isPlaced){
+        if(currentCowFamily === cowFamiliesToPlace.length - 1 && cowFamiliesToPlace[cowFamiliesToPlace.length - 1].isPlaced){
             changeToIngame();
         } else {
-            currentShip ++;
+            currentCowFamily ++;
             console.log("count");
             checkStatusPgselect();
         }
@@ -62,9 +59,9 @@ function changeToIngame() {
 }
 
 
-function changeShipDirection(e) {
+function changeCowFamilyDirection(e) {
     if (e.keyCode == "82") {
-        shipsToPlace[currentShip].changeDirection();
+        cowFamiliesToPlace[currentCowFamily].changeDirection();
     }
 
     for(var i = 0; i < FY; i++){
