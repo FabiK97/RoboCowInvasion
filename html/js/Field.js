@@ -1,11 +1,12 @@
 const FIELDSIZE = 45;
 
 class Field {
-    constructor(posX,posY,state) {
+    constructor(posX,posY,state, divBox) {
         this.posX = posX;
         this.posY = posY;
         this.state = state;
-        this.isShip = false;
+        this.isCowFamily = false;
+        this.divBox = divBox;
     }
 
     set posX(x){
@@ -29,7 +30,7 @@ class Field {
     }
 
     set state(s) {
-        if(this.state == null || this.state < 2) {
+        if(this.state == null || this.state < 3) {
             this._state = s;
         }
     }

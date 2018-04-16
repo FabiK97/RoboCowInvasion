@@ -16,7 +16,6 @@ class CowFamily {
         //delete Old cowFamily
         for(var i = 0; i < this.cowFamilyLength; i++) {
             if (this.cowFamilyArray[i] != null) {
-                this.cowFamilyArray[i].isCowFamily = false;
                 this.cowFamilyArray[i].state = 0;
             }
         }
@@ -36,26 +35,32 @@ class CowFamily {
         }
 
         //set Fields as cowFamily
-        this.isPlaceable = true;
+
         this.checkPlaceable();
-        console.log(this.isPlacable);
+
+        console.log("placeable: " +  this.isPlaceable);
 
         if(this.isPlaceable){
             for(var i = 0; i < this.cowFamilyLength; i++) {
-                this.cowFamilyArray[i].state = 1;
+                if (!this.cowFamilyArray[i].isCowFamily) {
+                    this.cowFamilyArray[i].state = 1;
+                    }
             }
         } else {
             for(var i = 0; i < this.cowFamilyLength; i++) {
-                this.cowFamilyArray[i].state = 3;
+                if (!this.cowFamilyArray[i].isCowFamily) {
+                    this.cowFamilyArray[i].state = 2;
+                }
             }
         }
     }
 
     checkPlaceable(){
+        this.isPlaceable = true;
         for(var i = 0; i < this.cowFamilyLength; i++) {
+            console.log("Feld-" + i + " : " + this.cowFamilyArray[i].isCowFamily);
             if(this.cowFamilyArray[i].isCowFamily) {
                 this.isPlaceable = false;
-                console.log('state: ' + this.cowFamilyArray[i].state);
             }
         }
     }
@@ -72,7 +77,8 @@ class CowFamily {
 
     placeCowFamily(){
         for(var i = 0; i < this.cowFamilyLength; i++) {
-            this.cowFamilyArray[i].state = 2;
+            this.cowFamilyArray[i].state = 3;
+            this.cowFamilyArray[i].isCowFamily = true;
         }
     }
 

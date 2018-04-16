@@ -187,3 +187,16 @@ body {
     top: 25px;
     left: 330px;
 }
+
+.ingame .game #plf {
+    position: absolute;
+    width: 540px;
+    height: 315px;
+    top: 350px;
+}
+
+.ingame .game #ef {
+    position: absolute;
+    width: 540px;
+    height: 315px;
+}
