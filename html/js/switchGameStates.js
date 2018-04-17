@@ -4,11 +4,18 @@ var pselect;
 var menu;
 var playfieldSet;
 
+var player;
+var cows;
 
-var menuButton;
-var psButton;
-var pgsButton;
-var ingameButton;
+
+
+var playButton;
+var scoreButton;
+var helpButton;
+var helpBackButton;
+
+var farmerButton;
+var roboFarmerButton;
 
 
 window.onload = function() {
@@ -17,17 +24,21 @@ window.onload = function() {
     pselect = document.getElementById("ps");
     menu = document.getElementById("m");
 
-    ingameButton = document.getElementById("ingameButton");
-    menuButton = document.getElementById("menuButton");
-    psButton = document.getElementById("play");
-    pgsButton = document.getElementById("pgsButton");
+    playButton = document.getElementById("play");
+    scoreButton = document.getElementById("score");
+    helpButton = document.getElementById("help");
+    helpBackButton = document.getElementById("helpBack");
+
+    farmerButton = document.getElementById("farmer");
+    roboFarmerButton = document.getElementById("roboFarmer");
 
 
-    ingameButton.onclick = function() {show(inGame, pgselect, pselect, menu)};
-    pgsButton.onclick = function() {show(pgselect, inGame, pselect, menu); setupPlayfield();};
-    psButton.onclick = function() {show(pselect, pgselect, inGame, menu)};
-    menuButton.onclick = function() {show(menu, inGame, pgselect, pselect)};
+    farmerButton.onclick = function() {farmer();};
+    roboFarmerButton.onclick = function() {robofarmer();};
 
+    playButton.onclick = function() {show(pselect, pgselect, inGame, menu)};
+    helpButton.onclick = function() {help_on()};
+    helpBackButton.onclick = function() {help_off()};
 
 };
 
@@ -40,3 +51,18 @@ function show(el1, el2, el3, el4) {
 }
 
 
+function farmer () {
+    show(pgselect, inGame, pselect, menu);
+
+    player = "farmer.png";
+    cows = "cows_klein.png"
+    setupPlayfield();
+}
+
+function robofarmer () {
+    show(pgselect, inGame, pselect, menu);
+
+    player = "robofarmer.png";
+    cows = "robo-cow_klein.png"
+    setupPlayfield();
+}
