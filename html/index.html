@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/design.css">
+
+    <script src="js/Field.js" language="javascript" type="text/javascript"></script>
+    <script src="js/PlayerField.js" language="javascript" type="text/javascript"></script>
+    <script src="js/CowFamily.js" language="javascript" type="text/javascript"></script>
+    <script src="js/playgroundSelect.js" language="javascript" type="text/javascript"></script>
+    <script src="js/game.js" language="javascript" type="text/javascript"></script>
     <script src="js/switchGameStates.js" language="javascript" type="text/javascript"></script>
     <script src="js/overlay_help.js" type="text/javascript"></script>
     <script src="js/switchToPlayerSelect.js" type="text/javascript"></script>
@@ -58,7 +64,7 @@
 
         <div id="pgs" class="content pgselect">
             <h1 class="überschrift">Cow-Familiy Setup</h1>
-            <div class="playerfield"></div>
+            <div id="pf" class="playerfield"></div>
         </div>
 
         <div id="g1" class="content ingame">
@@ -68,7 +74,10 @@
             <div class="sign playerLeft">Left: 0</div>
             <div class="farmerPlayer">player</div>
             <div class="farmerEnemy"></div>
-            <div class="game"></div>
+            <div class="game">
+                <div id="ef"></div>
+                <div id="plf"></div>
+            </div>
         </div>
     </div>
 

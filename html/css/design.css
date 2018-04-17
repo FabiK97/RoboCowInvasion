@@ -328,8 +328,15 @@ body {
 }
 
 .ingame .game {
-    background-color: darkgreen;
     opacity: 0.5;
+}
+
+.ingame .game #plf {
+    background-color: darkgreen;
+}
+
+.ingame .game #ef {
+    background-color: darkgreen;
 }
 
 .ingame .sign {
