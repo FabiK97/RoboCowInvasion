@@ -42,6 +42,51 @@ body {
     height: 108px;
 }
 
+.overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    display: none;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.overlay-box {
+    padding: 1.5em;
+    padding-top: 3em;
+    height: 50%;
+    width: 30%;
+    background-color: #c89247;
+    border-radius: 25px;
+    margin: auto;
+    margin-top: 15%;
+    opacity: 1;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+}
+
+.overlay-content{
+    font-size: 18px;
+    color: white;
+    height: 85%;
+    overflow: auto;
+    padding-left: 2em;
+    padding-right:1.5em;
+    margin-right: 5%;
+
+}
+.overlay-box .btn {
+    float: right;
+    margin-right: 5%;
+    margin-top: 5%;
+    background-color: #56791e;
+    font-family: sans-serif;
+    color: #dff99a;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+}
+
 .cowWalk {
     background-image: url("../img/cow.png");
     position: absolute;

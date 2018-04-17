@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>bootstrap-test</title>
+    <title>Robo Cow Invasion</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/design.css">
     <script src="js/switchGameStates.js" language="javascript" type="text/javascript"></script>
+    <script src="js/overlay_help.js" type="text/javascript"></script>
+    <script src="js/switchToPlayerSelect.js" type="text/javascript"></script>
+    <script src="js/playerSelectToPG.js" type="text/javascript"></script>
 </head>
 <body>
 <embed src="./musik/RoyalEntrance.mp3" autostart="true" loop="true" hidden="true" height="0" width="0">
@@ -19,28 +22,45 @@
             <div class="roboCowWalk"></div>
             <div class="playSign">
                 <div class="fld">
-                    <div id="play" class="fbtn"><img src="./img/playButton.png"> </div>
+                    <div id="play" class="fbtn" onclick="playerselect_on()"><img src="./img/playButton.png"> </div>
                     <div class="ftxt" style="font-size: 3em; padding: 10px;">Play</div>
                 </div>
                 <div class="fld">
                     <div id="score" class="fbtn "><img src="./img/scoreButton.png"></div>
                     <div class="ftxt">Scoreboard</div>
                 </div>
-                <div id="settings" class="fld">
-                    <div class="fbtn "><img src="./img/optionsButton.png"></div>
-                    <div class="ftxt">Settings</div>
+                <div id="help" class="fld">
+                    <div class="fbtn " onclick="help_on()"><img src="./img/optionsButton.png"></div>
+                    <div class="ftxt">Help</div>
+                </div>
+            </div>
+            <div id="helpoverlay" class="overlay">
+                <div class="overlay-box">
+                    <div class="overlay-content">
+                        <h4>Das ist eine Spielbeschreibung</h4> <br>
+                       <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                        Das ist eine Spielbeschreibung <br>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                    </div>
+                    <div class="button">
+                        <button type="submit" class="btn" onclick="help_off()">back</button>
+                    </div>
                 </div>
             </div>
         </div>
+
+
         <div id="ps" class="content pselect">
             <div class="pshead">Please Select your Player</div>
-            <div class="farmer"></div>
-            <div class="roboFarmer"></div>
+            <div class="farmer" onclick="farmer()"></div>
+            <div class="roboFarmer" onclick="robofarmer()"></div>
         </div>
+
         <div id="pgs" class="content pgselect">
             <h1 class="überschrift">Cow-Familiy Setup</h1>
             <div class="playerfield"></div>
         </div>
+
         <div id="g1" class="content ingame">
             <div class="sign enemyHits">Hits: 0</div>
             <div class="sign playerHits">Hits: 0</div>

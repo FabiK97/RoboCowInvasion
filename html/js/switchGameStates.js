@@ -9,6 +9,7 @@ var psButton;
 var pgsButton;
 var ingameButton;
 
+
 window.onload = function() {
     inGame = document.getElementById("g1");
     pgselect = document.getElementById("pgs");
@@ -17,8 +18,9 @@ window.onload = function() {
 
     ingameButton = document.getElementById("ingameButton");
     menuButton = document.getElementById("menuButton");
-    psButton = document.getElementById("psButton");
+    psButton = document.getElementById("play");
     pgsButton = document.getElementById("pgsButton");
+
 
     ingameButton.onclick = function() {show(inGame, pgselect, pselect, menu)};
     pgsButton.onclick = function() {show(pgselect, inGame, pselect, menu)};
@@ -33,4 +35,5 @@ function show(el1, el2, el3, el4) {
         el3.style.display = 'none';
         el4.style.display = 'none';
 }
+
 
