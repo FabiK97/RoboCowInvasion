@@ -1,9 +1,10 @@
 class CowFamily {
-    constructor(x,y,l,d){
+    constructor(x,y,l,d,player){
         this.x = x;
         this.y = y;
         this.cowFamilyLength = l;
         this.direction = d;
+        this.isPlayerCowFamily = player;
 
         this.isPlaceable = true;
         this.isPlaced = false;
@@ -21,19 +22,35 @@ class CowFamily {
         }
 
         //create cowFamilyArray
-        switch(this.direction) {
-            case 1: //down
-                for(var i = 0; i < this.cowFamilyLength; i++) {
-                    this.cowFamilyArray[i] = playfieldArray[this.y + i][this.x];
-                }
-                break;
-            case 2: //right
-                for(var i = 0; i < this.cowFamilyLength; i++) {
-                    this.cowFamilyArray[i] = playfieldArray[this.y][this.x + i];
-                }
-                break;
+        if(this.isPlayerCowFamily) {
+            console.log("player");
+            switch (this.direction) {
+                case 1: //down
+                    for (var i = 0; i < this.cowFamilyLength; i++) {
+                        this.cowFamilyArray[i] = playfieldArray[this.y + i][this.x];
+                    }
+                    break;
+                case 2: //right
+                    for (var i = 0; i < this.cowFamilyLength; i++) {
+                        this.cowFamilyArray[i] = playfieldArray[this.y][this.x + i];
+                    }
+                    break;
+            }
+        } else {
+            console.log("enemy");
+            switch (this.direction) {
+                case 1: //down
+                    for (var i = 0; i < this.cowFamilyLength; i++) {
+                        this.cowFamilyArray[i] = enemyFieldArray[this.y + i][this.x];
+                    }
+                    break;
+                case 2: //right
+                    for (var i = 0; i < this.cowFamilyLength; i++) {
+                        this.cowFamilyArray[i] = enemyFieldArray[this.y][this.x + i];
+                    }
+                    break;
+            }
         }
-
         //set Fields as cowFamily
 
         this.checkPlaceable();
