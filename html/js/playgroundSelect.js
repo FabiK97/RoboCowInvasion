@@ -38,7 +38,7 @@ function checkStatusPgselect() {
     console.log(currentCowFamily);
 
     if(cowFamiliesToPlace[currentCowFamily] == null) {
-        cowFamiliesToPlace[currentCowFamily] = new CowFamily(5, 2, 5 - currentCowFamily, 1);
+        cowFamiliesToPlace[currentCowFamily] = new CowFamily(5, 2, 5 - currentCowFamily, 1, true);
     }
 
     if(cowFamiliesToPlace[currentCowFamily].isPlaced) {
