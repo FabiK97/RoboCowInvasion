@@ -21,7 +21,7 @@ function scanField(field) {
     else if (field.state === 5 || field.state === 4) {
             enemyAttack();
     } //
-    else if (field.state === 3) { //
+    else if (field.state === 5) { //
         scanNeighbor(field);
     }
 
@@ -31,7 +31,7 @@ function scanNeighbor() {
 
         switch (Math.floor(Math.random() * 4) + 1) {
             case (1):
-                if (randomx < 12) {
+                if (randomy < FY) {
                     scanField(playfieldArray[randomy + 1][randomx]);
                 } else {
                     scanField(playfieldArray[randomy - 1][randomx]);
@@ -39,21 +39,21 @@ function scanNeighbor() {
                 break;
 
             case (2):
-                if (randomy < 7) {
+                if (randomx < FX) {
                     scanField(playfieldArray[randomy][randomx + 1]);
                 } else {
                     scanField(playfieldArray[randomy][randomx - 1]);
                 }
                 break;
             case (3):
-                if (randomx > 0) {
+                if (randomy > 0) {
                     scanField(playfieldArray[randomy - 1][randomx]);
                 } else {
                     scanField(playfieldArray[randomy + 1][randomx]);
                 }
                 break;
             case (4):
-                if (randomy > 0) {
+                if (randomx > 0) {
                     scanField(playfieldArray[randomy][randomx - 1]);
                 } else {
                     scanField(playfieldArray[randomy][randomx + 1]);
@@ -68,6 +68,7 @@ function shoot(field) {
                 field.state = 5;
                 updateField();
                 enemyHit = true;
+                console.log("Feld getroffen")
                 gameCycle();
 
             } else {
