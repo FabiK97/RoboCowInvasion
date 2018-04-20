@@ -2,14 +2,13 @@ var randomx;
 var randomy;
 
 function enemyAttack() {
-    if (enemyHit === false) {
+    if (!enemyHit) {
         randomx = Math.floor(Math.random() * 12);
         randomy = Math.floor(Math.random() * 7);
-    } else {
     }
+    console.log(randomx + ' - ' + randomy);
 
-
-    scanField(enemyFieldArray[randomx][randomy]);
+    scanField(playfieldArray[randomy][randomx]);
 }
 
 //Scannen ob Feld frei ist mit Angriff
@@ -17,72 +16,68 @@ function enemyAttack() {
 function scanField(field) {
 
     if (field.state === 0 || field.state === 3) {  //Grundstatus
-
-
-        if (field.state === 0 || field.state === 1) {  //Grundstatus
-
             shoot(field);
-        }
-        else if (field.state === 6 || field.state === 4) {
+    }
+    else if (field.state === 6 || field.state === 4) {
             enemyAttack();
-        } //
-        else if (field.state === 5) { //
-
-            scanNeighbor(field);
-
-        }
+    } //
+    else if (field.state === 3) { //
+        scanNeighbor(field);
     }
 
-    function scanNeighbor() {
+}
+
+function scanNeighbor() {
 
         switch (Math.floor(Math.random() * 4) + 1) {
             case (1):
                 if (randomx < 12) {
-                    scanField(playFieldArray[randomx + 1][randomy]);
+                    scanField(playfieldArray[randomy + 1][randomx]);
                 } else {
-                    scanField(playFieldArray[randomx - 1][randomy]);
+                    scanField(playfieldArray[randomy - 1][randomx]);
                 }
                 break;
 
             case (2):
                 if (randomy < 7) {
-                    scanField(playFieldArray[randomx][randomy + 1]);
+                    scanField(playfieldArray[randomy][randomx + 1]);
                 } else {
-                    scanField(playFieldArray[randomx][randomy - 1]);
+                    scanField(playfieldArray[randomy][randomx - 1]);
                 }
                 break;
             case (3):
                 if (randomx > 0) {
-                    scanField(playFieldArray[randomx - 1][randomy]);
+                    scanField(playfieldArray[randomy - 1][randomx]);
                 } else {
-                    scanField(playFieldArray[randomx + 1][randomy]);
+                    scanField(playfieldArray[randomy + 1][randomx]);
                 }
                 break;
             case (4):
                 if (randomy > 0) {
-                    scanField(playFieldArray[randomx][randomy - 1]);
+                    scanField(playfieldArray[randomy][randomx - 1]);
                 } else {
-                    scanField(playFieldArray[randomx][randomy + 1]);
+                    scanField(playfieldArray[randomy][randomx + 1]);
                 }
                 break;
         }
+}
 
-        function shoot(field) {
-
-            if (this.cowFamily === true) {
+function shoot(field) {
+            console.log(field.posX + ' - ' + field.posY);
+            if (field.isCowFamily === true) {
                 field.state = 5;
+                updateField();
                 enemyHit = true;
-
+                gameCycle();
 
             } else {
                 field.state = 4;
                 enemyHit = false;
+                updateField();
             }
 
-            updateField();
-            gameCycle();
-        }
-
-
-    }
 }
+
+
+
+
