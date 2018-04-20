@@ -5,7 +5,7 @@ var menu;
 var playfieldSet;
 
 var player;
-var cows;
+var enemy;
 
 
 
@@ -16,6 +16,10 @@ var helpBackButton;
 
 var farmerButton;
 var roboFarmerButton;
+
+var humanAnimSet = ["../img/cow_50x50.png","../img/","../img/crosshairred.png","../img/cow-dead_50x50.png","../img/farmer.png"];
+
+var robotAnimSet = ["../img/robo-cow_50x50.png","../img/","../img/crosshairred.png","../img/robo-cow-dead_50x50.png","../img/robo-farmer.png"];
 
 
 window.onload = function() {
@@ -53,15 +57,17 @@ function show(el1, el2, el3, el4) {
 
 function farmer () {
     show(pgselect, inGame, pselect, menu);
+player = humanAnimSet;
+enemy = robotAnimSet;
 
-    player = "farmer.png";
-    cows = "cows_klein.png"
     setupPlayfield();
 }
 
 function robofarmer () {
     show(pgselect, inGame, pselect, menu);
-    player = "robofarmer.png";
-    cows = "robo-cow_klein.png"
+
+    player = robotAnimSet;
+    enemy = humanAnimSet;
+
     setupPlayfield();
 }
