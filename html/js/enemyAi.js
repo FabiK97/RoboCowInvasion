@@ -5,13 +5,17 @@ function enemyAttack() {
     randomx = Math.floor(Math.random() * 12);
     randomy = Math.floor(Math.random() * 7);
 
-    scanField(playfieldArray[randomx][randomy]);
+    scanField(enemyFieldArray[randomx][randomy]);
 }
 
 //Scannen ob Feld frei ist mit Angriff
 
 function scanField(field) {
+
     if (field.state === 0 || field.state === 3) {  //Grundstatus
+
+
+    if (field.state === 0 || field.state === 1) {  //Grundstatus
 
         shoot(field);
     }
@@ -23,7 +27,6 @@ function scanField(field) {
         scanNeighbor(field);
 
     }
-
 }
 
 function scanNeighbor() {

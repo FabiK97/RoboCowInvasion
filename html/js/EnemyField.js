@@ -45,7 +45,7 @@ class EnemyField extends Field {
     }
 
     set state(s) {
-        if(this.state == null || !(s < 2 && this.state === 3) || this.state === 4) {
+        if(this.state == null || !(this.state >= 2) || (s === 4 && this.state === 3)) {
             console.log(s);
             this._state = s;
         }

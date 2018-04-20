@@ -8,6 +8,7 @@ class CowFamily {
 
         this.isPlaceable = true;
         this.isPlaced = false;
+        this.isSunk = false;
 
         this.cowFamilyArray = new Array(l);
         this.setCowFamily();
@@ -65,7 +66,7 @@ class CowFamily {
             }
         } else {
             for(var i = 0; i < this.cowFamilyLength; i++) {
-                if (!this.cowFamilyArray[i].isCowFamily) {
+                if (!this.cowFamilyArray[i].isCowFamily && this.isPlayerCowFamily) {
                     this.cowFamilyArray[i].state = 2;
                 }
             }
@@ -93,6 +94,7 @@ class CowFamily {
             for(var i = 0; i < this.cowFamilyLength; i++) {
                 this.cowFamilyArray[i].state = 4;
             }
+            this.isSunk = true;
         }
     }
 
