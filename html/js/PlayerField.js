@@ -42,7 +42,7 @@ class PlayerField extends Field {
     }
 
     set state(s) {
-        if(this.state == null || this.state < 3 || (s >= 4 && this.state === 3)){
+        if(this.state == null || this.state < 3 || (s >= 4 && (this.state === 3 || this.state === 5))){
             this._state = s;
         }
     }

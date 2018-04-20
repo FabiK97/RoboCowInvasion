@@ -145,7 +145,7 @@ function updateEnemyField(){
 
 function gameCycle(element) {
 
-    if(running && !enemyHit){ //wenn Spiel läuft
+    if(running && !enemyHit && playersTurn){ //wenn Spiel läuft
         if(element.isCowFamily){
             playerHit = true;
             element.state = 3;
@@ -180,7 +180,7 @@ function gameCycle(element) {
         setTimeout(function(){
             console.log("enemy is thinking...");
             enemyAttack();
-            }, 2000);
+            }, 1000);
     }
 
 }

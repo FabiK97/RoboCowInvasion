@@ -98,6 +98,21 @@ class CowFamily {
         }
     }
 
+    checkPlayerSunk() {
+        var stateSum = 0;
+        for(var i = 0; i < this.cowFamilyLength; i++) {
+            stateSum += this.cowFamilyArray[i].state;
+        }
+
+        if(stateSum === 5*this.cowFamilyArray.length){
+            console.log("sum:" + stateSum);
+            for(var i = 0; i < this.cowFamilyLength; i++) {
+                this.cowFamilyArray[i].state = 6;
+            }
+            this.isSunk = true;
+        }
+    }
+
     changeDirection(){
 
         if (this.direction === 1) {
