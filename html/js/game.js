@@ -6,12 +6,16 @@ var randomPlacex;
 var randomPlacey;
 var randomDirection;
 
+var running;
+var playersTurn;
+var playerHit = false;
+var enemyHit = false;
+
 function setupGame() {
     setupEnemyfield();
     setupPlayerfield();
-
-
-
+    playersTurn = true;
+    running = true;
 }
 
 function setupPlayerfield() {
@@ -93,32 +97,36 @@ function addEnemyEventListeners() {
     for (var i = 0; i < FY; i++) {
         for (var j = 0; j < FX; j++) {
             let element = enemyFieldArray[i][j];
-            element.field.onmouseenter = function(){changeEnemyFieldStates(1, element);};
-            element.field.onmouseleave = function(){changeEnemyFieldStates(0, element);};
-            element.field.onclick = function(){changeEnemyFieldStates(2, element);};
+            element.field.onmouseenter = function(){checkMouseEvent(1, element);};
+            element.field.onmouseleave = function(){checkMouseEvent(0, element);};
+            element.field.onclick = function(){checkMouseEvent(2, element);};
         }
     }
 }
 
-function changeEnemyFieldStates(mouseEvent, element){
+function checkMouseEvent(mouseEvent, element){
 
     switch(mouseEvent){
-        case 0: element.state = 0;
-                console.log("hover");
-            break;
-        case 1: element.state = 1;
-                console.log("hover");
-            break;
-        case 2: if(element.isCowFamily){
-                    element.state = 3;
-                } else {
-                    element.state = 2;
+        case 0: if(playersTurn){ //wenn Spieler an der Reihe
+                    element.state = 0; //wenn die Maus das Feld verlässt, soll es wieder nichts Anzeigen
                 }
-
-                for(var i = 0; i < enemyCowFamilies.length; i++) {
-                    enemyCowFamilies[i].checkSunk();
+            break;
+        case 1: if(playersTurn) { //wenn Spieler an der Reihe
+                    element.state = 1; //wenn die Maus das Feld "betretet", soll es den Hover-Zustand bekommen
                 }
-
+            break;
+        case 2: if(playersTurn) { //wenn Spieler an der Reihe
+                    gameCycle(element); //wenn das Feld geklickt wird, soll es den Spielzyklus starten
+                }
+                // if(element.isCowFamily){
+                //     element.state = 3;
+                // } else {
+                //     element.state = 2;
+                // }
+                //
+                // for(var i = 0; i < enemyCowFamilies.length; i++) {
+                //     enemyCowFamilies[i].checkSunk();
+                // }
             break;
     }
 
@@ -135,5 +143,46 @@ function updateEnemyField(){
 
 }
 
+function gameCycle(element) {
 
+    if(running && !enemyHit){ //wenn Spiel läuft
+        if(element.isCowFamily){
+            playerHit = true;
+            element.state = 3;
+        } else {
+            playerHit = false;
+            element.state = 2;
+        }
 
+        for(var i = 0; i < enemyCowFamilies.length; i++) {
+            enemyCowFamilies[i].checkSunk();
+        }
+
+        //Prüfe ob alle gesunken
+        for(var cf in enemyCowFamilies){
+            var count = 0;
+            if(cf.isSunk === true){
+                count ++;
+            }
+        }
+
+        //Wenn alle gesunken --> Spiel vorbei
+        if(count === enemyCowFamilies.length){
+            running = false;
+            gameOver();
+        }
+
+    }
+
+    if(running && !playerHit) {
+        setTimeout(function(){
+            console.log("enemy is thinking...");
+            enemyAttack();
+            }, 2000);
+    }
+
+}
+
+function gameOver() {
+    //wenn Spiel vorbei dann
+}

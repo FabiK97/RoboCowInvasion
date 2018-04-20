@@ -62,18 +62,19 @@ function changeToIngame() {
 
 function changeCowFamilyDirection(e) {
     if (e.keyCode == "82") {
-        cowFamiliesToPlace[currentCowFamily].changeDirection();
-    }
-
-    for(var i = 0; i < FY; i++){
-        for(var j = 0; j < FX; j++){
-            console.log("update");
-            playfieldArray[i][j].update();
+        //prüfe ob Drehbar
+        if ((cowFamiliesToPlace[currentCowFamily].direction === 2 && cowFamiliesToPlace[currentCowFamily].y <= FY - cowFamiliesToPlace[currentCowFamily].cowFamilyLength) ||
+            (cowFamiliesToPlace[currentCowFamily].direction === 1 && cowFamiliesToPlace[currentCowFamily].x <= FX - cowFamiliesToPlace[currentCowFamily].cowFamilyLength)) {
+                cowFamiliesToPlace[currentCowFamily].changeDirection(); //wenn drehbar, dann drehen
         }
     }
+
+    updateField();
 }
 
 function addPlayfieldEventListeners() {
+
+
         for (var i = 0; i < FY; i++) {
             for (var j = 0; j < FX; j++) {
                 let element = playfieldArray[i][j];
@@ -86,14 +87,17 @@ function addPlayfieldEventListeners() {
 
 function changeFieldStates(mouseEvent, element){
 
-    switch(mouseEvent){
-        case 1: cowFamiliesToPlace[currentCowFamily].x = element.posX;
-                cowFamiliesToPlace[currentCowFamily].y = element.posY;
-                cowFamiliesToPlace[currentCowFamily].setCowFamily();
-                console.log("Familie 1 Feld 1:" + cowFamiliesToPlace[0].cowFamilyArray[0].isCowFamily + "Feld 2:" + cowFamiliesToPlace[0].cowFamilyArray[1].isCowFamily + "Feld 3:" + cowFamiliesToPlace[0].cowFamilyArray[2].isCowFamily + "Feld 1:" + cowFamiliesToPlace[0].cowFamilyArray[3].isCowFamily)
+    switch(mouseEvent) {
+        case 1: //prüfe ob es im platzierbaren Bereich ist
+            if ((cowFamiliesToPlace[currentCowFamily].direction === 2 && element.posX <= FX - cowFamiliesToPlace[currentCowFamily].cowFamilyLength) ||
+                (cowFamiliesToPlace[currentCowFamily].direction === 1 && element.posY <= FY - cowFamiliesToPlace[currentCowFamily].cowFamilyLength)){
+                    cowFamiliesToPlace[currentCowFamily].x = element.posX; //CowFamily auf gehovertes Feld setzen
+                    cowFamiliesToPlace[currentCowFamily].y = element.posY; //CowFamily auf gehovertes Feld setzen
+                    cowFamiliesToPlace[currentCowFamily].setCowFamily(); //CowFamily neu generieren
+                }
                 break;
 
-        case 2: if(cowFamiliesToPlace[currentCowFamily].isPlaceable){
+        case 2: if(cowFamiliesToPlace[currentCowFamily].isPlaceable){ //wenn platzierbar, dann Platzieren
                     cowFamiliesToPlace[currentCowFamily].isPlaced = true;
                     cowFamiliesToPlace[currentCowFamily].placeCowFamily();
                     checkStatusPgselect();
@@ -108,7 +112,7 @@ function updateField(){
 
     for(var i = 0; i < FY; i++){
         for(var j = 0; j < FX; j++){
-            playfieldArray[i][j].update();
+            playfieldArray[i][j].update(); //gehe jedes Feld im Array durch und zeichne es neu
         }
     }
 
