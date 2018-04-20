@@ -2,6 +2,8 @@ var randomx;
 var randomy;
 
 function enemyAttack() {
+
+
     if (!enemyHit) {
         randomx = Math.floor(Math.random() * 12);
         randomy = Math.floor(Math.random() * 7);
@@ -73,6 +75,7 @@ function shoot(field) {
 
             } else {
                 field.state = 4;
+                playersTurn = true;
                 enemyHit = false;
                 updateField();
             }

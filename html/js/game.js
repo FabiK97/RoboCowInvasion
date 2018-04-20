@@ -175,6 +175,8 @@ function gameCycle(element) {
     }
 
     if(running && !playerHit) {
+
+        playersTurn = false;
         setTimeout(function(){
             console.log("enemy is thinking...");
             enemyAttack();
