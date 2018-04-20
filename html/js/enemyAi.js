@@ -18,7 +18,7 @@ function scanField(field) {
     if (field.state === 0 || field.state === 3) {  //Grundstatus
             shoot(field);
     }
-    else if (field.state === 6 || field.state === 4) {
+    else if (field.state === 5 || field.state === 4) {
             enemyAttack();
     } //
     else if (field.state === 3) { //
