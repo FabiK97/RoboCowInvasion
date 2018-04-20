@@ -19,6 +19,15 @@ body {
     background-size: cover;
 }
 
+.header #musicButton {
+    text-align: center;
+    background-color: green;
+}
+
+.header #musicButton:hover {
+    background-color: darkgreen;
+}
+
 /*GameStates*/
 
 /*Menu                  GameState: 0*/

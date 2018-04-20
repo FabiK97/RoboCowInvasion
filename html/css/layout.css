@@ -20,12 +20,21 @@ body {
     background-position-x: 50px;
     width: 100%;
     height: 150px;
-    display: flex;
-    padding: 0px;
+    /*display: flex;*/
 
     align-items: center;
     justify-content: center;
 
+}
+
+.header #musicButton {
+    width: 75px;
+    height: 75px;
+
+    font-size: 0.5em;
+
+    margin: 10px 10px;
+    float: left;
 }
 
 .content {

@@ -3,9 +3,13 @@ var pgselect;
 var pselect;
 var menu;
 var playfieldSet;
+var backgroundMusic;
+var musicButton;
+
 
 var player;
 var enemy;
+
 
 
 
@@ -36,9 +40,21 @@ window.onload = function() {
     farmerButton = document.getElementById("farmer");
     roboFarmerButton = document.getElementById("roboFarmer");
 
+    musicButton = document.getElementById("musicButton");
+    backgroundMusic = new sound("./musik/RoyalEntrance.mp3");
+    //backgroundMusic.play();
 
     farmerButton.onclick = function() {farmer();};
     roboFarmerButton.onclick = function() {robofarmer();};
+
+    musicButton.onclick = function() {
+      if(backgroundMusic.sound.paused){
+         backgroundMusic.play();
+      } else {
+          backgroundMusic.stop();
+      }
+
+    };
 
     playButton.onclick = function() {show(pselect, pgselect, inGame, menu)};
     helpButton.onclick = function() {help_on()};
@@ -53,7 +69,6 @@ function show(el1, el2, el3, el4) {
         el3.style.display = 'none';
         el4.style.display = 'none';
 }
-
 
 function farmer () {
     show(pgselect, inGame, pselect, menu);
@@ -70,4 +85,20 @@ function robofarmer () {
     enemy = humanAnimSet;
 
     setupPlayfield();
+}
+
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+        this.sound.play();
+    }
+    this.stop = function(){
+        this.sound.pause();
+    }
+
 }
