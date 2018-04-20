@@ -1,16 +1,15 @@
 const FIELDSIZE = 45;
 
 class Field {
-    constructor(posX,posY,state, divBox) {
+    constructor(posX, posY, divBox) {
         this.posX = posX;
         this.posY = posY;
-        this.state = state;
         this.isCowFamily = false;
         this.divBox = divBox;
     }
 
-    set posX(x){
-        if(x<12) {
+    set posX(x) {
+        if (x < 12) {
             this._posX = x;
         }
     }
@@ -19,8 +18,8 @@ class Field {
         return this._posX;
     }
 
-    set posY(y){
-        if(y<8) {
+    set posY(y) {
+        if (y < 8) {
             this._posY = y;
         }
     }
@@ -29,13 +28,4 @@ class Field {
         return this._posY;
     }
 
-    set state(s) {
-        if(this.state == null || this.state < 3) {
-            this._state = s;
-        }
-    }
-
-    get state() {
-        return this._state;
-    }
 }

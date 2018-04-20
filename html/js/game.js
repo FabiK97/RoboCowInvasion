@@ -1,5 +1,6 @@
 var playerFieldBox;
 var EnemyFieldBox;
+var enemyCowFamilies = new Array(4);
 var enemyFieldArray;
 var randomPlacex;
 var randomPlacey;
@@ -35,17 +36,17 @@ function setupEnemyfield() {
 
     for(var i = 0; i < FY; i++){
         for(var j = 0; j < FX; j++){
-            enemyFieldArray[i][j] = new PlayerField(j,i , 0, enemyFieldBox);
+            enemyFieldArray[i][j] = new EnemyField(j,i , 0, enemyFieldBox);
         }
     }
 
     setupEnemyCowFamily();
 
-    for(var i = 0; i < FY; i++){
-        for(var j = 0; j < FX; j++){
-            enemyFieldArray[i][j].update();
-        }
-    }
+    updateEnemyField();
+
+    addEnemyEventListeners();
+
+
 }
 
 
@@ -56,19 +57,19 @@ function setupEnemyCowFamily() {
         var length = 5 - i;
 
         setupRandomPlace(length);
-        enemyCowFamily = new CowFamily(randomPlacex, randomPlacey, length, randomDirection, false);
-        enemyCowFamily.checkPlaceable();
+        enemyCowFamilies[i] = new CowFamily(randomPlacex, randomPlacey, length, randomDirection, false);
+        enemyCowFamilies[i].checkPlaceable();
 
-        while (enemyCowFamily.isPlaceable != true) {
+        while (enemyCowFamilies[i].isPlaceable != true) {
             setupRandomPlace(length);
-            enemyCowFamily.x = randomPlacex;
-            enemyCowFamily.y = randomPlacey;
-            enemyCowFamily.direction = randomDirection;
-            enemyCowFamily.setCowFamily();
-            enemyCowFamily.checkPlaceable();
+            enemyCowFamilies[i].x = randomPlacex;
+            enemyCowFamilies[i].y = randomPlacey;
+            enemyCowFamilies[i].direction = randomDirection;
+            enemyCowFamilies[i].setCowFamily();
+            enemyCowFamilies[i].checkPlaceable();
         }
-        enemyCowFamily.isPlaced = true;
-        enemyCowFamily.placeCowFamily();
+        enemyCowFamilies[i].isPlaced = true;
+        enemyCowFamilies[i].placeCowFamily();
 
 
     }
@@ -88,7 +89,51 @@ function setupRandomPlace(length) {
     console.log(randomPlacex + ' - ' + randomPlacey + ' - ' + randomDirection + ' l: ' + length);
 }
 
+function addEnemyEventListeners() {
+    for (var i = 0; i < FY; i++) {
+        for (var j = 0; j < FX; j++) {
+            let element = enemyFieldArray[i][j];
+            element.field.onmouseenter = function(){changeEnemyFieldStates(1, element);};
+            element.field.onmouseleave = function(){changeEnemyFieldStates(0, element);};
+            element.field.onclick = function(){changeEnemyFieldStates(2, element);};
+        }
+    }
+}
 
+function changeEnemyFieldStates(mouseEvent, element){
+
+    switch(mouseEvent){
+        case 0: element.state = 0;
+                console.log("hover");
+            break;
+        case 1: element.state = 1;
+                console.log("hover");
+            break;
+        case 2: if(element.isCowFamily){
+                    element.state = 3;
+                } else {
+                    element.state = 2;
+                }
+
+                for(var i = 0; i < enemyCowFamilies.length; i++) {
+                    enemyCowFamilies[i].checkSunk();
+                }
+
+            break;
+    }
+
+    updateEnemyField();
+}
+
+function updateEnemyField(){
+
+    for(var i = 0; i < FY; i++){
+        for(var j = 0; j < FX; j++){
+            enemyFieldArray[i][j].update();
+        }
+    }
+
+}
 
 
 

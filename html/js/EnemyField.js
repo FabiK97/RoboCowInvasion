@@ -2,8 +2,31 @@ class EnemyField extends Field {
 
     constructor(x, y, state, divBox) {
         super(x, y, state, divBox);
+        this.state = state;
         this.createField(divBox);
         this.update();
+    }
+
+    update() {
+        switch(this.state){
+
+            case 0: // nichts
+                this.field.style.backgroundColor = 'green';
+                break;
+            case 1: //transparent - hover
+                this.field.style.backgroundColor = 'black';
+                break;
+            case 2: //dreck
+                this.field.style.backgroundColor = 'red';
+                break;
+            case 3: //Hit but not Destroyed
+                this.field.style.backgroundColor = 'white';
+                break;
+            case 4: //Kuh-Tot
+                this.field.style.backgroundColor = 'blue';
+                break;
+
+        }
     }
 
     createField(divBox){
@@ -19,6 +42,17 @@ class EnemyField extends Field {
         this.field.style.top = (FIELDSIZE*this.posY).toString() + 'px';
         divBox.appendChild(this.field);
 
+    }
+
+    set state(s) {
+        if(this.state == null || !(s < 2 && this.state === 3) || this.state === 4) {
+            console.log(s);
+            this._state = s;
+        }
+    }
+
+    get state() {
+        return this._state;
     }
 
 }

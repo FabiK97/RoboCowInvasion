@@ -82,6 +82,20 @@ class CowFamily {
         }
     }
 
+    checkSunk() {
+        var stateSum = 0;
+        for(var i = 0; i < this.cowFamilyLength; i++) {
+                stateSum += this.cowFamilyArray[i].state;
+        }
+
+        if(stateSum === 3*this.cowFamilyArray.length){
+            console.log("sum:" + stateSum);
+            for(var i = 0; i < this.cowFamilyLength; i++) {
+                this.cowFamilyArray[i].state = 4;
+            }
+        }
+    }
+
     changeDirection(){
 
         if (this.direction === 1) {
@@ -94,8 +108,13 @@ class CowFamily {
 
     placeCowFamily(){
         for(var i = 0; i < this.cowFamilyLength; i++) {
-            this.cowFamilyArray[i].state = 3;
+            if(this.isPlayerCowFamily) {
+                this.cowFamilyArray[i].state = 3;
+            } else {
+                this.cowFamilyArray[i].state = 0;
+            }
             this.cowFamilyArray[i].isCowFamily = true;
+
         }
     }
 

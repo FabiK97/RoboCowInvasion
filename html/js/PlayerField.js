@@ -1,7 +1,8 @@
 class PlayerField extends Field {
 
     constructor(x,y,state, divBox) {
-        super(x,y,state, divBox);
+        super(x,y, divBox);
+        this.state = state;
         this.createField(divBox);
         this.update();
     }
@@ -34,5 +35,14 @@ class PlayerField extends Field {
 
     }
 
+    set state(s) {
+        if(this.state == null || this.state < 3) {
+            this._state = s;
+        }
+    }
+
+    get state() {
+        return this._state;
+    }
 
 }

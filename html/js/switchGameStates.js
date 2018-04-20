@@ -61,7 +61,6 @@ function farmer () {
 
 function robofarmer () {
     show(pgselect, inGame, pselect, menu);
-
     player = "robofarmer.png";
     cows = "robo-cow_klein.png"
     setupPlayfield();
