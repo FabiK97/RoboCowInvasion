@@ -11,14 +11,14 @@ function enemyAttack() {
 //Scannen ob Feld frei ist mit Angriff
 
 function scanField(field) {
-    if (field.state === 0 || field.state === 1) {  //Grundstatus
+    if (field.state === 0 || field.state === 3) {  //Grundstatus
 
         shoot(field);
     }
-    else if (field.state === 2 || field.state === 4) {
+    else if (field.state === 6 || field.state === 4) {
         enemyAttack();
     } //
-    else if (field.state === 3) { //
+    else if (field.state === 5) { //
 
         scanNeighbor(field);
 
@@ -60,14 +60,15 @@ function scanNeighbor() {
             break;
     }
 
-    function shoot() {
+    function shoot(field) {
 
         if (this.cowFamily == true) {
-            field.changeFieldStates(2);
+            field.state = 5;
+
         } else {
-            field.changeFieldStates(1);
+            field.state = 4;
         }
-        update();
+        updateField();
     }
 
 
