@@ -10,6 +10,7 @@ var tempy;
 function enemyAttack() {
 
     if (!hitCowfamily) {
+
         randomx = Math.floor(Math.random() * 12);
         randomy = Math.floor(Math.random() * 7);
     }
@@ -21,6 +22,7 @@ function enemyAttack() {
 //Scannen ob Feld frei ist mit Angriff
 
 function scanField(field) {
+    console.log("hitcounter: " + hitCounter);
 
     if (field.state === 0 || field.state === 3) {  //Grundstatus
             shoot(field);
@@ -31,8 +33,9 @@ function scanField(field) {
             changeDir();
             randomx = tempx;
             randomy = tempy;
-            console.log(randomx + ' ' + randomy);
+            console.log("Setze gespeicherte Variablen: x: " + randomx + " y: " + randomy);
         }
+        console.log("greife an!" + rightDir);
         enemyAttack();
     }
     else if (field.state === 6 || field.state === 4) {
@@ -47,17 +50,18 @@ function scanField(field) {
 function scanNeighbor() {
     if(!rightDir){
         randomDir = Math.floor(Math.random() * 4) + 1;
+        console.log("generiere eine zufällige Richtung");
+    } else {
+        console.log("gespeicherte Dir: " + randomDir);
     }
 
-
-    console.log(randomDir);
 
         switch (randomDir) {
             case (1): //unten
                 if(rightDir){
                     randomy ++;
                 }
-                if (randomy < FY) {
+                if (randomy < FY - 1) {
                     scanField(playfieldArray[randomy + 1][randomx]);
                 } else {
                     scanField(playfieldArray[randomy - 1][randomx]);
@@ -68,10 +72,9 @@ function scanNeighbor() {
                 if(rightDir){
                     randomx ++;
                 }
-                if (randomx < FX) {
+                if (randomx < FX - 1) {
                     scanField(playfieldArray[randomy][randomx + 1]);
                 } else {
-
                     scanField(playfieldArray[randomy][randomx - 1]);
                 }
                 break;
@@ -105,6 +108,8 @@ function shoot(field) {
                 field.state = 5;
                 updateField();
 
+                enemyHits ++;
+
                 hitCowfamily = true;
 
                 if(hitCowfamily === true){
@@ -115,19 +120,24 @@ function shoot(field) {
                     tempx = randomx;
                     tempy = randomy;
                     rightDir = true;
+                    console.log("setzt rightDir auf true");
                 }
 
                 for(var i = 0; i < enemyCowFamilies.length; i++) {
                     cowFamiliesToPlace[i].checkPlayerSunk();
                 }
+                updateField();
 
                 if(field.state === 6) {
                     hitCowfamily = false;
+                    hitCounter = 0;
+                    rightDir = false;
+                    console.log("setze rightDir auf false");
                 }
 
                 enemyHit = true;
 
-                console.log("Feld getroffen")
+                console.log("Feld getroffen");
                 gameCycle();
 
             } else {
@@ -136,12 +146,13 @@ function shoot(field) {
                     changeDir();
                     randomx = tempx;
                     randomy = tempy;
+                    console.log("speichere x: " + tempx + "speichere y: " + tempy);
                 }
 
                 field.state = 4;
                 playersTurn = true;
                 enemyHit = false;
-
+                enemyMiss ++;
                 updateField();
             }
 
@@ -149,17 +160,21 @@ function shoot(field) {
 
 function changeDir(){
     switch(randomDir) {
-        case 1: randomDir = 3;
-                tempy --;
-            break;
-        case 2: randomDir = 4;
-                tempx --;
-            break;
-        case 3: randomDir = 1;
+        case 1: console.log("Dir von Up zu Down" + randomDir);
+                randomDir = 3;
                 tempy ++;
             break;
-        case 4: randomDir = 2;
+        case 2: console.log("Dir von Right zu Left" + randomDir);
+                randomDir = 4;
                 tempx ++;
+            break;
+        case 3: console.log("Dir von Down zu Up" + randomDir);
+                randomDir = 1;
+                tempy --;
+            break;
+        case 4: console.log("Dir von Left zu Right" + randomDir);
+                randomDir = 2;
+                tempx --;
             break;
     }
 }

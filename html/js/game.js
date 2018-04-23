@@ -11,6 +11,19 @@ var playersTurn;
 var playerHit = false;
 var enemyHit = false;
 
+var playerHits = 0;
+var playerMiss = 0;
+
+var enemyHits = 0;
+var enemyMiss = 0;
+
+var playerHitsSign = document.getElementsByClassName("sign playerHits");
+var playerLeftSign = document.getElementsByClassName("sign playerLeft");
+var enemyHitsSign = document.getElementsByClassName("sign enemyHits");
+var enemyLeftSign = document.getElementsByClassName("sign enemyLeft");
+
+var NumberOfCows = 14;
+
 function setupGame() {
     setupEnemyfield();
     setupPlayerfield();
@@ -64,7 +77,7 @@ function setupEnemyCowFamily() {
         enemyCowFamilies[i] = new CowFamily(randomPlacex, randomPlacey, length, randomDirection, false);
         enemyCowFamilies[i].checkPlaceable();
 
-        while (enemyCowFamilies[i].isPlaceable != true) {
+        while (enemyCowFamilies[i].isPlaceable !== true) {
             setupRandomPlace(length);
             enemyCowFamilies[i].x = randomPlacex;
             enemyCowFamilies[i].y = randomPlacey;
@@ -116,7 +129,9 @@ function checkMouseEvent(mouseEvent, element){
                 }
             break;
         case 2: if(playersTurn) { //wenn Spieler an der Reihe
-                    gameCycle(element); //wenn das Feld geklickt wird, soll es den Spielzyklus starten
+                if(element.state !== 2){
+                        gameCycle(element); //wenn das Feld geklickt wird, soll es den Spielzyklus starten
+                    }
                 }
                 // if(element.isCowFamily){
                 //     element.state = 3;
@@ -148,9 +163,11 @@ function gameCycle(element) {
     if(running && !enemyHit && playersTurn){ //wenn Spiel läuft
         if(element.isCowFamily){
             playerHit = true;
+            playerHits ++;
             element.state = 3;
         } else {
             playerHit = false;
+            playerMiss ++;
             element.state = 2;
         }
 
@@ -173,6 +190,7 @@ function gameCycle(element) {
         }
 
     }
+        updateSigns();
 
     if(running && !playerHit) {
 
@@ -187,4 +205,12 @@ function gameCycle(element) {
 
 function gameOver() {
     //wenn Spiel vorbei dann
+}
+
+function updateSigns() {
+    console.log("updateSigns");
+    playerHitsSign.innerHTML = "Hits: " + playerHits;
+    playerLeftSign.innerHTML = "Left: " + (NumberOfCows - playerHits) ;
+    enemyHitsSign.innerHTML = "Hits: " + enemyHits;
+    enemyLeftSign.innerHTML = "Hits: " + (NumberOfCows - enemyHits);
 }

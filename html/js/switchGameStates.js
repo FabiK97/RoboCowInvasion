@@ -21,6 +21,9 @@ var helpBackButton;
 var farmerButton;
 var roboFarmerButton;
 
+var playerFarmer;
+var enemyFarmer;
+
 var humanAnimSet = ["../img/cow_50x50.png","../img/","../img/crosshairred.png","../img/cow-dead_50x50.png","../img/farmer.png"];
 
 var robotAnimSet = ["../img/robo-cow_50x50.png","../img/","../img/crosshairred.png","../img/robo-cow-dead_50x50.png","../img/robo-farmer.png"];
@@ -42,6 +45,9 @@ window.onload = function() {
 
     musicButton = document.getElementById("musicButton");
     backgroundMusic = new sound("./musik/RoyalEntrance.mp3");
+
+    playerFarmer = document.getElementsByClassName("farmerPlayer");
+    enemyFarmer = document.getElementsByClassName("farmerEnemy");
     //backgroundMusic.play();
 
     farmerButton.onclick = function() {farmer();};
@@ -72,8 +78,11 @@ function show(el1, el2, el3, el4) {
 
 function farmer () {
     show(pgselect, inGame, pselect, menu);
-player = humanAnimSet;
-enemy = robotAnimSet;
+    player = humanAnimSet;
+    enemy = robotAnimSet;
+
+    playerFarmer[0].style.backgroundImage = "url('../img/farmer.png')";
+    enemyFarmer[0].style.backgroundImage = "url('../img/robo-farmer.png')";
 
     setupPlayfield();
 }
@@ -83,6 +92,10 @@ function robofarmer () {
 
     player = robotAnimSet;
     enemy = humanAnimSet;
+
+    playerFarmer[0].style.backgroundImage = "url('img/robo-farmer.png')";
+    enemyFarmer[0].style.backgroundImage = "url('img/farmer.png')";
+
 
     setupPlayfield();
 }
