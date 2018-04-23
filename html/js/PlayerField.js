@@ -14,9 +14,15 @@ class PlayerField extends Field {
             case 1: this.field.style.backgroundColor = 'black';
                     break;
             case 2: this.field.style.backgroundColor = 'red';
-                break;
+                    break;
             case 3: this.field.style.backgroundColor = 'white';
-            break;
+                    break;
+            case 4: this.field.style.backgroundColor = 'red';
+                break;
+            case 5: this.field.style.backgroundColor = 'violet';
+                break;
+            case 6: this.field.style.backgroundColor = 'blue';
+                break;
         }
     }
 
@@ -36,7 +42,7 @@ class PlayerField extends Field {
     }
 
     set state(s) {
-        if(this.state == null || this.state < 3) {
+        if(this.state == null || this.state < 3 || (s >= 4 && (this.state === 3 || this.state === 5))){
             this._state = s;
         }
     }
