@@ -1,0 +1,126 @@
+/* line 9, ../scss/login_registration.scss */
+body {
+  height: 100%;
+  background-image: url("../img/farm.png");
+  background-size: cover;
+}
+
+@font-face {
+  font-family: 'myfont';
+  src: url("Sawyers Whitewash.otf") format("truetype");
+}
+/* line 21, ../scss/login_registration.scss */
+#main {
+  background-color: #c89247;
+  margin-top: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  max-width: 350px;
+  height: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 25px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* line 36, ../scss/login_registration.scss */
+.row h1 {
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 35px;
+}
+
+/* line 43, ../scss/login_registration.scss */
+.col-xs-12 {
+  text-align: center;
+  padding-left: auto;
+  padding-right: auto;
+  padding-bottom: 10px;
+  font-family: myfont, serif;
+  font-weight: bold;
+  font-size: 3em;
+}
+
+/* line 53, ../scss/login_registration.scss */
+.form-control {
+  background-color: #f8e390;
+  border-color: #c89247;
+}
+/* line 56, ../scss/login_registration.scss */
+.form-control::placeholder {
+  color: #7ba459;
+  font-family: sans-serif;
+}
+
+/* line 62, ../scss/login_registration.scss */
+.btn {
+  background-color: #56791e;
+  font-family: sans-serif;
+  color: #dff99a;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* line 70, ../scss/login_registration.scss */
+#main p {
+  font-size: 12pt;
+  padding-bottom: 40px;
+}
+/* line 74, ../scss/login_registration.scss */
+#main .registration {
+  padding-bottom: 10px;
+}
+
+/* line 80, ../scss/login_registration.scss */
+.col-md-10 {
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+}
+
+/* line 86, ../scss/login_registration.scss */
+.logo {
+  position: absolute;
+  width: 18%;
+  left: 41%;
+  top: 8%;
+}
+
+/* line 93, ../scss/login_registration.scss */
+a {
+  color: #f8e390;
+}
+/* line 95, ../scss/login_registration.scss */
+a:hover {
+  text-decoration: underline #dff99a;
+  color: #dff99a;
+}
+
+@media (min-width: 990px) {
+  /* line 11, ../scss/main.scss */
+  /* line 103, ../scss/login_registration.scss */
+  #main {
+    width: 990px;
+  }
+}
+
+@media screen and (max-width: 64em){
+  .col-xs-12 {
+    font-size: 3em;
+  }
+}
+@media screen and (max-width: 50em){
+  .col-xs-12 {
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 30em){
+  .col-xs-12 {
+    font-size: 1.5em;
+  }
+}
+@media screen and (max-width: 30em){
+  p {
+    font-size: 10px;
+  }
+}

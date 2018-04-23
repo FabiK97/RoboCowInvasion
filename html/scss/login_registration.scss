@@ -1,0 +1,124 @@
+$brown:  #c89247;
+$darkgrey_shadow: rgba(0, 0, 0, .5);
+$sand: #f8e390;
+$lightgreen: #dff99a;
+$_darkgreen: #56791e;
+$midgreen: #7ba459;
+$lightgrey_shadow: rgba(0, 0, 0, 0.2);
+
+body {
+  height: 100%;
+
+  background-image: url("../img/farm.png");
+  background-size: cover;
+}
+
+@font-face {
+  font-family: 'myfont';
+  src: url('Sawyers Whitewash.otf') format('truetype');
+}
+
+#main {
+  background-color: $brown;
+  margin-top: 20%;
+  margin-left: auto;
+  margin-right:auto;
+  width: 30%;
+  max-width: 350px;
+  height: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 25px;
+  box-shadow: 1px 2px 4px $darkgrey_shadow;
+}
+
+.row {
+  h1{
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 35px;
+  }
+}
+
+.col-xs-12 {
+  text-align: center;
+  padding-left: auto;
+  padding-right: auto;
+  padding-bottom: 10px;
+  font-family: myfont, serif;
+  font-weight: bold;
+  font-size: 3em;
+}
+
+.form-control {
+  background-color: $sand;
+  border-color: $brown;
+  &::placeholder {
+    color: $midgreen;
+    font-family: sans-serif;
+  }
+}
+
+.btn {
+  background-color: $_darkgreen;
+  font-family: sans-serif;
+  color: $lightgreen;
+  box-shadow: 0 5px 8px 0 $lightgrey_shadow, 0 6px 20px 0 $lightgrey_shadow;
+}
+
+#main {
+  p {
+    font-size: 12pt;
+    padding-bottom:40px;
+  }
+  .registration {
+    padding-bottom: 10px;
+  }
+
+}
+
+.col-md-10 {
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+}
+
+.logo {
+  position: absolute;
+  width: 18%;
+  left: 41%;
+  top: 8%;
+}
+
+a {
+  color: $sand;
+  &:hover {
+    text-decoration: underline $lightgreen;
+    color: $lightgreen;
+  }
+}
+
+@media (min-width: 990px) {
+  /* line 11, ../scss/main.scss */
+  #main {
+    width: 990px;
+  }
+}
+
+//Responsive: Login und Registrierung Überschriften
+
+@media screen and (max-width: 50em){
+  .col-xs-12 {
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 30em){
+  .col-xs-12 {
+    font-size: 1.5em;
+  }
+}
+@media screen and (max-width: 30em){
+  p {
+    font-size: 10px;
+  }
+}
