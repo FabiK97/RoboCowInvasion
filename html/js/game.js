@@ -22,6 +22,9 @@ var playerLeftSign = document.getElementsByClassName("sign playerLeft");
 var enemyHitsSign = document.getElementsByClassName("sign enemyHits");
 var enemyLeftSign = document.getElementsByClassName("sign enemyLeft");
 
+var sinkInterval;
+var intervallCounter = -1;
+
 var NumberOfCows = 14;
 
 function setupGame() {
@@ -198,7 +201,7 @@ function gameCycle(element) {
         setTimeout(function(){
             console.log("enemy is thinking...");
             enemyAttack();
-            }, 1000);
+            }, 500);
     }
 
 }
@@ -209,8 +212,20 @@ function gameOver() {
 
 function updateSigns() {
     console.log("updateSigns");
-    playerHitsSign.innerHTML = "Hits: " + playerHits;
-    playerLeftSign.innerHTML = "Left: " + (NumberOfCows - playerHits) ;
-    enemyHitsSign.innerHTML = "Hits: " + enemyHits;
-    enemyLeftSign.innerHTML = "Hits: " + (NumberOfCows - enemyHits);
+    playerHitsSign[0].innerHTML = "Hits: " + playerHits;
+    playerLeftSign[0].innerHTML = "Left: " + (NumberOfCows - playerHits) ;
+    enemyHitsSign[0].innerHTML = "Hits: " + enemyHits;
+    enemyLeftSign[0].innerHTML = "Hits: " + (NumberOfCows - enemyHits);
+}
+
+function sinkanimation(Array){
+
+        if(intervallCounter == -1) {
+            intervallCounter = Array.length - 1;
+        }
+        Array[intervallCounter].state = 4;
+        Array[intervallCounter].update();
+        console.log(Array[intervallCounter]);
+        intervallCounter--;
+
 }

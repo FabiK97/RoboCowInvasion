@@ -10,6 +10,8 @@ class CowFamily {
         this.isPlaced = false;
         this.isSunk = false;
 
+        this.intervallC = 0;
+
         this.cowFamilyArray = new Array(l);
         this.setCowFamily();
     }
@@ -66,7 +68,7 @@ class CowFamily {
             }
         } else {
             for(var i = 0; i < this.cowFamilyLength; i++) {
-                if (!this.cowFamilyArray[i].isCowFamily && this.isPlayerCowFamily) {
+                if (!this.cowFamilyArray[i].isCowFamily && this.isPlayerCowFamily) { //
                     this.cowFamilyArray[i].state = 2;
                 }
             }
@@ -92,8 +94,16 @@ class CowFamily {
         if(stateSum === 3*this.cowFamilyArray.length){
             console.log("sum:" + stateSum);
             for(var i = 0; i < this.cowFamilyLength; i++) {
-                this.cowFamilyArray[i].state = 4;
+                var time = i*500;
+                console.log(time);
+
+                var Array = this.cowFamilyArray;
+
+                setTimeout(function() {sinkanimation(Array);}, time);
             }
+
+            //intervallCounter = 0;
+            //sinkInterval = setInterval(sinkanimation(this.cowFamilyArray), 500);
             this.isSunk = true;
         }
     }
@@ -128,7 +138,7 @@ class CowFamily {
             if(this.isPlayerCowFamily) {
                 this.cowFamilyArray[i].state = 3;
             } else {
-                this.cowFamilyArray[i].state = 0;
+                this.cowFamilyArray[i].state = 1;
             }
             this.cowFamilyArray[i].isCowFamily = true;
 
@@ -167,5 +177,16 @@ class CowFamily {
 
     get direction(){
         return this._direction;
+    }
+
+    sinkanimation(){
+        this.cowFamilyArray[this.intervallCounter].state = 4;
+        this.intervallCounter++;
+        console.log(this.intervallCounter);
+
+        if(this.intervallCounter === this.cowFamilyLength){
+            console.log(this.intervallCounter);
+            window.clearInterval(this.sinkInterval);
+        }
     }
 }

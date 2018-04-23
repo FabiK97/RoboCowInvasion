@@ -9,19 +9,23 @@ class PlayerField extends Field {
 
     update() {
         switch(this.state){
-            case 0: this.field.style.backgroundColor = 'green';
+            case 0: this.field.style.backgroundColor = 'inherit';
                     break;
             case 1: this.field.style.backgroundColor = 'black';
                     break;
             case 2: this.field.style.backgroundColor = 'red';
+                    this.field.style.backgroundColor = 'inherit';
                     break;
-            case 3: this.field.style.backgroundColor = 'white';
+            case 3: this.field.style.backgroundImage = "url('" + player[0] + "')";
+                    this.field.style.backgroundColor = 'inherit';
                     break;
             case 4: this.field.style.backgroundColor = 'red';
-                break;
-            case 5: this.field.style.backgroundColor = 'violet';
-                break;
-            case 6: this.field.style.backgroundColor = 'blue';
+                    break;
+            case 5: this.field.style.backgroundImage = "url('" + player[2] + "')";
+                    //this.field.style.backgroundColor = 'inherit';
+                    break;
+            case 6: this.field.style.backgroundImage = "url('" + player[3] + "')";
+                    this.field.style.backgroundColor = 'inherit';
                 break;
         }
     }
@@ -37,6 +41,10 @@ class PlayerField extends Field {
 
         this.field.style.left = (FIELDSIZE*this.posX).toString() + 'px';
         this.field.style.top = (FIELDSIZE*this.posY).toString() + 'px';
+
+        this.field.style.backgroundSize = 'cover';
+        this.field.style.backgroundRepeat = 'no-repeat';
+
         divBox.appendChild(this.field);
 
     }

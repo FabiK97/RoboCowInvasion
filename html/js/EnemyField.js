@@ -11,19 +11,21 @@ class EnemyField extends Field {
         switch(this.state){
 
             case 0: // nichts
-                this.field.style.backgroundColor = 'green';
+                this.field.style.backgroundColor = 'inherit';
                 break;
             case 1: //transparent - hover
-                this.field.style.backgroundColor = 'black';
+                this.field.style.backgroundColor = 'grey';
                 break;
             case 2: //dreck
                 this.field.style.backgroundColor = 'red';
                 break;
             case 3: //Hit but not Destroyed
-                this.field.style.backgroundColor = 'white';
+                this.field.style.backgroundImage = "url('" + enemy[2] + "')";
+                this.field.style.backgroundColor = 'inherit';
                 break;
             case 4: //Kuh-Tot
-                this.field.style.backgroundColor = 'blue';
+                this.field.style.backgroundImage = "url('" + enemy[3] + "')";
+                this.field.style.backgroundColor = 'inherit';
                 break;
 
         }
@@ -40,6 +42,9 @@ class EnemyField extends Field {
 
         this.field.style.left = (FIELDSIZE*this.posX).toString() + 'px';
         this.field.style.top = (FIELDSIZE*this.posY).toString() + 'px';
+
+        this.field.style.backgroundSize = 'cover';
+        this.field.style.backgroundRepeat = 'no-repeat';
         divBox.appendChild(this.field);
 
     }
