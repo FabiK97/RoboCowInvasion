@@ -25,7 +25,6 @@ var playerFarmer;
 var enemyFarmer;
 
 var humanAnimSet = ["img/cow_50x50.png","img/cowmarked_50x50.png","img/cow-dead_50x50.png","img/dreck.png"];
-
 var robotAnimSet = ["img/robo-cow_50x50.png","img/robo-cowmarked_50x50.png","img/robo-cow-dead_50x50.png","img/dreck.png"];
 
 
@@ -107,10 +106,10 @@ function sound(src) {
     this.sound.setAttribute("controls", "none");
     this.sound.style.display = "none";
     document.body.appendChild(this.sound);
-    this.play = function(){
+    this.play = function () {
         this.sound.play();
     }
-    this.stop = function(){
+    this.stop = function () {
         this.sound.pause();
     }
 
