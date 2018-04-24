@@ -1,0 +1,555 @@
+/*Layout*/
+
+body {
+    height: 100%;
+}
+
+@font-face {
+    font-family: 'myfont';
+    src: url('Sawyers Whitewash.otf') format('truetype');
+}
+
+/*Mobile*/
+
+.game-box {
+    margin: 30px auto;
+    width: 600px;
+    height: 875px;
+}
+
+.header {
+    margin: 0 0;
+    background-position-x: 50px;
+    width: 100%;
+    height: 150px;
+    /*display: flex;*/
+
+    align-items: center;
+    justify-content: center;
+
+}
+
+.header #musicButton {
+    width: 75px;
+    height: 75px;
+
+    font-size: 0.5em;
+
+    margin: 10px 10px;
+    float: left;
+}
+
+.content {
+    width: 100%;
+    height: 725px;
+    margin: 0;
+
+    position: relative;
+}
+
+/*menu                  GameState: 0*/
+
+.startMenu {
+    height: 725px;
+    width: 100%;
+    position: relative;
+}
+
+.startMenu .fld {
+    margin-top: 15px;
+    width: 100%;
+    height: 28%;
+}
+
+.startMenu .ftxt {
+    font-family: myfont, serif;
+    color: #d5b961;
+    font-size: 1.5em;
+    font-weight: bold;
+    height: 100%;
+    width: 50%;
+    float: right;
+
+    padding-top: 35px;
+    text-align: center;
+}
+
+.startMenu .fbtn{
+    float: left;
+
+    height: 100%;
+    width: 50%;
+
+}
+
+.startMenu .playSign {
+    width: 230px;
+    height: 360px;
+    position: absolute;
+    top: 140px;
+    right: 120px;
+}
+
+
+/*player Select         GameState: 1*/
+
+.pselect .farmer {
+
+    position: absolute;
+    bottom: 200px;
+    left: 50px;
+    height: 300px;
+    width: 200px;
+
+}
+
+.pselect .roboFarmer {
+
+    position:absolute;
+    bottom: 200px;
+    right: 50px;
+    height: 300px;
+    width: 200px;
+
+}
+
+.pselect .farmer:hover, .pselect .roboFarmer:hover{
+    background-color: rgba(71, 255, 0, 0.25);
+    border: 5px solid rgba(41, 255, 0, 0.5);
+    border-radius: 15px;
+    box-shadow: 1px 2px 4px rgba(0,0,0,0.5);
+}
+
+/*playground select     GameState: 2*/
+
+.pgselect .playerfield{
+    width: 540px;
+    height:315px;
+    position: absolute;
+
+    top: 195px;
+    right: 30px;
+}
+
+.pgselect .überschrift {
+    padding-top: 30px;
+    text-align: center;
+}
+
+/*ingame                GameState: 3*/
+
+.ingame .farmerPlayer {
+    width: 200px;
+    height: 250px;
+
+    position: absolute;
+
+    bottom: 10px;
+    left: 10px;
+}
+
+.ingame .farmerEnemy {
+    width: 200px;
+    height: 250px;
+
+    position: absolute;
+
+    top: 10px;
+    right: 10px;
+}
+.blocksign{
+    position: absolute;
+
+    text-align: center;
+
+
+    width: 600px;
+    height: 50px;
+}
+
+.s2{
+    top: 675.5px;
+}
+
+.sign {
+    display: none;
+}
+
+.farmerEnemy{
+    display: none;
+}
+
+.farmerPlayer {
+    display: none;
+}
+
+/*
+.ingame .sign {
+    position: absolute;
+
+    text-align: center;
+    padding-top: 35px;
+
+
+    width: 150px;
+    height: 150px;
+}
+
+/*
+.ingame .playerHits {
+    top: 20px;
+    left: 10px;
+}
+
+.ingame .playerLeft {
+    top: 200px;
+    left: 10px;
+}
+
+.ingame .enemyHits {
+    bottom: 200px;
+    right: 10px;
+}
+
+.ingame .enemyLeft {
+    bottom: 20px;
+    right: 10px;
+}
+*/
+
+.ingame .game {
+    width: 540px;
+    height: 675px;
+
+    position: absolute;
+    top: 38px;
+    left: 27px;
+}
+
+.ingame .game #plf {
+    position: absolute;
+    width: 540px;
+    height: 315px;
+    top: 350px;
+}
+
+.ingame .game #ef {
+    position: absolute;
+    width: 540px;
+    height: 315px;
+
+}
+
+/*Desktop*/
+
+@media screen and (min-width: 1200px){
+    .game-box {
+        margin: 30px auto;
+        width: 1200px;
+        height: 875px;
+    }
+
+    .header {
+        margin: 0 0;
+        background-position-x: 50px;
+        width: 100%;
+        height: 150px;
+        /*display: flex;*/
+
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .header #musicButton {
+        width: 75px;
+        height: 75px;
+
+        font-size: 0.5em;
+
+        margin: 10px 10px;
+        float: left;
+    }
+
+    .content {
+        width: 100%;
+        height: 725px;
+        margin: 0;
+
+        position: relative;
+    }
+
+    .pselect .farmer {
+
+        position: absolute;
+        bottom: 60px;
+        left: 100px;
+        height: 550px;
+        width: 400px;
+
+    }
+
+    .pselect .roboFarmer {
+
+        position:absolute;
+        bottom: 60px;
+        right: 80px;
+        height: 550px;
+        width: 400px;
+
+    }
+
+    .pgselect .playerfield{
+        width: 540px;
+        height:315px;
+        position: absolute;
+
+        top: 195px;
+        left: 115px;
+    }
+
+    .ingame .farmerPlayer {
+        width: 200px;
+        height: 250px;
+
+        position: absolute;
+        display: block;
+
+        bottom: 10px;
+        left: 10px;
+    }
+
+    .ingame .farmerEnemy {
+        width: 200px;
+        height: 250px;
+
+        position: absolute;
+        display: block;
+
+        top: 10px;
+        right: 10px;
+    }
+
+    .ingame .sign {
+        position: absolute;
+
+        text-align: center;
+        padding-top: 35px;
+        display: block;
+
+        width: 150px;
+        height: 150px;
+    }
+
+    .ingame .playerHits {
+        top: 20px;
+        left: 10px;
+    }
+
+    .ingame .playerLeft {
+        top: 200px;
+        left: 10px;
+    }
+
+    .ingame .enemyHits {
+        bottom: 200px;
+        right: 10px;
+    }
+
+    .ingame .enemyLeft {
+        bottom: 20px;
+        right: 10px;
+    }
+
+    .ingame .game {
+        width: 540px;
+        height: 675px;
+
+        position: absolute;
+
+        top: 25px;
+        left: 330px;
+    }
+
+    .ingame .game #plf {
+        position: absolute;
+        width: 540px;
+        height: 315px;
+        top: 350px;
+    }
+
+    .ingame .game #ef {
+        position: absolute;
+        width: 540px;
+        height: 315px;
+    }
+
+}
+
+
+
+/*menu                  GameState: 0*/
+/*
+.startMenu {
+    height: 725px;
+    width: 100%;
+    position: relative;
+}
+
+.startMenu .fld {
+    margin-top: 15px;
+    width: 100%;
+    height: 28%;
+}
+
+.startMenu .ftxt {
+    font-family: myfont, serif;
+    color: #d5b961;
+    font-size: 1.5em;
+    font-weight: bold;
+    height: 100%;
+    width: 50%;
+    float: right;
+
+    padding-top: 35px;
+    text-align: center;
+}
+
+.startMenu .fbtn{
+    float: left;
+
+    height: 100%;
+    width: 50%;
+
+}
+
+.startMenu .playSign {
+    width: 230px;
+    height: 360px;
+    position: absolute;
+    top: 140px;
+    right: 120px;
+}
+
+
+/*player Select         GameState: 1*/
+/*
+.pselect .farmer {
+
+    position: absolute;
+    bottom: 60px;
+    left: 100px;
+    height: 550px;
+    width: 400px;
+
+}
+
+.pselect .roboFarmer {
+
+    position:absolute;
+    bottom: 60px;
+    right: 80px;
+    height: 550px;
+    width: 400px;
+
+}
+
+.pselect .farmer:hover, .pselect .roboFarmer:hover{
+    background-color: rgba(71, 255, 0, 0.25);
+    border: 5px solid rgba(41, 255, 0, 0.5);
+    border-radius: 15px;
+    box-shadow: 1px 2px 4px rgba(0,0,0,0.5);
+}
+
+/*playground select     GameState: 2*//*
+
+.pgselect .playerfield{
+    width: 540px;
+    height:315px;
+    position: absolute;
+
+    top: 195px;
+    left: 115px;
+}
+
+.pgselect .überschrift {
+    padding-top: 30px;
+    text-align: center;
+}
+
+/*ingame                GameState: 3*/
+/*
+.ingame .farmerPlayer {
+    width: 200px;
+    height: 250px;
+
+    position: absolute;
+
+    bottom: 10px;
+    left: 10px;
+}
+
+.ingame .farmerEnemy {
+    width: 200px;
+    height: 250px;
+
+    position: absolute;
+
+    top: 10px;
+    right: 10px;
+}
+
+.ingame .sign {
+    position: absolute;
+
+    text-align: center;
+    padding-top: 35px;
+
+
+    width: 150px;
+    height: 150px;
+}
+
+.ingame .playerHits {
+    top: 20px;
+    left: 10px;
+}
+
+.ingame .playerLeft {
+    top: 200px;
+    left: 10px;
+}
+
+.ingame .enemyHits {
+    bottom: 200px;
+    right: 10px;
+}
+
+.ingame .enemyLeft {
+    bottom: 20px;
+    right: 10px;
+}
+
+.ingame .game {
+    width: 540px;
+    height: 675px;
+
+    position: absolute;
+
+    top: 25px;
+    left: 330px;
+}
+
+.ingame .game #plf {
+    position: absolute;
+    width: 540px;
+    height: 315px;
+    top: 350px;
+}
+
+.ingame .game #ef {
+    position: absolute;
+    width: 540px;
+    height: 315px;
+}
+*/

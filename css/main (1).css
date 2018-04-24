@@ -1,0 +1,103 @@
+/* line 11, ../scss/main.scss */
+#main {
+  background-color: whitesmoke;
+  margin-top: 15%;
+  margin-left: auto;
+  margin-right:auto;
+  width: 30%;
+  max-width: 350px;
+  height: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 25px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+}
+
+.row h1{
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 35px;
+}
+
+.col-xs-12 {
+  text-align: center;
+  padding-left: auto;
+  padding-right: auto;
+  padding-bottom: 10px;
+}
+#main p {
+  font-size: 12pt;
+  padding-bottom:40px;
+}
+
+#main .registration {
+  padding-bottom: 10px;
+}
+
+.col-md-10 {
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+}
+
+a {
+  color: limegreen;
+}
+
+a:hover {
+  text-decoration: underline limegreen;
+  color: limegreen;
+}
+
+@media (min-width: 990px) {
+  /* line 11, ../scss/main.scss */
+  #main {
+    width: 990px;
+  }
+}
+
+/* line 21, ../scss/main.scss */
+header {
+  margin-bottom: 20px;
+}
+/* line 22, ../scss/main.scss */
+header .inner {
+  margin: 0 auto;
+  width: 90%;
+}
+/* line 26, ../scss/main.scss */
+header .inner .logo {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+/* line 30, ../scss/main.scss */
+header .inner .logo .name {
+  font-size: 25px;
+  font-weight: 400;
+}
+/* line 35, ../scss/main.scss */
+header .inner .logo .version {
+  color: #aaa;
+  font-size: 10px;
+}
+/* line 36, ../scss/main.scss */
+header .inner .logo .version::before {
+  content: "Version";
+  display: inline-block;
+  margin-right: 5px;
+}
+@media (min-width: 990px) {
+  /* line 22, ../scss/main.scss */
+  header .inner {
+    width: 990px;
+  }
+}
+/* line 54, ../scss/main.scss */
+header::after {
+  content: '';
+  display: block;
+  height: 10px;
+  width: 100%;
+  background-color: #337ab7;
+  margin-top: 5px;
+}

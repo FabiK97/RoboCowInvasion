@@ -1,0 +1,143 @@
+/* line 11, ../scss/main.scss */
+@font-face {
+  font-family: 'myfont';
+  src: url('Sawyers Whitewash.otf') format('truetype');
+}
+
+#main {
+  background-color: #c89247;
+  margin-top: 20%;
+  margin-left: auto;
+  margin-right:auto;
+  width: 30%;
+  max-width: 350px;
+  height: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 25px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+}
+
+.row h1{
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 35px;
+}
+
+.col-xs-12 {
+  text-align: center;
+  padding-left: auto;
+  padding-right: auto;
+  padding-bottom: 10px;
+  font-family: myfont, serif;
+  font-weight: bold;
+  font-size: 3em;
+}
+
+.form-control {
+  background-color: #f8e390;
+  border-color: #d39f39;
+}
+
+.form-control::placeholder {
+  color: #7ba459;
+  font-family: sans-serif;
+}
+
+.btn {
+  background-color: #56791e;
+  font-family: sans-serif;
+  color: #dff99a;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+#main p {
+  font-size: 12pt;
+  padding-bottom:40px;
+}
+
+#main .registration {
+  padding-bottom: 10px;
+}
+
+.col-md-10 {
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+}
+
+body {
+  height: 100%;
+
+  background-image: url("../img/farm.png");
+  background-size: cover;
+}
+
+.logo {
+  position: absolute;
+  width: 18%;
+  left: 41%;
+  top: 8%;
+}
+
+a {
+  color: #f2c736;
+}
+
+a:hover {
+  text-decoration: underline #d8fca7;
+  color: #d8fca7;
+}
+
+@media (min-width: 990px) {
+  /* line 11, ../scss/main.scss */
+  #main {
+    width: 990px;
+  }
+}
+
+/* line 21, ../scss/main.scss */
+header {
+  margin-bottom: 20px;
+}
+/* line 22, ../scss/main.scss */
+header .inner {
+  margin: 0 auto;
+  width: 90%;
+}
+/* line 26, ../scss/main.scss */
+header .inner .logo {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+/* line 30, ../scss/main.scss */
+header .inner .logo .name {
+  font-size: 25px;
+  font-weight: 400;
+}
+/* line 35, ../scss/main.scss */
+header .inner .logo .version {
+  color: #aaa;
+  font-size: 10px;
+}
+/* line 36, ../scss/main.scss */
+header .inner .logo .version::before {
+  content: "Version";
+  display: inline-block;
+  margin-right: 5px;
+}
+@media (min-width: 990px) {
+  /* line 22, ../scss/main.scss */
+  header .inner {
+    width: 990px;
+  }
+}
+/* line 54, ../scss/main.scss */
+header::after {
+  content: '';
+  display: block;
+  height: 10px;
+  width: 100%;
+  background-color: #337ab7;
+  margin-top: 5px;
+}
