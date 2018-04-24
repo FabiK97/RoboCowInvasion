@@ -17,14 +17,15 @@ class EnemyField extends Field {
                 this.field.style.backgroundColor = 'grey';
                 break;
             case 2: //dreck
-                this.field.style.backgroundColor = 'red';
+                this.field.style.backgroundImage = "url('" + enemy[3] + "')";
+                this.field.style.backgroundColor = 'inherit';
                 break;
             case 3: //Hit but not Destroyed
-                this.field.style.backgroundImage = "url('" + enemy[2] + "')";
+                this.field.style.backgroundImage = "url('" + enemy[1] + "')";
                 this.field.style.backgroundColor = 'inherit';
                 break;
             case 4: //Kuh-Tot
-                this.field.style.backgroundImage = "url('" + enemy[3] + "')";
+                this.field.style.backgroundImage = "url('" + enemy[2] + "')";
                 this.field.style.backgroundColor = 'inherit';
                 break;
 
@@ -42,6 +43,7 @@ class EnemyField extends Field {
 
         this.field.style.left = (FIELDSIZE*this.posX).toString() + 'px';
         this.field.style.top = (FIELDSIZE*this.posY).toString() + 'px';
+
 
         this.field.style.backgroundSize = 'cover';
         this.field.style.backgroundRepeat = 'no-repeat';

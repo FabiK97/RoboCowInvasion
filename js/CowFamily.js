@@ -138,7 +138,7 @@ class CowFamily {
             if(this.isPlayerCowFamily) {
                 this.cowFamilyArray[i].state = 3;
             } else {
-                this.cowFamilyArray[i].state = 1;
+                this.cowFamilyArray[i].state = 0;
             }
             this.cowFamilyArray[i].isCowFamily = true;
 

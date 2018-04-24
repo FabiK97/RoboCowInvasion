@@ -14,17 +14,17 @@ class PlayerField extends Field {
             case 1: this.field.style.backgroundColor = 'black';
                     break;
             case 2: this.field.style.backgroundColor = 'red';
-                    this.field.style.backgroundColor = 'inherit';
                     break;
             case 3: this.field.style.backgroundImage = "url('" + player[0] + "')";
                     this.field.style.backgroundColor = 'inherit';
                     break;
-            case 4: this.field.style.backgroundColor = 'red';
+            case 4: this.field.style.backgroundImage = "url('" + player[3] + "')";
+                    this.field.style.backgroundColor = 'inherit';
                     break;
-            case 5: this.field.style.backgroundImage = "url('" + player[2] + "')";
-                    //this.field.style.backgroundColor = 'inherit';
+            case 5: this.field.style.backgroundImage = "url('" + player[1] + "')";
+                    this.field.style.backgroundColor = 'inherit';
                     break;
-            case 6: this.field.style.backgroundImage = "url('" + player[3] + "')";
+            case 6: this.field.style.backgroundImage = "url('" + player[2] + "')";
                     this.field.style.backgroundColor = 'inherit';
                 break;
         }
