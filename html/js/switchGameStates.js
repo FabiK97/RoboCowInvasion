@@ -24,9 +24,9 @@ var roboFarmerButton;
 var playerFarmer;
 var enemyFarmer;
 
-var humanAnimSet = ["img/cow_50x50.png","/img/","img/cowmarked_50x50.png","img/cow-dead_50x50.png"];
+var humanAnimSet = ["img/cow_50x50.png","/img/","img/cowmarked_50x50.png","img/cow-dead_50x50.png","img/dreck.png"];
 
-var robotAnimSet = ["img/robo-cow_50x50.png","/img/","img/robo-cowmarked_50x50.png","img/robo-cow-dead_50x50.png"];
+var robotAnimSet = ["img/robo-cow_50x50.png","/img/","img/robo-cowmarked_50x50.png","img/robo-cow-dead_50x50.png","/img/dreck.png"];
 
 
 window.onload = function() {

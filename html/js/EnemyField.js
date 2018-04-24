@@ -17,7 +17,8 @@ class EnemyField extends Field {
                 this.field.style.backgroundColor = 'grey';
                 break;
             case 2: //dreck
-                this.field.style.backgroundColor = 'red';
+                this.field.style.backgroundImage = "url('" + enemy[4] + "')";
+                this.field.style.backgroundColor = 'inherit';
                 break;
             case 3: //Hit but not Destroyed
                 this.field.style.backgroundImage = "url('" + enemy[2] + "')";
