@@ -100,6 +100,7 @@ function changeFieldStates(mouseEvent, element){
         case 2: if(cowFamiliesToPlace[currentCowFamily].isPlaceable){ //wenn platzierbar, dann Platzieren
                     cowFamiliesToPlace[currentCowFamily].isPlaced = true;
                     cowFamiliesToPlace[currentCowFamily].placeCowFamily();
+                    muhSound.play();
                     checkStatusPgselect();
                   }
                 break;

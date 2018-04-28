@@ -171,6 +171,7 @@ function gameCycle(element) {
         if(element.isCowFamily){
             playerHit = true;
             playerHits ++;
+            targetingSound.play();
             element.state = 3;
         } else {
             playerHit = false;
@@ -224,12 +225,17 @@ function updateSigns() {
     enemyLeftSign[0].innerHTML = "Hits: " + (NumberOfCows - enemyHits);
 }
 
-function sinkanimation(Array){
+function sinkanimation(Array, iPCF){
 
-        if(intervallCounter == -1) {
+        if(intervallCounter === -1) {
             intervallCounter = Array.length - 1;
         }
-        Array[intervallCounter].state = 4;
+        if(iPCF) {
+            Array[intervallCounter].state = 6;
+        } else {
+            Array[intervallCounter].state = 4;
+        }
+        explosionSound.play();
         Array[intervallCounter].update();
         console.log(Array[intervallCounter]);
         intervallCounter--;

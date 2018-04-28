@@ -10,7 +10,6 @@ var tempy;
 function enemyAttack() {
 
     if (!hitCowfamily) {
-
         randomx = Math.floor(Math.random() * 12);
         randomy = Math.floor(Math.random() * 7);
     }
@@ -40,8 +39,8 @@ function scanField(field) {
     }
     else if (field.state === 6 || field.state === 4) {
             enemyAttack();
-    } //
-    else if (field.state === 5) { //
+    }
+    else if (field.state === 5) {
         scanNeighbor(field);
     }
 
@@ -105,6 +104,7 @@ function shoot(field) {
             console.log(field.posX + ' - ' + field.posY);
             if (field.isCowFamily === true) {
                 //wenn getroffen dann markieren
+                targetingSound.play();
                 field.state = 5;
                 updateField();
 
@@ -128,7 +128,7 @@ function shoot(field) {
                 }
                 updateField();
 
-                if(field.state === 6) {
+                if(field.sunk) {
                     hitCowfamily = false;
                     hitCounter = 0;
                     rightDir = false;

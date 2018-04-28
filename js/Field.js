@@ -5,6 +5,7 @@ class Field {
         this.posX = posX;
         this.posY = posY;
         this.isCowFamily = false;
+        this.sunk = false;
         this.divBox = divBox;
     }
 

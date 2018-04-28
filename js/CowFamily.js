@@ -96,10 +96,10 @@ class CowFamily {
             for(var i = 0; i < this.cowFamilyLength; i++) {
                 var time = i*500;
                 console.log(time);
-
+                this.cowFamilyArray[i].sunk = true;
                 var Array = this.cowFamilyArray;
 
-                setTimeout(function() {sinkanimation(Array);}, time);
+                setTimeout(function() {sinkanimation(Array, false);}, time);
             }
 
             //intervallCounter = 0;
@@ -117,7 +117,15 @@ class CowFamily {
         if(stateSum === 5*this.cowFamilyArray.length){
             console.log("sum:" + stateSum);
             for(var i = 0; i < this.cowFamilyLength; i++) {
-                this.cowFamilyArray[i].state = 6;
+                var time = i*500;
+                console.log(time);
+
+                this.cowFamilyArray[i].sunk = true;
+                var Array = this.cowFamilyArray;
+
+                setTimeout(function() {sinkanimation(Array, true);}, time);
+
+
             }
             this.isSunk = true;
         }
@@ -179,14 +187,4 @@ class CowFamily {
         return this._direction;
     }
 
-    sinkanimation(){
-        this.cowFamilyArray[this.intervallCounter].state = 4;
-        this.intervallCounter++;
-        console.log(this.intervallCounter);
-
-        if(this.intervallCounter === this.cowFamilyLength){
-            console.log(this.intervallCounter);
-            window.clearInterval(this.sinkInterval);
-        }
-    }
 }
