@@ -463,6 +463,38 @@ body {
 
 }
 
+.cowAttack {
+    width: 45px;
+    height: 113px;
+    background-image: url("../img/kuhexplosion.png");
+    opacity: 0;
+
+
+    animation: explosion 1.8s steps(19) 1;
+}
+
+
+@keyframes explosion {
+    from { background-position:    0px;
+            opacity: 1.0;}
+    to { background-position: -835px;
+            opacity: 1.0;}
+}
+
+.roboCowAttack {
+    width: 45px;
+    height: 45px;
+    background-image: url("../img/roboCowAttack.png");
+
+    animation: plasmaExplosion 1.8s steps(9) infinite;
+}
+
+
+@keyframes plasmaExplosion {
+    from { background-position:    0px; }
+    to { background-position: -455px; }
+}
+
 
 /*GameStates*/
 

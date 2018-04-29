@@ -22,10 +22,15 @@ var playerLeftSign = document.getElementsByClassName("sign playerLeft");
 var enemyHitsSign = document.getElementsByClassName("sign enemyHits");
 var enemyLeftSign = document.getElementsByClassName("sign enemyLeft");
 
+var explosionDiv = document.createElement("div");
+
+
 var sinkInterval;
 var intervallCounter = -1;
 
 var NumberOfCows = 14;
+
+var explosionArray = [];
 
 
 
@@ -36,6 +41,7 @@ function setupGame() {
     playersTurn = true;
     running = true;
     updateSigns();
+    explosionDiv.style.display = "none";
 }
 
 function setupPlayerfield() {
@@ -226,19 +232,39 @@ function updateSigns() {
 }
 
 function sinkanimation(Array, iPCF){
+        explosionDiv.style.display = "none";
 
         if(intervallCounter === -1) {
             intervallCounter = Array.length - 1;
         }
         if(iPCF) {
+            //Wenn Player
             Array[intervallCounter].state = 6;
+            createExplosion(Array[intervallCounter], playerFieldBox);
         } else {
+            //Wenn Enemy
             Array[intervallCounter].state = 4;
+            createExplosion(Array[intervallCounter], enemyFieldBox);
         }
         explosionSound.play();
         Array[intervallCounter].update();
         console.log(Array[intervallCounter]);
         intervallCounter--;
+
+}
+
+function createExplosion(field, divBox){
+    var exPosX = field.posX;
+    var exPosY = field.posY;
+
+
+    divBox.appendChild(explosionDiv);
+    explosionDiv.style.display = "block";
+    explosionDiv.style.position = "absolute";
+    explosionDiv.className = "cowAttack";
+    explosionDiv.style.left = (FIELDSIZE*field.posX).toString() + 'px';
+    explosionDiv.style.top = (FIELDSIZE*field.posY - 50).toString() + 'px';
+    explosionDiv.className = "cowAttack";
 
 }
 
