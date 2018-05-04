@@ -151,6 +151,7 @@ function shoot(field) {
 
                 field.state = 4;
                 playersTurn = true;
+                changeFarmerDivs(playerFarmer[0], enemyFarmer[0]);
                 enemyHit = false;
                 enemyMiss ++;
                 updateField();

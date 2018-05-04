@@ -11,6 +11,7 @@ var playersTurn;
 var playerHit = false;
 var enemyHit = false;
 
+
 var playerHits = 0;
 var playerMiss = 0;
 
@@ -38,6 +39,7 @@ var explosionArray = [];
 function setupGame() {
     setupEnemyfield();
     setupPlayerfield();
+    changeFarmerDivs(playerFarmer[0], enemyFarmer[0]);
     playersTurn = true;
     running = true;
     updateSigns();
@@ -146,15 +148,6 @@ function checkMouseEvent(mouseEvent, element){
                         gameCycle(element); //wenn das Feld geklickt wird, soll es den Spielzyklus starten
                     }
                 }
-                // if(element.isCowFamily){
-                //     element.state = 3;
-                // } else {
-                //     element.state = 2;
-                // }
-                //
-                // for(var i = 0; i < enemyCowFamilies.length; i++) {
-                //     enemyCowFamilies[i].checkSunk();
-                // }
             break;
     }
 
@@ -174,15 +167,16 @@ function updateEnemyField(){
 function gameCycle(element) {
 
     if(running && !enemyHit && playersTurn){ //wenn Spiel läuft
-        if(element.isCowFamily){
+        if(element.isCowFamily){ //wenn getroffen
             playerHit = true;
             playerHits ++;
             targetingSound.play();
             element.state = 3;
-        } else {
+        } else { //wenn nicht getroffen
             playerHit = false;
             playerMiss ++;
             element.state = 2;
+            changeFarmerDivs(enemyFarmer[0], playerFarmer[0]);
         }
 
         for(var i = 0; i < enemyCowFamilies.length; i++) {
@@ -209,13 +203,14 @@ function gameCycle(element) {
         updateSigns();
 
     if(running && !playerHit) {
-
+        turn = 1;
         playersTurn = false;
         setTimeout(function(){
             console.log("enemy is thinking...");
             enemyAttack();
-            }, 500);
+            }, 1500);
     }
+
 
 }
 
@@ -281,5 +276,15 @@ function saveScore(hits, cowsLeft) {
            }
        }
     });
+}
+
+function changeFarmerDivs(farmerToHighlight, otherFarmer){
+
+    farmerToHighlight.style.outlineColor = "brown";
+    farmerToHighlight.style.outlineStyle = "solid";
+    farmerToHighlight.style.outlineWidth = "5px";
+    farmerToHighlight.style.backgroundColor = "#6eff6f";
+    otherFarmer.style.outlineStyle = "none";
+    otherFarmer.style.backgroundColor = "inherit";
 }
 

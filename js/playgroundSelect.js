@@ -2,6 +2,9 @@ var playfieldBox;
 var playfieldArray;
 const FX = 12;
 const FY = 7;
+const MAX_COWFAMILY_LENGTH = 5;
+var checkFamily = [];
+
 
 var cowFamiliesToPlace = new Array(4);
 var currentCowFamily = 0;
@@ -11,7 +14,9 @@ function setupPlayfield() {
     playfieldBox  = document.getElementById("pf");
 
     //div Box mit Feldern füllen
+    createInfobox();
     createField();
+
     window.addEventListener("keydown", changeCowFamilyDirection, false);
     addPlayfieldEventListeners();
 
@@ -38,7 +43,7 @@ function checkStatusPgselect() {
     console.log(currentCowFamily);
 
     if(cowFamiliesToPlace[currentCowFamily] == null) {
-        cowFamiliesToPlace[currentCowFamily] = new CowFamily(5, 2, 5 - currentCowFamily, 1, true);
+        cowFamiliesToPlace[currentCowFamily] = new CowFamily(5, 2, MAX_COWFAMILY_LENGTH - currentCowFamily, 1, true);
     }
 
     if(cowFamiliesToPlace[currentCowFamily].isPlaced) {
@@ -101,6 +106,7 @@ function changeFieldStates(mouseEvent, element){
                     cowFamiliesToPlace[currentCowFamily].isPlaced = true;
                     cowFamiliesToPlace[currentCowFamily].placeCowFamily();
                     muhSound.play();
+                    checkFamily[currentCowFamily].style.display = "block";
                     checkStatusPgselect();
                   }
                 break;
@@ -116,6 +122,54 @@ function updateField(){
             playfieldArray[i][j].update(); //gehe jedes Feld im Array durch und zeichne es neu
         }
     }
+
+}
+
+function createInfobox(){
+
+    //Box generieren, die dann die Familien enthält
+    var Infobox = document.createElement("div");
+    pgselect.appendChild(Infobox);
+    Infobox.style.position = "absolute";
+    Infobox.style.top = '175px';
+    Infobox.style.right = '100px';
+    Infobox.style.width = (FIELDSIZE*(MAX_COWFAMILY_LENGTH + 2)).toString() + 'px';
+    Infobox.style.height = (FIELDSIZE*7).toString() + 'px';
+    Infobox.className = "infobox";
+
+
+    //mit Cowfamilys füllen
+    var fLength = 5;
+    var currentCheck = 0;
+    for(var i = 0; i<7; i+=2){
+        for(var j = 0; j<fLength; j++){
+            var cow = document.createElement("div");
+            Infobox.appendChild(cow);
+            cow.style.position = "absolute";
+            cow.style.top = (FIELDSIZE*i).toString() + 'px';
+            cow.style.left = (FIELDSIZE*j).toString() + 'px';
+            cow.style.width = FIELDSIZE.toString() + 'px';
+            cow.style.height = FIELDSIZE.toString() + 'px';
+            cow.style.backgroundImage = "url('" + player[0] + "')";
+
+        }
+        fLength --;
+
+        //checks in Array speichern
+        checkFamily[currentCheck] = document.createElement("div");
+        Infobox.appendChild(checkFamily[currentCheck]);
+        checkFamily[currentCheck].style.position = "absolute";
+        checkFamily[currentCheck].style.top = (FIELDSIZE*i).toString() + 'px';
+        checkFamily[currentCheck].style.right = 0 + 'px';
+        checkFamily[currentCheck].style.width = FIELDSIZE.toString() + 'px';
+        checkFamily[currentCheck].style.height = FIELDSIZE.toString() + 'px';
+        checkFamily[currentCheck].style.backgroundImage = "url('img/woodenCheck.png')";
+        checkFamily[currentCheck].style.backgroundPosition = "contain";
+        checkFamily[currentCheck].style.display = "none";
+        currentCheck++;
+    }
+
+
 
 }
 
