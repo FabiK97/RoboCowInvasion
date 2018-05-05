@@ -23,6 +23,11 @@ var playerLeftSign = document.getElementsByClassName("sign playerLeft");
 var enemyHitsSign = document.getElementsByClassName("sign enemyHits");
 var enemyLeftSign = document.getElementsByClassName("sign enemyLeft");
 
+var playerHitsResponsive = document.getElementsByClassName("s1 playerHits");
+var playerLeftResponsive = document.getElementsByClassName("s1 playerLeft");
+var enemyHitsResponsive = document.getElementsByClassName("s2 enemyHits");
+var enemyLeftResponsive = document.getElementsByClassName("s2 enemyLeft");
+
 var explosionDiv = document.createElement("div");
 
 
@@ -224,6 +229,12 @@ function updateSigns() {
     playerLeftSign[0].innerHTML = "Left: " + (NumberOfCows - playerHits) ;
     enemyHitsSign[0].innerHTML = "Hits: " + enemyHits;
     enemyLeftSign[0].innerHTML = "Hits: " + (NumberOfCows - enemyHits);
+
+    playerHitsResponsive[0].innerHTML = "Hits: " + playerHits;
+    playerLeftResponsive[0].innerHTML = "Left: " + (NumberOfCows - playerHits) ;
+    enemyHitsResponsive[0].innerHTML = "Hits: " + enemyHits;
+    enemyLeftResponsive[0].innerHTML = "Hits: " + (NumberOfCows - enemyHits);
+    
 }
 
 function sinkanimation(Array, iPCF){

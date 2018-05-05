@@ -76,7 +76,7 @@
         <div class="sign playerLeft"></div>
         <div class="blocksign s1">
             <div class="s1 playerHits">Hits: 0</div>
-            <div class="playerLeft">Left: 0</div>
+            <div class="s1 playerLeft">Left: 0</div>
         </div>
         <div class="farmerPlayer"></div>
 
