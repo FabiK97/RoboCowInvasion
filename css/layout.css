@@ -9,6 +9,9 @@ body {
     src: url('Sawyers Whitewash.otf') format('truetype');
 }
 
+
+
+
 /*Mobile*/
 
 .game-box {
@@ -26,15 +29,12 @@ body {
 
     align-items: center;
     justify-content: center;
-
 }
 
 .header #musicButton {
-    width: 75px;
-    height: 75px;
-
+    width: 50px;
+    height: 50px;
     font-size: 0.5em;
-
     margin: 10px 10px;
     float: left;
 }
@@ -48,6 +48,16 @@ body {
 }
 
 /*menu                  GameState: 0*/
+
+.logoutMenu h1 {
+    margin-top: 270px;
+    margin-left: 150px;
+}
+
+.logoutMenu p {
+    margin-top: 10px;
+    margin-left: 150px;
+}
 
 .startMenu {
     height: 725px;
@@ -261,6 +271,26 @@ body {
 
     }
 
+    .header .showUser {
+        font-size: 20px;
+        padding-top: 50px;
+        margin-left: 960px;
+        width: 220px;
+    }
+
+    .header #helloUser p{
+        padding-top: 30px;
+        color: #77522e;
+        float:left;
+    }
+    .showUser #logoutButton {
+        width: 100px;
+        height: 30px;
+        border-radius: 30px;
+        margin-top: 30px;
+        float: right;
+    }
+
     .header #musicButton {
         width: 75px;
         height: 75px;
@@ -277,6 +307,15 @@ body {
         margin: 0;
 
         position: relative;
+    }
+
+    .logoutMenu h1 {
+        margin-top: 270px;
+        margin-left: 755px;
+    }
+
+    .logoutMenu p {
+        margin-left: 755px;
     }
 
     .pselect .farmer {

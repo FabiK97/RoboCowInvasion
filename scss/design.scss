@@ -13,7 +13,7 @@ $lightgrey: rgba(0, 0, 0, 0.2);
 
 body {
 
-  background-image: url("../html/img/farm.png");
+  background-image: url("../img/farm.png");
   background-size: cover ;
 }
 
@@ -28,14 +28,28 @@ body {
 
 .header {
   font-size: 3em;
-  background-image: url("../html/img/logograss.png");
+  background-image: url("../img/logograss.png");
   background-size: cover;
   background-position-x: -250px ;
   #musicButton {
-    text-align: center;
-    background-color: $outline_darkgreen;
+    img{
+      height: 50px;
+      width: 50px;
+      &:hover {
+        padding: 0px 0px;
+        height: 65px;
+        width: 65px;
+      }
+    }
+  }
+  #logoutButton {
+    background-color: #56791e;
+    font-family: sans-serif;
+    color: #dff99a;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
     &:hover {
-      background-color: $darkgreen;
+      width: 108px;
+      height: 38px;
     }
   }
 }
@@ -46,9 +60,28 @@ body {
 
 
 .content {
+  .logoutMenu {
+    background-image: url("../img/logout_screen.png");
+    background-position-x: -600px;
+    outline-width: 10px;
+    outline-color: #56791e;
+    outline-style: ridge;
+    font-family: myfont;
+    color: #d5b961;
+    h1 {
+      font-weight: bold;
+    }
+    a {
+      color: greenyellow;
+      &:hover {
+        text-decoration: underline greenyellow;
+        color: greenyellow;
+      }
+    }
+  }
   .startMenu {
     @extend .game-box;
-    background-image: url("../html/img/menu_neu.png");
+    background-image: url("../img/menu_neu.png");
     background-position-x: -600px;
     .fbtn {
       img{
@@ -64,7 +97,6 @@ body {
     }
   }
 }
-
 
 .overlay {
   height: 100%;
@@ -144,7 +176,7 @@ body {
 }
 
 .cowWalk {
-  background-image: url("../html/img/cow.png");
+  background-image: url("../img/cow.png");
   position: absolute;
   bottom: 50px;
   left: 75px;
@@ -157,7 +189,7 @@ body {
 }
 
 .roboCowWalk {
-  background-image: url("../html/img/robo-cow.png");
+  background-image: url("../img/robo-cow.png");
   position: absolute;
   bottom: 50px;
   left: 400px;
@@ -303,19 +335,19 @@ body {
 /*player select         GameState: 1*/
 .content {
   .pselect{
-    background-image: url("../html/img/playerselect-bg.png");
+    background-image: url("../img/playerselect-bg.png");
     background-size: cover;
     display: none;
     @extend .game-box;
     .farmer {
       background-repeat:no-repeat;
       background-size:contain;
-      background-image: url("../html/img/farmer.png");
+      background-image: url("../img/farmer.png");
     }
     .roboFarmer {
       background-repeat:no-repeat;
       background-size:contain;
-      background-image: url("../html/img/robo-farmer.png");
+      background-image: url("../img/robo-farmer.png");
       background-position-x: 15px;
     }
     .pshead {
@@ -331,7 +363,7 @@ body {
 /*playground select     GameState: 2*/
 .content{
   .pgselect {
-    background-image: url("../html/img/playgroundselect-bg.png");
+    background-image: url("../img/playgroundselect-bg.png");
     background-size: cover;
     display: none;
     background-position: -87px;
@@ -354,7 +386,7 @@ body {
 
 .content {
   .ingame {
-    background-image: url("../html/img/game-bg.png");
+    background-image: url("../img/game-bg.png");
     /*background-repeat:no-repeat;*/
     background-size: 190%;
     display:none;
@@ -366,7 +398,7 @@ body {
 }
 
 .blocksign {
-  background-image: url("../html/img/blocksign.png");
+  background-image: url("../img/blocksign.png");
   color: white;
   font-size: 2em;
   .enemyHits{
@@ -426,25 +458,58 @@ body {
     color: black;
 }*/
 
+/*Desktop*/
 
 @media screen and (min-width: 1200px){
   .header {
     font-size: 3em;
-    background-image: url("../html/img/logograss.png");
+    background-image: url("../img/logograss.png");
     background-size: cover;
     background-position-x: 30px;
+    #musicButton {
+      img {
+        height: 75px;
+        width: 75px;
+        &:hover {
+          padding: 0px 0px;
+          height: 85px;
+          width: 85px;
+        }
+
+      }
+    }
   }
 
   .content {
+    .logoutMenu {
+      background-image: url("../img/logout_screen.png");
+      background-position-x: 0px;
+      outline-width: 10px;
+      outline-color: #56791e;
+      outline-style: ridge;
+      font-family: myfont;
+      color: #d5b961;
+      h1 {
+        font-weight: bold;
+      }
+      a {
+        color: greenyellow;
+        &:hover {
+          text-decoration: underline greenyellow;
+          color: greenyellow;
+        }
+      }
+    }
+
     .startMenu {
-      background-image: url("../html/img/menu_neu.png");
+      background-image: url("../img/menu_neu.png");
       background-position-x: 0px;
       outline-width: 10px;
       outline-color: $outline_darkgreen;
       outline-style: ridge;
     }
     .pgselect {
-      background-image: url("../html/img/playgroundselect-bg.png");
+      background-image: url("../img/playgroundselect-bg.png");
       background-size: cover;
       display: none;
       background-position-x: 0px;
@@ -452,7 +517,7 @@ body {
       @extend .game-box;
     }
     .ingame {
-      background-image: url("../html/img/game-bg.png");
+      background-image: url("../img/game-bg.png");
       background-repeat:no-repeat;
       background-size: cover;
       display:none;
@@ -463,14 +528,14 @@ body {
       @extend .game-box;
 
       .farmerPlayer {
-        background-image: url("../html/img/farmer.png");
+        background-image: url("../img/farmer.png");
         background-size: contain;
         background-repeat: no-repeat;
         color: $white;
       }
       .farmerEnemy {
         @extend .farmerPlayer;
-        background-image: url("../html/img/robo-farmer.png");
+        background-image: url("../img/robo-farmer.png");
       }
       .game {
         opacity: 0.5;
@@ -482,7 +547,7 @@ body {
         }
       }
       .sign {
-        background-image: url("../html/img/blank-wood-sign-hi.png");
+        background-image: url("../img/blank-wood-sign-hi.png");
         background-repeat: no-repeat;
         background-size: contain;
 
@@ -497,7 +562,7 @@ body {
     display: none;
   }
   .customCursor{
-    cursor: url('../html/img/crosshairblue.png') +15 +15 , auto;
+    cursor: url('../img/crosshairblue.png') +15 +15 , auto;
 
   }
 
