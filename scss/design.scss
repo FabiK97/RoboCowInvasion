@@ -8,6 +8,9 @@ $darkgrey: rgba(0,0,0,0.7);
 $midgrey: rgba(0, 0, 0, .5);
 $sand: #c89247;
 $lightgrey: rgba(0, 0, 0, 0.2);
+$lightgreen: #dff99a;
+$lightsand: #d5b961;
+$brown: #77522e;
 
 /*Design*/
 
@@ -43,14 +46,18 @@ body {
     }
   }
   #logoutButton {
-    background-color: #56791e;
+    display: none;
+  }
+  #dropdownLogout {
+    background-color: $outline_darkgreen;
+    background-image: url("../img/logout_symbol.png");
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position-x: 2px;
+    background-position-y: 2px;
     font-family: sans-serif;
-    color: #dff99a;
-    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
-    &:hover {
-      width: 108px;
-      height: 38px;
-    }
+    color: $lightgreen;
+    box-shadow: 0 5px 8px 0 $lightgrey, 0 6px 20px 0 $lightgrey;
   }
 }
 
@@ -64,10 +71,10 @@ body {
     background-image: url("../img/logout_screen.png");
     background-position-x: -600px;
     outline-width: 10px;
-    outline-color: #56791e;
+    outline-color: $outline_darkgreen;
     outline-style: ridge;
     font-family: myfont;
-    color: #d5b961;
+    color: $lightsand;
     h1 {
       font-weight: bold;
     }
@@ -478,6 +485,20 @@ body {
 
       }
     }
+    .showUser {
+      color: $brown;
+      #logoutButton {
+        display: block;
+        background-color: $outline_darkgreen;
+        font-family: sans-serif;
+        color: $lightgreen;
+        box-shadow: 0 5px 8px 0 $lightgrey, 0 6px 20px 0 $lightgrey;
+        &:hover {
+          width: 108px;
+          height: 38px;
+        }
+      }
+    }
   }
 
   .content {
@@ -485,10 +506,10 @@ body {
       background-image: url("../img/logout_screen.png");
       background-position-x: 0px;
       outline-width: 10px;
-      outline-color: #56791e;
+      outline-color: $outline_darkgreen;
       outline-style: ridge;
       font-family: myfont;
-      color: #d5b961;
+      color: $lightsand;
       h1 {
         font-weight: bold;
       }

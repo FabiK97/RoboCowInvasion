@@ -36,6 +36,23 @@ body {
 }
 
 
+
+.header #logoutButton {
+    display: none;
+}
+
+.header #dropdownLogout {
+    background-color: #56791e;
+    background-image: url("../img/logout_symbol.png");
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position-x: 2px;
+    background-position-y: 2px;
+    font-family: sans-serif;
+    color: #dff99a;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
 /*GameStates*/
 
 /*Menu                  GameState: 0*/
@@ -435,7 +452,12 @@ body {
         width: 85px;
     }
 
+    .header .showUser {
+        color: #77522e;
+    }
+
     .header #logoutButton {
+        display: block;
         background-color: #56791e;
         font-family: sans-serif;
         color: #dff99a;

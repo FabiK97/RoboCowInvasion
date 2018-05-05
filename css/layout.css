@@ -10,8 +10,6 @@ body {
 }
 
 
-
-
 /*Mobile*/
 
 .game-box {
@@ -37,6 +35,26 @@ body {
     font-size: 0.5em;
     margin: 10px 10px;
     float: left;
+}
+
+.header .showUser {
+    float: right;
+    width: 150px;
+    margin-right: 30px;
+    margin-top: 95px;
+}
+
+.header #helloUser {
+    margin-left: 37px;
+    font-size: 14px;
+    float: left;
+}
+
+.header #dropdownLogout {
+    float: right;
+    height: 25px;
+    width: 25px;
+    border-radius: 5px;
 }
 
 .content {
@@ -268,28 +286,8 @@ body {
 
         align-items: center;
         justify-content: center;
-
     }
 
-    .header .showUser {
-        font-size: 20px;
-        padding-top: 50px;
-        margin-left: 960px;
-        width: 220px;
-    }
-
-    .header #helloUser p{
-        padding-top: 30px;
-        color: #77522e;
-        float:left;
-    }
-    .showUser #logoutButton {
-        width: 100px;
-        height: 30px;
-        border-radius: 30px;
-        margin-top: 30px;
-        float: right;
-    }
 
     .header #musicButton {
         width: 75px;
@@ -299,6 +297,30 @@ body {
 
         margin: 10px 10px;
         float: left;
+    }
+
+    .header .showUser {
+        float: right;
+        width: 250px;
+        margin-right: 30px;
+        margin-top: 95px;
+    }
+
+    .header #helloUser {
+        margin-left: 37px;
+        font-size: 18px;
+        float: left;
+    }
+
+    .header #logoutButton {
+        display: block;
+        width: 100px;
+        height: 30px;
+        float: right;
+    }
+
+    .header #dropdownLogout {
+      display: none;
     }
 
     .content {
