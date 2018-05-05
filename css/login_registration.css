@@ -103,23 +103,20 @@ a:hover {
     width: 990px;
   }
 }
-
-@media screen and (max-width: 64em){
-  .col-xs-12 {
-    font-size: 3em;
-  }
-}
-@media screen and (max-width: 50em){
+@media screen and (max-width: 50em) {
+  /* line 111, ../scss/login_registration.scss */
   .col-xs-12 {
     font-size: 2em;
   }
 }
-@media screen and (max-width: 30em){
+@media screen and (max-width: 30em) {
+  /* line 116, ../scss/login_registration.scss */
   .col-xs-12 {
     font-size: 1.5em;
   }
 }
-@media screen and (max-width: 30em){
+@media screen and (max-width: 30em) {
+  /* line 121, ../scss/login_registration.scss */
   p {
     font-size: 10px;
   }

@@ -14,6 +14,11 @@ $brown: #77522e;
 
 /*Design*/
 
+@font-face {
+  font-family: 'myfont';
+  src: url('Sawyers Whitewash.otf') format('truetype');
+}
+
 body {
 
   background-image: url("../img/farm.png");
@@ -66,7 +71,6 @@ body {
 /*Menu                  GameState: 0*/
 
 
-.content {
   .logoutMenu {
     background-image: url("../img/logout_screen.png");
     background-position-x: -600px;
@@ -86,20 +90,20 @@ body {
       }
     }
   }
-  .startMenu {
-    @extend .game-box;
-    background-image: url("../img/menu_neu.png");
-    background-position-x: -600px;
-    .fbtn {
-      img{
-        padding: 4px 4px;
-        width: 100px;
-        height: 100px;
-        &:hover{
-          padding: 0 0;
-          width: 108px;
-          height: 108px;
-        }
+
+.startMenu {
+  @extend .game-box;
+  background-image: url("../img/menu_neu.png");
+  background-position-x: -600px;
+  .fbtn {
+    img{
+      padding: 4px 4px;
+      width: 100px;
+      height: 100px;
+      &:hover{
+        padding: 0 0;
+        width: 108px;
+        height: 108px;
       }
     }
   }
@@ -340,7 +344,7 @@ body {
 
 
 /*player select         GameState: 1*/
-.content {
+
   .pselect{
     background-image: url("../img/playerselect-bg.png");
     background-size: cover;
@@ -365,10 +369,10 @@ body {
       font-size: 3em;
     }
   }
-}
+
 
 /*playground select     GameState: 2*/
-.content{
+
   .pgselect {
     background-image: url("../img/playgroundselect-bg.png");
     background-size: cover;
@@ -385,13 +389,10 @@ body {
       }
     }
   }
-}
 
 
 /*ingame                GameState: 3*/
 
-
-.content {
   .ingame {
     background-image: url("../img/game-bg.png");
     /*background-repeat:no-repeat;*/
@@ -401,8 +402,6 @@ body {
     background-position-y: 20px;
     @extend .game-box;
   }
-
-}
 
 .blocksign {
   background-image: url("../img/blocksign.png");
@@ -445,7 +444,6 @@ body {
 */
 .ingame {
   .game {
-    opacity: 0.5;
     #plf {
       background-color: $darkgreen;
     }
@@ -501,8 +499,14 @@ body {
     }
   }
 
-  .content {
-    .logoutMenu {
+  .game-box {
+    color: white;
+    outline-width: 10px;
+    outline-color: $outline_darkgreen;
+    outline-style: ridge;
+  }
+
+      .logoutMenu {
       background-image: url("../img/logout_screen.png");
       background-position-x: 0px;
       outline-width: 10px;
@@ -535,7 +539,10 @@ body {
       display: none;
       background-position-x: 0px;
 
-      @extend .game-box;
+      color: white;
+      outline-width: 10px;
+      outline-color: $outline_darkgreen;
+      outline-style: ridge;
     }
     .ingame {
       background-image: url("../img/game-bg.png");
@@ -546,7 +553,10 @@ body {
       background-position-x: 0px;
       background-position-y: 0px;
 
-      @extend .game-box;
+      color: white;
+      outline-width: 10px;
+      outline-color: $outline_darkgreen;
+      outline-style: ridge;
 
       .farmerPlayer {
         background-image: url("../img/farmer.png");
@@ -559,12 +569,11 @@ body {
         background-image: url("../img/robo-farmer.png");
       }
       .game {
-        opacity: 0.5;
         #plf {
           background-color: $darkgreen;
         }
         #ef {
-          @extend #plf;
+          background-color: $darkgreen;
         }
       }
       .sign {
@@ -577,7 +586,6 @@ body {
         color: $black;
       }
     }
-  }
 
   .blocksign {
     display: none;
@@ -922,4 +930,4 @@ body {
 .customCursor{
     cursor: url('../img/crosshairblue.png') +15 +15 , auto;
 
-}
+}*/
