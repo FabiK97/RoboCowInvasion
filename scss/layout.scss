@@ -277,14 +277,26 @@ body {
       margin: 10px 10px;
       float: left;
     }
-    #logoutButton {
-      width: 100px;
-      height: 30px;
-      border-radius: 30px;
-      margin-top: 10px;
-      margin-left: 980px;
+    .showUser {
+      font-size: 20px;
+      padding-top: 50px;
+      margin-left: 960px;
+      width: 220px;
+      #helloUser p{
+        padding-top: 30px;
+        color: #77522e;
+        float:left;
+      }
+      #logoutButton {
+        width: 100px;
+        height: 30px;
+        border-radius: 30px;
+        margin-top: 30px;
+        float: right;
+      }
     }
   }
+
 
   .content {
     width: 100%;
