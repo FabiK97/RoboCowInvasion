@@ -19,12 +19,27 @@
     <script src="js/switchGameStates.js" language="javascript" type="text/javascript"></script>
     <script src="js/overlay_help.js" type="text/javascript"></script>
     <script src="js/switchToPlayerSelect.js" type="text/javascript"></script>
+    <script src="js/sound.js" type="text/javascript"></script>
 </head>
 <body>
 <div class="game-box">
+
     <div class="header">
-        <div id="musicButton"> Musik aus </div>
+        <div id="musicButton">
+           <img id= "soundSymbol" src="img/music_off.png" onclick="changeSoundSymbol()">
+        </div>
+        <div class="showUser">
+            <div id="helloUser">
+        <p>Hallo <strong class="username"><?php echo $this->username; ?></strong> | </p>
+            </div>
+        <a href="logout"><button id="logoutButton" type="button" class="btn"> logout </button></a>
+
+            <div id ="mobileDropdown">
+            <a href="logout"><button id="dropdownLogout" type="button" class="btn"></button></a>
+            </div>
+        </div>
     </div>
+
     <div id="m" class="content startMenu">
         <div class="cowWalk"></div>
         <div class="roboCowWalk"></div>

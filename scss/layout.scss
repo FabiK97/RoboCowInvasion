@@ -33,17 +33,30 @@ body {
 
   align-items: center;
   justify-content: center;
-
-}
-
-.header #musicButton {
-  width: 75px;
-  height: 75px;
-
-  font-size: 0.5em;
-
-  margin: 10px 10px;
-  float: left;
+  #musicButton {
+    width: 50px;
+    height: 50px;
+    font-size: 0.5em;
+    margin: 10px 10px;
+    float: left;
+  }
+  .showUser {
+    float: right;
+    width: 150px;
+    margin-right: 30px;
+    margin-top: 95px;
+    #helloUser {
+      margin-left: 37px;
+      font-size: 14px;
+      float: left;
+    }
+    #dropdownLogout {
+      float: right;
+      height: 25px;
+      width: 25px;
+      border-radius: 5px;
+    }
+  }
 }
 
 .content {
@@ -55,6 +68,18 @@ body {
 }
 
 /*menu                  GameState: 0*/
+
+.logoutMenu {
+  h1 {
+    margin-top: 270px;
+    margin-left: 150px;
+  }
+  p {
+    margin-top: 10px;
+    margin-left: 150px;
+  }
+}
+
 
 .startMenu {
   height: 725px;
@@ -264,13 +289,31 @@ body {
     align-items: center;
     justify-content: center;
     #musicButton {
-      width: 75px;
-      height: 75px;
-
+      width: 100px;
+      height: 100px;
       font-size: 0.5em;
-
       margin: 10px 10px;
       float: left;
+    }
+    .showUser {
+      float: right;
+      width: 250px;
+      margin-right: 30px;
+      margin-top: 95px;
+      #helloUser p{
+        margin-left: 37px;
+        font-size: 18px;
+        float: left;
+      }
+      #logoutButton {
+        display: block;
+        width: 100px;
+        height: 30px;
+        float: right;
+      }
+      #dropdownLogout {
+        display: none;
+      }
     }
   }
 
@@ -280,6 +323,16 @@ body {
     margin: 0;
 
     position: relative;
+  }
+
+  .logoutMenu{
+    h1 {
+      margin-top: 270px;
+      margin-left: 755px;
+    }
+    p {
+      margin-left: 755px;
+    }
   }
 
   .pselect {
