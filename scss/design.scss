@@ -137,7 +137,7 @@ body {
     margin-top: 5%;
     background-color: $outline_darkgreen;
     font-family: sans-serif;
-    color: #dff99a;
+    color: $lightgreen;
     box-shadow: 0 5px 8px 0 $lightgrey, 0 6px 20px 0 $lightgrey;
 
   }
@@ -381,7 +381,7 @@ body {
     @extend .game-box;
     .playerfield{
     }
-    .überschrift {
+    h1 {
       text-align: center;
       font-family: myfont, serif;
       font-weight: bold;
@@ -389,7 +389,6 @@ body {
       font-size: 3em;
     }
   }
-
 
 /*ingame                GameState: 3*/
 
@@ -485,9 +484,6 @@ body {
     }
     .showUser {
       color: $brown;
-      #helloUser{
-        text-align: right;
-      }
       #logoutButton {
         display: block;
         background-color: $outline_darkgreen;

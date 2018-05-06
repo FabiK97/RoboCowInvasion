@@ -344,7 +344,7 @@ body {
   background-position: -87px;
 }
 /* line 384, ../scss/design.scss */
-.pgselect .├╝berschrift {
+.pgselect h1 {
   text-align: center;
   font-family: myfont, serif;
   font-weight: bold;
@@ -353,7 +353,7 @@ body {
 }
 
 /*ingame                GameState: 3*/
-/* line 396, ../scss/design.scss */
+/* line 395, ../scss/design.scss */
 .ingame {
   background-image: url("../img/game-bg.png");
   /*background-repeat:no-repeat;*/
@@ -363,18 +363,18 @@ body {
   background-position-y: 20px;
 }
 
-/* line 406, ../scss/design.scss */
+/* line 405, ../scss/design.scss */
 .blocksign {
   background-image: url("../img/blocksign.png");
   color: white;
   font-size: 2em;
 }
-/* line 410, ../scss/design.scss */
+/* line 409, ../scss/design.scss */
 .blocksign .enemyHits, .blocksign .playerHits {
   float: left;
   padding-left: 20px;
 }
-/* line 414, ../scss/design.scss */
+/* line 413, ../scss/design.scss */
 .blocksign .enemyLeft, .blocksign .playerLeft {
   float: right;
   padding-right: 20px;
@@ -399,7 +399,7 @@ body {
 
 }
 */
-/* line 447, ../scss/design.scss */
+/* line 446, ../scss/design.scss */
 .ingame .game #plf, .ingame .game #ef {
   background-color: darkgreen;
 }
@@ -416,33 +416,29 @@ body {
 }*/
 /*Desktop*/
 @media screen and (min-width: 1200px) {
-  /* line 469, ../scss/design.scss */
+  /* line 468, ../scss/design.scss */
   .header {
     font-size: 3em;
     background-image: url("../img/logograss.png");
     background-size: cover;
     background-position-x: 30px;
   }
-  /* line 475, ../scss/design.scss */
+  /* line 474, ../scss/design.scss */
   .header #musicButton img {
     height: 75px;
     width: 75px;
   }
-  /* line 478, ../scss/design.scss */
+  /* line 477, ../scss/design.scss */
   .header #musicButton img:hover {
     padding: 0px 0px;
     height: 85px;
     width: 85px;
   }
-  /* line 486, ../scss/design.scss */
+  /* line 485, ../scss/design.scss */
   .header .showUser {
     color: #77522e;
   }
-  /* line 488, ../scss/design.scss */
-  .header .showUser #helloUser {
-    text-align: right;
-  }
-  /* line 491, ../scss/design.scss */
+  /* line 487, ../scss/design.scss */
   .header .showUser #logoutButton {
     display: block;
     background-color: #56791e;
@@ -450,13 +446,13 @@ body {
     color: #dff99a;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
   }
-  /* line 497, ../scss/design.scss */
+  /* line 493, ../scss/design.scss */
   .header .showUser #logoutButton:hover {
     width: 108px;
     height: 38px;
   }
 
-  /* line 505, ../scss/design.scss */
+  /* line 501, ../scss/design.scss */
   .game-box, .startMenu, .pselect, .pgselect, .ingame {
     color: white;
     outline-width: 10px;
@@ -464,7 +460,7 @@ body {
     outline-style: ridge;
   }
 
-  /* line 512, ../scss/design.scss */
+  /* line 508, ../scss/design.scss */
   .logoutMenu {
     background-image: url("../img/logout_screen.png");
     background-position-x: 0px;
@@ -474,21 +470,21 @@ body {
     font-family: myfont;
     color: #d5b961;
   }
-  /* line 520, ../scss/design.scss */
+  /* line 516, ../scss/design.scss */
   .logoutMenu h1 {
     font-weight: bold;
   }
-  /* line 523, ../scss/design.scss */
+  /* line 519, ../scss/design.scss */
   .logoutMenu a {
     color: greenyellow;
   }
-  /* line 525, ../scss/design.scss */
+  /* line 521, ../scss/design.scss */
   .logoutMenu a:hover {
     text-decoration: underline greenyellow;
     color: greenyellow;
   }
 
-  /* line 532, ../scss/design.scss */
+  /* line 528, ../scss/design.scss */
   .startMenu {
     background-image: url("../img/menu_neu.png");
     background-position-x: 0px;
@@ -497,7 +493,7 @@ body {
     outline-style: ridge;
   }
 
-  /* line 539, ../scss/design.scss */
+  /* line 535, ../scss/design.scss */
   .pgselect {
     background-image: url("../img/playgroundselect-bg.png");
     background-size: cover;
@@ -509,7 +505,7 @@ body {
     outline-style: ridge;
   }
 
-  /* line 550, ../scss/design.scss */
+  /* line 546, ../scss/design.scss */
   .ingame {
     background-image: url("../img/game-bg.png");
     background-repeat: no-repeat;
@@ -522,26 +518,26 @@ body {
     outline-color: #56791e;
     outline-style: ridge;
   }
-  /* line 564, ../scss/design.scss */
+  /* line 560, ../scss/design.scss */
   .ingame .farmerPlayer, .ingame .farmerEnemy {
     background-image: url("../img/farmer.png");
     background-size: contain;
     background-repeat: no-repeat;
     color: white;
   }
-  /* line 570, ../scss/design.scss */
+  /* line 566, ../scss/design.scss */
   .ingame .farmerEnemy {
     background-image: url("../img/robo-farmer.png");
   }
-  /* line 575, ../scss/design.scss */
+  /* line 571, ../scss/design.scss */
   .ingame .game #plf, .ingame .game #ef {
     background-color: darkgreen;
   }
-  /* line 578, ../scss/design.scss */
+  /* line 574, ../scss/design.scss */
   .ingame .game #ef {
     background-color: darkgreen;
   }
-  /* line 582, ../scss/design.scss */
+  /* line 578, ../scss/design.scss */
   .ingame .sign {
     background-image: url("../img/blank-wood-sign-hi.png");
     background-repeat: no-repeat;
@@ -551,12 +547,12 @@ body {
     color: black;
   }
 
-  /* line 593, ../scss/design.scss */
+  /* line 589, ../scss/design.scss */
   .blocksign {
     display: none;
   }
 
-  /* line 596, ../scss/design.scss */
+  /* line 592, ../scss/design.scss */
   .customCursor {
     cursor: url("../img/crosshairblue.png")1515, auto;
   }
