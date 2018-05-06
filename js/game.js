@@ -228,12 +228,12 @@ function updateSigns() {
     playerHitsSign[0].innerHTML = "Hits: " + playerHits;
     playerLeftSign[0].innerHTML = "Left: " + (NumberOfCows - playerHits) ;
     enemyHitsSign[0].innerHTML = "Hits: " + enemyHits;
-    enemyLeftSign[0].innerHTML = "Hits: " + (NumberOfCows - enemyHits);
+    enemyLeftSign[0].innerHTML = "Left: " + (NumberOfCows - enemyHits);
 
     playerHitsResponsive[0].innerHTML = "Hits: " + playerHits;
     playerLeftResponsive[0].innerHTML = "Left: " + (NumberOfCows - playerHits) ;
     enemyHitsResponsive[0].innerHTML = "Hits: " + enemyHits;
-    enemyLeftResponsive[0].innerHTML = "Hits: " + (NumberOfCows - enemyHits);
+    enemyLeftResponsive[0].innerHTML = "Left: " + (NumberOfCows - enemyHits);
     
 }
 

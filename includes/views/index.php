@@ -60,10 +60,14 @@
         <div id="helpoverlay" class="overlay">
             <div class="overlay-box">
                 <div class="overlay-content">
-                    <h4>Das ist eine Spielbeschreibung</h4> <br>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                        Das ist eine Spielbeschreibung <br>
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                    <h4>RoboCow Invasion</h4> <br>
+                    <p>Roboterbauern greifen die Farmen der Erde an! Der Bauer Farmario beschützt sein Eigentum und kämpft mit seinen Kühen gegen maschinelle Kühe. <br><br>
+                        Wähle eine Seite und lass den Kampf um die Erde beginnen!</p><br><br>
+
+                    <h5>Wie es funktioniert:</h5>
+                       <p>Wähle eine Seite und platziere deine Kampfkühe als Familie auf deinem Feld. Insgesamt gibt es 4 Kuhfamilien mit 5,4,3 oder 2 Kühen. Hast du deine Kühe gesetzt, gelangst du nun zum Schlachtfeld.
+                        Nun wird abwechselnd ein Feld gewählt. Verfehlst du die Gegnerkuh, wird ein Schmutzfleck sichtbar. Hast du einen Treffer gelandet, wird die Kuh des Gegners angezeigt und mit einem Fadenkreuz markiert. Das gleiche gilt für deine Kühe: Hat dein Gegner eine deiner Kühe ins Visier genommen, wird auch diese mit einem Fadenkreuz markiert. Hast du oder dein Gegner alle Kühe einer Kuhfamilie ins Visier genommen, werden Bomben auf sie geworfen und sie werden außer Gefecht gesetzt.
+                        <br><br>   Derjenige, der als erstes die Kühe des Gegners ausgeschalten hat, gewinnt den Kampf!</p>
                 </div>
                 <div class="button">
                     <button id="helpBack" type="submit" class="btn" onclick="help_off()">back</button>
@@ -81,6 +85,7 @@
 
     <div id="pgs" class="content pgselect">
         <h1 class="überschrift">Cow-Familiy Setup</h1>
+        <h2 class="infoLine">Cow-Families to place: </h2>
         <div id="pf" class="playerfield"></div>
     </div>
 

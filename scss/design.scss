@@ -138,7 +138,7 @@ body {
     margin-top: 5%;
     background-color: $outline_darkgreen;
     font-family: sans-serif;
-    color: #dff99a;
+    color: $lightgreen;
     box-shadow: 0 5px 8px 0 $lightgrey, 0 6px 20px 0 $lightgrey;
 
   }
@@ -163,14 +163,17 @@ body {
   width: 45px;
   height: 113px;
   background-image: url("../img/kuhexplosion.png");
+  opacity: 0;
 
-  animation: explosion 1.8s steps(19) infinite;
+  animation: explosion 1.8s steps(19) 1;
 }
 
 
 @keyframes explosion {
-  from { background-position:    0px; }
-  to { background-position: -835px; }
+  from { background-position:    0px;
+      opacity: 1.0;}
+  to { background-position: -835px;
+      opacity: 1.0;}
 }
 
 .roboCowAttack {
@@ -381,16 +384,15 @@ body {
     background-position: -87px;
     @extend .game-box;
     .playerfield{
-    background-color: $red;
-    opacity: 0.5;
-      .überschrift {
-        font-size: 3em;
-        font-family: myfont, serif;
-        color: $brown_red;
-      }
+    }
+    h1 {
+      text-align: center;
+      font-family: myfont, serif;
+      font-weight: bold;
+      color: $brown_red;
+      font-size: 3em;
     }
   }
-
 
 /*ingame                GameState: 3*/
 
@@ -443,6 +445,7 @@ body {
 
 }
 */
+/*
 .ingame {
   .game {
     #plf {
@@ -453,7 +456,7 @@ body {
     }
   }
 }
-/*
+
 .ingame .sign {
     background-image: url(".../img/blank-wood-sign-hi.png");
     background-repeat: no-repeat;
@@ -570,6 +573,7 @@ body {
         @extend .farmerPlayer;
         background-image: url("../img/robo-farmer.png");
       }
+      /*
       .game {
         #plf {
           background-color: $darkgreen;
@@ -579,7 +583,7 @@ body {
           background-color: $darkgreen;
 
         }
-      }
+      }*/
       .sign {
         background-image: url("../img/blank-wood-sign-hi.png");
         background-repeat: no-repeat;

@@ -1,11 +1,13 @@
-/*Layout*/
-$light_green_bg: rgba(71, 255, 0, 0.25);
-$mid_green_border: rgba(41, 255, 0, 0.5);
-$dark_green_shadow: rgba(0,0,0,0.5);
-$light_brown: #d5b961;
-$darkgrey_shadow: darkgrey;
 
-/*Layout*/
+/*Colors:*/
+$sand_text: #d5b961;
+$lightgreen_background: rgba(71, 255, 0, 0.25);
+$lightgreen_border: rgba(41, 255, 0, 0.5);
+$grey_shadow: rgba(0,0,0,0.5);
+
+/*Layout:*/
+
+
 
 body {
   height: 100%;
@@ -15,6 +17,7 @@ body {
   font-family: 'myfont';
   src: url('Sawyers Whitewash.otf') format('truetype');
 }
+
 
 /*Mobile*/
 
@@ -33,6 +36,7 @@ body {
 
   align-items: center;
   justify-content: center;
+
   #musicButton {
     width: 50px;
     height: 50px;
@@ -68,8 +72,7 @@ body {
 }
 
 /*menu                  GameState: 0*/
-
-.logoutMenu {
+.logoutMenu{
   h1 {
     margin-top: 270px;
     margin-left: 150px;
@@ -92,7 +95,7 @@ body {
   }
   .ftxt {
     font-family: myfont, serif;
-    color: $light_brown;
+    color: $sand_text;
     font-size: 1.5em;
     font-weight: bold;
     height: 100%;
@@ -117,31 +120,29 @@ body {
   }
 }
 
-
 /*player Select         GameState: 1*/
 
-.pselect{
+.pselect {
   .farmer {
-
     position: absolute;
     bottom: 200px;
     left: 50px;
     height: 300px;
     width: 200px;
-    &:hover{
-      background-color: $light_green_bg;
-      border: 5px solid $mid_green_border;
+    &:hover {
+      background-color: $lightgreen_background;
+      border: 5px solid rgba(41, 255, 0, 0.5);
       border-radius: 15px;
-      box-shadow: 1px 2px 4px $darkgrey_shadow;
+      box-shadow: 1px 2px 4px $grey_shadow;
     }
   }
-  .roboFarmer {
-    position:absolute;
-    bottom: 200px;
-    right: 50px;
-    height: 300px;
-    width: 200px;
-    &:hover{
+  .roboFarmer{
+  position:absolute;
+  bottom: 200px;
+  right: 50px;
+  height: 300px;
+  width: 200px;
+    &:hover {
       @extend .farmer:hover;
     }
   }
@@ -150,7 +151,7 @@ body {
 
 /*playground select     GameState: 2*/
 
-.pgselect{
+.pgselect {
   .playerfield{
     width: 540px;
     height:315px;
@@ -163,8 +164,16 @@ body {
     padding-top: 30px;
     text-align: center;
   }
-}
 
+  .infoLine {
+    padding-top: 20px;
+    float: right;
+    margin-right: 90px;
+    font-size: 2.5em;
+    color: brown;
+    font-family: myfont, serif;
+  }
+}
 
 /*ingame                GameState: 3*/
 
@@ -172,45 +181,59 @@ body {
   .farmerPlayer {
     width: 200px;
     height: 250px;
-
     position: absolute;
-
     bottom: 10px;
     left: 10px;
   }
   .farmerEnemy {
     width: 200px;
     height: 250px;
-
     position: absolute;
-
     top: 10px;
     right: 10px;
   }
+  .blocksign{
+    position: absolute;
+    text-align: center;
+    width: 600px;
+    height: 50px;
+  }
+  .s2{
+    top: 675.5px;
+  }
+
+  .sign {
+    display: none;
+  }
+  .farmerEnemy{
+    display: none;
+  }
+  .farmerPlayer {
+    display: none;
+  }
+  .game {
+    width: 540px;
+    height: 675px;
+
+    position: absolute;
+    top: 38px;
+    left: 27px;
+    #plf {
+      position: absolute;
+      width: 540px;
+      height: 315px;
+      top: 350px;
+    }
+    #ef {
+      position: absolute;
+      width: 540px;
+      height: 315px;
+
+    }
+  }
 }
 
-.blocksign{
-  position: absolute;
-  text-align: center;
-  width: 600px;
-  height: 50px;
-}
 
-.s2{
-  top: 675.5px;
-}
-
-.sign {
-  display: none;
-}
-
-.farmerEnemy{
-  display: none;
-}
-
-.farmerPlayer {
-  display: none;
-}
 
 /*
 .ingame .sign {
@@ -246,33 +269,9 @@ body {
 }
 */
 
-.ingame {
-  .game {
-    width: 540px;
-    height: 675px;
-
-    position: absolute;
-    top: 38px;
-    left: 27px;
-    #plf {
-      position: absolute;
-      width: 540px;
-      height: 315px;
-      top: 350px;
-    }
-    #ef {
-      position: absolute;
-      width: 540px;
-      height: 315px;
-
-    }
-  }
-}
-
-
 /*Desktop*/
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1200px){
   .game-box {
     margin: 30px auto;
     width: 1200px;
@@ -285,13 +284,14 @@ body {
     width: 100%;
     height: 150px;
     /*display: flex;*/
-
     align-items: center;
     justify-content: center;
     #musicButton {
-      width: 100px;
-      height: 100px;
+      width: 75px;
+      height: 75px;
+
       font-size: 0.5em;
+
       margin: 10px 10px;
       float: left;
     }
@@ -300,10 +300,11 @@ body {
       width: 250px;
       margin-right: 30px;
       margin-top: 95px;
-      #helloUser p{
-        margin-left: 37px;
+      #helloUser {
+        margin-left: 5px;
         font-size: 18px;
-        float: left;
+        text-align: right;
+        padding-right: 10px;
       }
       #logoutButton {
         display: block;
@@ -325,7 +326,7 @@ body {
     position: relative;
   }
 
-  .logoutMenu{
+  .logoutMenu {
     h1 {
       margin-top: 270px;
       margin-left: 755px;
@@ -335,6 +336,7 @@ body {
     }
   }
 
+
   .pselect {
     .farmer {
 
@@ -343,28 +345,31 @@ body {
       left: 100px;
       height: 550px;
       width: 400px;
-
     }
     .roboFarmer {
 
-      position: absolute;
+      position:absolute;
       bottom: 60px;
       right: 80px;
       height: 550px;
       width: 400px;
-
     }
   }
 
   .pgselect {
-    .playerfield {
+    .playerfield{
       width: 540px;
-      height: 315px;
+      height:315px;
       position: absolute;
 
       top: 195px;
       left: 115px;
     }
+
+  }
+
+
+  .ingame {
     .farmerPlayer {
       width: 200px;
       height: 250px;
@@ -433,8 +438,6 @@ body {
     }
   }
 }
-
-
 
 
 

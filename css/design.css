@@ -56,7 +56,7 @@ body {
 
 /*GameStates*/
 /*Menu                  GameState: 0*/
-/* line 74, ../scss/design.scss */
+/* line 75, ../scss/design.scss */
 .logoutMenu {
   background-image: url("../img/logout_screen.png");
   background-position-x: -600px;
@@ -66,39 +66,39 @@ body {
   font-family: myfont;
   color: #d5b961;
 }
-/* line 82, ../scss/design.scss */
+/* line 83, ../scss/design.scss */
 .logoutMenu h1 {
   font-weight: bold;
 }
-/* line 85, ../scss/design.scss */
+/* line 86, ../scss/design.scss */
 .logoutMenu a {
   color: greenyellow;
 }
-/* line 87, ../scss/design.scss */
+/* line 88, ../scss/design.scss */
 .logoutMenu a:hover {
   text-decoration: underline greenyellow;
   color: greenyellow;
 }
 
-/* line 94, ../scss/design.scss */
+/* line 95, ../scss/design.scss */
 .startMenu {
   background-image: url("../img/menu_neu.png");
   background-position-x: -600px;
 }
-/* line 99, ../scss/design.scss */
+/* line 100, ../scss/design.scss */
 .startMenu .fbtn img {
   padding: 4px 4px;
   width: 100px;
   height: 100px;
 }
-/* line 103, ../scss/design.scss */
+/* line 104, ../scss/design.scss */
 .startMenu .fbtn img:hover {
   padding: 0 0;
   width: 108px;
   height: 108px;
 }
 
-/* line 112, ../scss/design.scss */
+/* line 113, ../scss/design.scss */
 .overlay {
   height: 100%;
   width: 100%;
@@ -110,7 +110,7 @@ body {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-/* line 123, ../scss/design.scss */
+/* line 124, ../scss/design.scss */
 .overlay-box {
   padding: 1.5em;
   padding-top: 3em;
@@ -123,7 +123,7 @@ body {
   opacity: 1;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
 }
-/* line 134, ../scss/design.scss */
+/* line 135, ../scss/design.scss */
 .overlay-box .btn {
   float: right;
   margin-right: 5%;
@@ -134,7 +134,7 @@ body {
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* line 147, ../scss/design.scss */
+/* line 148, ../scss/design.scss */
 .overlay-content {
   font-size: 18px;
   color: white;
@@ -145,23 +145,26 @@ body {
   margin-right: 5%;
 }
 
-/* line 161, ../scss/design.scss */
+/* line 162, ../scss/design.scss */
 .cowAttack {
   width: 45px;
   height: 113px;
   background-image: url("../img/kuhexplosion.png");
-  animation: explosion 1.8s steps(19) infinite;
+  opacity: 0;
+  animation: explosion 1.8s steps(19) 1;
 }
 
 @keyframes explosion {
   from {
     background-position: 0px;
+    opacity: 1.0;
   }
   to {
     background-position: -835px;
+    opacity: 1.0;
   }
 }
-/* line 175, ../scss/design.scss */
+/* line 179, ../scss/design.scss */
 .roboCowAttack {
   width: 45px;
   height: 45px;
@@ -177,7 +180,7 @@ body {
     background-position: -455px;
   }
 }
-/* line 189, ../scss/design.scss */
+/* line 193, ../scss/design.scss */
 .cowWalk {
   background-image: url("../img/cow.png");
   position: absolute;
@@ -190,7 +193,7 @@ body {
   animation: cowwalk 2.2s steps(15) infinite;
 }
 
-/* line 202, ../scss/design.scss */
+/* line 206, ../scss/design.scss */
 .roboCowWalk {
   background-image: url("../img/robo-cow.png");
   position: absolute;
@@ -307,26 +310,26 @@ body {
   }
 }
 /*player select         GameState: 1*/
-/* line 348, ../scss/design.scss */
+/* line 352, ../scss/design.scss */
 .pselect {
   background-image: url("../img/playerselect-bg.png");
   background-size: cover;
   display: none;
 }
-/* line 353, ../scss/design.scss */
+/* line 357, ../scss/design.scss */
 .pselect .farmer {
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url("../img/farmer.png");
 }
-/* line 358, ../scss/design.scss */
+/* line 362, ../scss/design.scss */
 .pselect .roboFarmer {
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url("../img/robo-farmer.png");
   background-position-x: 15px;
 }
-/* line 364, ../scss/design.scss */
+/* line 368, ../scss/design.scss */
 .pselect .pshead {
   text-align: center;
   font-family: myfont, serif;
@@ -336,14 +339,14 @@ body {
 }
 
 /*playground select     GameState: 2*/
-/* line 376, ../scss/design.scss */
+/* line 380, ../scss/design.scss */
 .pgselect {
   background-image: url("../img/playgroundselect-bg.png");
   background-size: cover;
   display: none;
   background-position: -87px;
 }
-/* line 384, ../scss/design.scss */
+/* line 388, ../scss/design.scss */
 .pgselect h1 {
   text-align: center;
   font-family: myfont, serif;
@@ -353,7 +356,7 @@ body {
 }
 
 /*ingame                GameState: 3*/
-/* line 395, ../scss/design.scss */
+/* line 399, ../scss/design.scss */
 .ingame {
   background-image: url("../img/game-bg.png");
   /*background-repeat:no-repeat;*/
@@ -363,18 +366,18 @@ body {
   background-position-y: 20px;
 }
 
-/* line 405, ../scss/design.scss */
+/* line 409, ../scss/design.scss */
 .blocksign {
   background-image: url("../img/blocksign.png");
   color: white;
   font-size: 2em;
 }
-/* line 409, ../scss/design.scss */
+/* line 413, ../scss/design.scss */
 .blocksign .enemyHits, .blocksign .playerHits {
   float: left;
   padding-left: 20px;
 }
-/* line 413, ../scss/design.scss */
+/* line 417, ../scss/design.scss */
 .blocksign .enemyLeft, .blocksign .playerLeft {
   float: right;
   padding-right: 20px;
@@ -382,7 +385,7 @@ body {
 
 /*
 .ingame .farmerPlayer {
-    background-image: url("../img/farmer.png");
+    background-image: url(".../img/farmer.png");
     background-size: contain;
     background-repeat: no-repeat;
     display: none;
@@ -391,7 +394,7 @@ body {
 }
 
 .ingame .farmerEnemy {
-    background-image: url("../img/robo-farmer.png");
+    background-image: url(".../img/robo-farmer.png");
     background-size: contain;
     background-repeat: no-repeat;
     color: white;
@@ -399,14 +402,20 @@ body {
 
 }
 */
-/* line 446, ../scss/design.scss */
-.ingame .game #plf, .ingame .game #ef {
-  background-color: darkgreen;
+/*
+.ingame {
+  .game {
+    #plf {
+      background-color: $darkgreen;
+    }
+    #ef {
+      @extend #plf;
+    }
+  }
 }
 
-/*
 .ingame .sign {
-    background-image: url("../img/blank-wood-sign-hi.png");
+    background-image: url(".../img/blank-wood-sign-hi.png");
     background-repeat: no-repeat;
     background-size: contain;
 
@@ -416,29 +425,29 @@ body {
 }*/
 /*Desktop*/
 @media screen and (min-width: 1200px) {
-  /* line 468, ../scss/design.scss */
+  /* line 473, ../scss/design.scss */
   .header {
     font-size: 3em;
     background-image: url("../img/logograss.png");
     background-size: cover;
     background-position-x: 30px;
   }
-  /* line 474, ../scss/design.scss */
+  /* line 479, ../scss/design.scss */
   .header #musicButton img {
     height: 75px;
     width: 75px;
   }
-  /* line 477, ../scss/design.scss */
+  /* line 482, ../scss/design.scss */
   .header #musicButton img:hover {
     padding: 0px 0px;
     height: 85px;
     width: 85px;
   }
-  /* line 485, ../scss/design.scss */
+  /* line 490, ../scss/design.scss */
   .header .showUser {
     color: #77522e;
   }
-  /* line 487, ../scss/design.scss */
+  /* line 492, ../scss/design.scss */
   .header .showUser #logoutButton {
     display: block;
     background-color: #56791e;
@@ -446,13 +455,13 @@ body {
     color: #dff99a;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
   }
-  /* line 493, ../scss/design.scss */
+  /* line 498, ../scss/design.scss */
   .header .showUser #logoutButton:hover {
     width: 108px;
     height: 38px;
   }
 
-  /* line 501, ../scss/design.scss */
+  /* line 506, ../scss/design.scss */
   .game-box, .startMenu, .pselect, .pgselect, .ingame {
     color: white;
     outline-width: 10px;
@@ -460,7 +469,7 @@ body {
     outline-style: ridge;
   }
 
-  /* line 508, ../scss/design.scss */
+  /* line 513, ../scss/design.scss */
   .logoutMenu {
     background-image: url("../img/logout_screen.png");
     background-position-x: 0px;
@@ -470,21 +479,21 @@ body {
     font-family: myfont;
     color: #d5b961;
   }
-  /* line 516, ../scss/design.scss */
+  /* line 521, ../scss/design.scss */
   .logoutMenu h1 {
     font-weight: bold;
   }
-  /* line 519, ../scss/design.scss */
+  /* line 524, ../scss/design.scss */
   .logoutMenu a {
     color: greenyellow;
   }
-  /* line 521, ../scss/design.scss */
+  /* line 526, ../scss/design.scss */
   .logoutMenu a:hover {
     text-decoration: underline greenyellow;
     color: greenyellow;
   }
 
-  /* line 528, ../scss/design.scss */
+  /* line 533, ../scss/design.scss */
   .startMenu {
     background-image: url("../img/menu_neu.png");
     background-position-x: 0px;
@@ -493,7 +502,7 @@ body {
     outline-style: ridge;
   }
 
-  /* line 535, ../scss/design.scss */
+  /* line 540, ../scss/design.scss */
   .pgselect {
     background-image: url("../img/playgroundselect-bg.png");
     background-size: cover;
@@ -505,7 +514,7 @@ body {
     outline-style: ridge;
   }
 
-  /* line 546, ../scss/design.scss */
+  /* line 552, ../scss/design.scss */
   .ingame {
     background-image: url("../img/game-bg.png");
     background-repeat: no-repeat;
@@ -517,27 +526,30 @@ body {
     outline-width: 10px;
     outline-color: #56791e;
     outline-style: ridge;
+      /*
+      .game {
+        #plf {
+          background-color: $darkgreen;
+        }
+        #ef {
+
+          background-color: $darkgreen;
+
+        }
+      }*/
   }
-  /* line 560, ../scss/design.scss */
+  /* line 566, ../scss/design.scss */
   .ingame .farmerPlayer, .ingame .farmerEnemy {
     background-image: url("../img/farmer.png");
     background-size: contain;
     background-repeat: no-repeat;
     color: white;
   }
-  /* line 566, ../scss/design.scss */
+  /* line 572, ../scss/design.scss */
   .ingame .farmerEnemy {
     background-image: url("../img/robo-farmer.png");
   }
-  /* line 571, ../scss/design.scss */
-  .ingame .game #plf, .ingame .game #ef {
-    background-color: darkgreen;
-  }
-  /* line 574, ../scss/design.scss */
-  .ingame .game #ef {
-    background-color: darkgreen;
-  }
-  /* line 578, ../scss/design.scss */
+  /* line 587, ../scss/design.scss */
   .ingame .sign {
     background-image: url("../img/blank-wood-sign-hi.png");
     background-repeat: no-repeat;
@@ -547,12 +559,12 @@ body {
     color: black;
   }
 
-  /* line 589, ../scss/design.scss */
+  /* line 598, ../scss/design.scss */
   .blocksign {
     display: none;
   }
 
-  /* line 592, ../scss/design.scss */
+  /* line 601, ../scss/design.scss */
   .customCursor {
     cursor: url("../img/crosshairblue.png")1515, auto;
   }
@@ -830,7 +842,7 @@ body {
     opacity: 0.5;
 }
 
-.pgselect .├╝berschrift {
+.pgselect .überschrift {
     font-size: 3em;
     font-family: myfont, serif;
     color: brown;
