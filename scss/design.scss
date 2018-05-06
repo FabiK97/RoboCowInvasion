@@ -380,13 +380,13 @@ body {
     background-position: -87px;
     @extend .game-box;
     .playerfield{
-    background-color: $red;
-    opacity: 0.5;
-      .überschrift {
-        font-size: 3em;
-        font-family: myfont, serif;
-        color: $brown_red;
-      }
+    }
+    .überschrift {
+      text-align: center;
+      font-family: myfont, serif;
+      font-weight: bold;
+      color: $brown_red;
+      font-size: 3em;
     }
   }
 
@@ -485,6 +485,9 @@ body {
     }
     .showUser {
       color: $brown;
+      #helloUser{
+        text-align: right;
+      }
       #logoutButton {
         display: block;
         background-color: $outline_darkgreen;

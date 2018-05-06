@@ -343,16 +343,13 @@ body {
   display: none;
   background-position: -87px;
 }
-/* line 382, ../scss/design.scss */
-.pgselect .playerfield {
-  background-color: red;
-  opacity: 0.5;
-}
-/* line 385, ../scss/design.scss */
-.pgselect .playerfield .├╝berschrift {
-  font-size: 3em;
+/* line 384, ../scss/design.scss */
+.pgselect .├╝berschrift {
+  text-align: center;
   font-family: myfont, serif;
+  font-weight: bold;
   color: brown;
+  font-size: 3em;
 }
 
 /*ingame                GameState: 3*/
@@ -442,6 +439,10 @@ body {
     color: #77522e;
   }
   /* line 488, ../scss/design.scss */
+  .header .showUser #helloUser {
+    text-align: right;
+  }
+  /* line 491, ../scss/design.scss */
   .header .showUser #logoutButton {
     display: block;
     background-color: #56791e;
@@ -449,13 +450,13 @@ body {
     color: #dff99a;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
   }
-  /* line 494, ../scss/design.scss */
+  /* line 497, ../scss/design.scss */
   .header .showUser #logoutButton:hover {
     width: 108px;
     height: 38px;
   }
 
-  /* line 502, ../scss/design.scss */
+  /* line 505, ../scss/design.scss */
   .game-box, .startMenu, .pselect, .pgselect, .ingame {
     color: white;
     outline-width: 10px;
@@ -463,7 +464,7 @@ body {
     outline-style: ridge;
   }
 
-  /* line 509, ../scss/design.scss */
+  /* line 512, ../scss/design.scss */
   .logoutMenu {
     background-image: url("../img/logout_screen.png");
     background-position-x: 0px;
@@ -473,21 +474,21 @@ body {
     font-family: myfont;
     color: #d5b961;
   }
-  /* line 517, ../scss/design.scss */
+  /* line 520, ../scss/design.scss */
   .logoutMenu h1 {
     font-weight: bold;
   }
-  /* line 520, ../scss/design.scss */
+  /* line 523, ../scss/design.scss */
   .logoutMenu a {
     color: greenyellow;
   }
-  /* line 522, ../scss/design.scss */
+  /* line 525, ../scss/design.scss */
   .logoutMenu a:hover {
     text-decoration: underline greenyellow;
     color: greenyellow;
   }
 
-  /* line 529, ../scss/design.scss */
+  /* line 532, ../scss/design.scss */
   .startMenu {
     background-image: url("../img/menu_neu.png");
     background-position-x: 0px;
@@ -496,7 +497,7 @@ body {
     outline-style: ridge;
   }
 
-  /* line 536, ../scss/design.scss */
+  /* line 539, ../scss/design.scss */
   .pgselect {
     background-image: url("../img/playgroundselect-bg.png");
     background-size: cover;
@@ -508,7 +509,7 @@ body {
     outline-style: ridge;
   }
 
-  /* line 547, ../scss/design.scss */
+  /* line 550, ../scss/design.scss */
   .ingame {
     background-image: url("../img/game-bg.png");
     background-repeat: no-repeat;
@@ -521,26 +522,26 @@ body {
     outline-color: #56791e;
     outline-style: ridge;
   }
-  /* line 561, ../scss/design.scss */
+  /* line 564, ../scss/design.scss */
   .ingame .farmerPlayer, .ingame .farmerEnemy {
     background-image: url("../img/farmer.png");
     background-size: contain;
     background-repeat: no-repeat;
     color: white;
   }
-  /* line 567, ../scss/design.scss */
+  /* line 570, ../scss/design.scss */
   .ingame .farmerEnemy {
     background-image: url("../img/robo-farmer.png");
   }
-  /* line 572, ../scss/design.scss */
+  /* line 575, ../scss/design.scss */
   .ingame .game #plf, .ingame .game #ef {
     background-color: darkgreen;
   }
-  /* line 575, ../scss/design.scss */
+  /* line 578, ../scss/design.scss */
   .ingame .game #ef {
     background-color: darkgreen;
   }
-  /* line 579, ../scss/design.scss */
+  /* line 582, ../scss/design.scss */
   .ingame .sign {
     background-image: url("../img/blank-wood-sign-hi.png");
     background-repeat: no-repeat;
@@ -550,12 +551,12 @@ body {
     color: black;
   }
 
-  /* line 590, ../scss/design.scss */
+  /* line 593, ../scss/design.scss */
   .blocksign {
     display: none;
   }
 
-  /* line 593, ../scss/design.scss */
+  /* line 596, ../scss/design.scss */
   .customCursor {
     cursor: url("../img/crosshairblue.png")1515, auto;
   }
