@@ -20,6 +20,9 @@
     <script src="js/overlay_help.js" type="text/javascript"></script>
     <script src="js/switchToPlayerSelect.js" type="text/javascript"></script>
     <script src="js/sound.js" type="text/javascript"></script>
+
+    <link href='https://fonts.googleapis.com/css?family=Black+Ops+One' rel='stylesheet' type='text/css'>
+
 </head>
 <body>
 <div class="game-box">
@@ -120,7 +123,7 @@
             <p> VICTORY </p>
         </div>
 
-        <div class="continue"> <p> RESTART? </p> </div>
+        <div class="restart"> <p> RESTART? </p> </div>
 
         <div class="decisions">
             <div class="btnyes" id="restart">  YES  </div>

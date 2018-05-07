@@ -475,40 +475,42 @@ body {
   background: url("../img/playerselect-bg.png");
 }
 
+
 .continue {
   width: 100%;
   height: auto;
   padding-top: 60px;
-  background: none;
+
 }
 
 .continue p {
   margin-top: 0px;
   margin-bottom: 0px;
-  font-size: 300px;
-  font-family: 'myfont', serif;
+  font-size: 80px;
+  font-family: 'Black Ops One', cursive;
+  line-height: 100px;
+  text-align: center;
+  text-shadow: 5px 5px #000000;
+  color: #ffffff;
+}
+
+.restart {
+  width: 100%;
+  height: auto;
+  padding-top: 60px;
+
+}
+.restart p{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 60px;
+  font-family: 'Black Ops One', cursive;
   line-height: 120px;
   text-align: center;
   text-shadow: 5px 5px #000000;
   color: #ffffff;
 }
 
-.continue {
-  width: 100%;
-  height: auto;
-  padding-top: 40px;
-}
-
-.continue p {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  text-align: center;
-  font-size: 40px;
-  font-weight: bold;
-  font-family: corbel;
-  color: #ffffff;
-  text-shadow: 2.5px 2.5px #000000;
-}
 
 .decisions {
   width: 40%;
@@ -744,36 +746,37 @@ body {
     width: 100%;
     height: auto;
     padding-top: 60px;
-    background: none;
+
   }
 
   .continue p {
     margin-top: 0px;
     margin-bottom: 0px;
-    font-size: 300px;
-    font-family: 'myfont', serif;
+    font-size: 150px;
+    font-family: 'Black Ops One', cursive;
     line-height: 120px;
     text-align: center;
     text-shadow: 5px 5px #000000;
     color: #ffffff;
   }
 
-  .continue {
+  .restart {
     width: 100%;
     height: auto;
-    padding-top: 40px;
-  }
+    padding-top: 60px;
 
-  .continue p {
+  }
+  .restart p{
     margin-top: 0px;
     margin-bottom: 0px;
+    font-size: 100px;
+    font-family: 'Black Ops One', cursive;
+    line-height: 120px;
     text-align: center;
-    font-size: 40px;
-    font-weight: bold;
-    font-family: corbel;
+    text-shadow: 5px 5px #000000;
     color: #ffffff;
-    text-shadow: 2.5px 2.5px #000000;
   }
+
 
   .decisions {
     width: 50%;

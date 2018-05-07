@@ -429,46 +429,45 @@ body {
   background: url("../img/playerselect-bg.png");
 }
 
-/* line 478, ../scss/design.scss */
+/* line 479, ../scss/design.scss */
 .continue {
   width: 100%;
   height: auto;
   padding-top: 60px;
-  background: none;
 }
 
-/* line 485, ../scss/design.scss */
+/* line 486, ../scss/design.scss */
 .continue p {
   margin-top: 0px;
   margin-bottom: 0px;
-  font-size: 300px;
-  font-family: 'myfont', serif;
+  font-size: 80px;
+  font-family: 'Black Ops One', cursive;
+  line-height: 100px;
+  text-align: center;
+  text-shadow: 5px 5px #000000;
+  color: #ffffff;
+}
+
+/* line 497, ../scss/design.scss */
+.restart {
+  width: 100%;
+  height: auto;
+  padding-top: 60px;
+}
+
+/* line 503, ../scss/design.scss */
+.restart p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 60px;
+  font-family: 'Black Ops One', cursive;
   line-height: 120px;
   text-align: center;
   text-shadow: 5px 5px #000000;
   color: #ffffff;
 }
 
-/* line 496, ../scss/design.scss */
-.continue {
-  width: 100%;
-  height: auto;
-  padding-top: 40px;
-}
-
-/* line 502, ../scss/design.scss */
-.continue p {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  text-align: center;
-  font-size: 40px;
-  font-weight: bold;
-  font-family: corbel;
-  color: #ffffff;
-  text-shadow: 2.5px 2.5px #000000;
-}
-
-/* line 513, ../scss/design.scss */
+/* line 515, ../scss/design.scss */
 .decisions {
   width: 40%;
   height: auto;
@@ -482,7 +481,7 @@ body {
   display:inline-block;
 }
 */
-/* line 527, ../scss/design.scss */
+/* line 529, ../scss/design.scss */
 .btnyes {
   text-align: center;
   font-size: 30px;
@@ -497,7 +496,7 @@ body {
   background: #006400;
 }
 
-/* line 546, ../scss/design.scss */
+/* line 548, ../scss/design.scss */
 .btnno {
   text-align: center;
   font-size: 30px;
@@ -512,7 +511,7 @@ body {
   margin-top: 20px;
 }
 
-/* line 565, ../scss/design.scss */
+/* line 567, ../scss/design.scss */
 .btnyes:hover {
   animation: pulse 0.8s linear infinite alternate;
 }
@@ -525,7 +524,7 @@ body {
     transform: scale(1.1);
   }
 }
-/* line 578, ../scss/design.scss */
+/* line 580, ../scss/design.scss */
 .btnno:hover {
   animation: shiver 0.15s linear infinite alternate;
 }
@@ -549,29 +548,29 @@ body {
 }
 /*Desktop*/
 @media screen and (min-width: 1200px) {
-  /* line 604, ../scss/design.scss */
+  /* line 606, ../scss/design.scss */
   .header {
     font-size: 3em;
     background-image: url("../img/logograss.png");
     background-size: cover;
     background-position-x: 30px;
   }
-  /* line 610, ../scss/design.scss */
+  /* line 612, ../scss/design.scss */
   .header #musicButton img {
     height: 75px;
     width: 75px;
   }
-  /* line 613, ../scss/design.scss */
+  /* line 615, ../scss/design.scss */
   .header #musicButton img:hover {
     padding: 0px 0px;
     height: 85px;
     width: 85px;
   }
-  /* line 621, ../scss/design.scss */
+  /* line 623, ../scss/design.scss */
   .header .showUser {
     color: #77522e;
   }
-  /* line 623, ../scss/design.scss */
+  /* line 625, ../scss/design.scss */
   .header .showUser #logoutButton {
     display: block;
     background-color: #56791e;
@@ -579,13 +578,13 @@ body {
     color: #dff99a;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
   }
-  /* line 629, ../scss/design.scss */
+  /* line 631, ../scss/design.scss */
   .header .showUser #logoutButton:hover {
     width: 108px;
     height: 38px;
   }
 
-  /* line 637, ../scss/design.scss */
+  /* line 639, ../scss/design.scss */
   .game-box, .startMenu, .pselect, .pgselect, .ingame {
     color: white;
     outline-width: 10px;
@@ -593,7 +592,7 @@ body {
     outline-style: ridge;
   }
 
-  /* line 644, ../scss/design.scss */
+  /* line 646, ../scss/design.scss */
   .logoutMenu {
     background-image: url("../img/logout_screen.png");
     background-position-x: 0px;
@@ -603,21 +602,21 @@ body {
     font-family: 'myfont', serif;
     color: #d5b961;
   }
-  /* line 652, ../scss/design.scss */
+  /* line 654, ../scss/design.scss */
   .logoutMenu h1 {
     font-weight: bold;
   }
-  /* line 655, ../scss/design.scss */
+  /* line 657, ../scss/design.scss */
   .logoutMenu a {
     color: greenyellow;
   }
-  /* line 657, ../scss/design.scss */
+  /* line 659, ../scss/design.scss */
   .logoutMenu a:hover {
     text-decoration: underline greenyellow;
     color: greenyellow;
   }
 
-  /* line 664, ../scss/design.scss */
+  /* line 666, ../scss/design.scss */
   .startMenu {
     background-image: url("../img/menu_neu.png");
     background-position-x: 0px;
@@ -626,7 +625,7 @@ body {
     outline-style: ridge;
   }
 
-  /* line 671, ../scss/design.scss */
+  /* line 673, ../scss/design.scss */
   .pgselect {
     background-image: url("../img/playgroundselect-bg.png");
     background-size: cover;
@@ -638,7 +637,7 @@ body {
     outline-style: ridge;
   }
 
-  /* line 683, ../scss/design.scss */
+  /* line 685, ../scss/design.scss */
   .ingame {
     background-image: url("../img/game-bg.png");
     background-repeat: no-repeat;
@@ -662,18 +661,18 @@ body {
         }
       }*/
   }
-  /* line 697, ../scss/design.scss */
+  /* line 699, ../scss/design.scss */
   .ingame .farmerPlayer, .ingame .farmerEnemy {
     background-image: url("../img/farmer.png");
     background-size: contain;
     background-repeat: no-repeat;
     color: white;
   }
-  /* line 703, ../scss/design.scss */
+  /* line 705, ../scss/design.scss */
   .ingame .farmerEnemy {
     background-image: url("../img/robo-farmer.png");
   }
-  /* line 718, ../scss/design.scss */
+  /* line 720, ../scss/design.scss */
   .ingame .sign {
     background-image: url("../img/blank-wood-sign-hi.png");
     background-repeat: no-repeat;
@@ -683,62 +682,61 @@ body {
     color: black;
   }
 
-  /* line 729, ../scss/design.scss */
+  /* line 731, ../scss/design.scss */
   .blocksign {
     display: none;
   }
 
-  /* line 732, ../scss/design.scss */
+  /* line 734, ../scss/design.scss */
   .customCursor {
     cursor: url("../img/crosshairblue.png")1515, auto;
   }
 
   /*GameOver Screen*/
-  /* line 738, ../scss/design.scss */
+  /* line 740, ../scss/design.scss */
   #eg {
     background: url("../img/playerselect-bg.png");
   }
 
-  /* line 743, ../scss/design.scss */
+  /* line 745, ../scss/design.scss */
   .continue {
     width: 100%;
     height: auto;
     padding-top: 60px;
-    background: none;
   }
 
-  /* line 750, ../scss/design.scss */
+  /* line 752, ../scss/design.scss */
   .continue p {
     margin-top: 0px;
     margin-bottom: 0px;
-    font-size: 300px;
-    font-family: 'myfont', serif;
+    font-size: 150px;
+    font-family: 'Black Ops One', cursive;
     line-height: 120px;
     text-align: center;
     text-shadow: 5px 5px #000000;
     color: #ffffff;
   }
 
-  /* line 761, ../scss/design.scss */
-  .continue {
+  /* line 763, ../scss/design.scss */
+  .restart {
     width: 100%;
     height: auto;
-    padding-top: 40px;
+    padding-top: 60px;
   }
 
-  /* line 767, ../scss/design.scss */
-  .continue p {
+  /* line 769, ../scss/design.scss */
+  .restart p {
     margin-top: 0px;
     margin-bottom: 0px;
+    font-size: 100px;
+    font-family: 'Black Ops One', cursive;
+    line-height: 120px;
     text-align: center;
-    font-size: 40px;
-    font-weight: bold;
-    font-family: corbel;
+    text-shadow: 5px 5px #000000;
     color: #ffffff;
-    text-shadow: 2.5px 2.5px #000000;
   }
 
-  /* line 778, ../scss/design.scss */
+  /* line 781, ../scss/design.scss */
   .decisions {
     width: 50%;
     height: auto;
@@ -746,12 +744,12 @@ body {
     margin: auto;
   }
 
-  /* line 786, ../scss/design.scss */
+  /* line 789, ../scss/design.scss */
   .decisions div {
     display: inline-block;
   }
 
-  /* line 791, ../scss/design.scss */
+  /* line 794, ../scss/design.scss */
   .btnyes {
     text-align: center;
     font-size: 30px;
@@ -767,7 +765,7 @@ body {
     float: left;
   }
 
-  /* line 810, ../scss/design.scss */
+  /* line 813, ../scss/design.scss */
   .btnno {
     text-align: center;
     font-size: 30px;
@@ -783,7 +781,7 @@ body {
     margin-top: 0px;
   }
 }
-/* line 829, ../scss/design.scss */
+/* line 832, ../scss/design.scss */
 .btnyes:hover {
   animation: pulse 0.8s linear infinite alternate;
 }
@@ -796,7 +794,7 @@ body {
     transform: scale(1.1);
   }
 }
-/* line 842, ../scss/design.scss */
+/* line 845, ../scss/design.scss */
 .btnno:hover {
   animation: shiver 0.15s linear infinite alternate;
 }
