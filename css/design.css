@@ -423,31 +423,154 @@ body {
     font-family: myfont, serif;
     color: black;
 }*/
+/*GameOver Screen*/
+/* line 473, ../scss/design.scss */
+#eg {
+  background: url("../img/playerselect-bg.png");
+}
+
+/* line 479, ../scss/design.scss */
+.continue {
+  width: 100%;
+  height: auto;
+  padding-top: 60px;
+}
+
+/* line 486, ../scss/design.scss */
+.continue p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 80px;
+  font-family: 'Black Ops One', cursive;
+  line-height: 100px;
+  text-align: center;
+  text-shadow: 5px 5px #000000;
+  color: #ffffff;
+}
+
+/* line 497, ../scss/design.scss */
+.restart {
+  width: 100%;
+  height: auto;
+  padding-top: 60px;
+}
+
+/* line 503, ../scss/design.scss */
+.restart p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 60px;
+  font-family: 'Black Ops One', cursive;
+  line-height: 120px;
+  text-align: center;
+  text-shadow: 5px 5px #000000;
+  color: #ffffff;
+}
+
+/* line 515, ../scss/design.scss */
+.decisions {
+  width: 40%;
+  height: auto;
+  padding-top: 50px;
+  margin: auto;
+}
+
+/*
+.decisions div {
+
+  display:inline-block;
+}
+*/
+/* line 529, ../scss/design.scss */
+.btnyes {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: corbel;
+  color: #ffffff;
+  text-decoration: none;
+  text-shadow: 2.5px 2.5px #000000;
+  padding: 25px 90px 25px 90px;
+  border: 1px solid #000000;
+  border-radius: 20px;
+  background: #006400;
+}
+
+/* line 548, ../scss/design.scss */
+.btnno {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: corbel;
+  color: #ffffff;
+  text-decoration: none;
+  text-shadow: 1.5px 1.5px #FB3733;
+  padding: 25px 80px 25px 80px;
+  border-radius: 20px;
+  background: #000000;
+  margin-top: 20px;
+}
+
+/* line 567, ../scss/design.scss */
+.btnyes:hover {
+  animation: pulse 0.8s linear infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+/* line 580, ../scss/design.scss */
+.btnno:hover {
+  animation: shiver 0.15s linear infinite alternate;
+}
+
+@keyframes shiver {
+  0% {
+    transform: translate(-5px, 0px);
+  }
+  25% {
+    transform: translate(-2.5px, 0px);
+  }
+  50% {
+    transform: translate(0px, 0px);
+  }
+  75% {
+    transform: translate(2.5px, 0px);
+  }
+  100% {
+    transform: translate(5px, 0px);
+  }
+}
 /*Desktop*/
 @media screen and (min-width: 1200px) {
-  /* line 474, ../scss/design.scss */
+  /* line 606, ../scss/design.scss */
   .header {
     font-size: 3em;
     background-image: url("../img/logograss.png");
     background-size: cover;
     background-position-x: 30px;
   }
-  /* line 480, ../scss/design.scss */
+  /* line 612, ../scss/design.scss */
   .header #musicButton img {
     height: 75px;
     width: 75px;
   }
-  /* line 483, ../scss/design.scss */
+  /* line 615, ../scss/design.scss */
   .header #musicButton img:hover {
     padding: 0px 0px;
     height: 85px;
     width: 85px;
   }
-  /* line 491, ../scss/design.scss */
+  /* line 623, ../scss/design.scss */
   .header .showUser {
     color: #77522e;
   }
-  /* line 493, ../scss/design.scss */
+  /* line 625, ../scss/design.scss */
   .header .showUser #logoutButton {
     display: block;
     background-color: #56791e;
@@ -456,7 +579,7 @@ body {
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
   }
 
-  /* line 504, ../scss/design.scss */
+  /* line 636, ../scss/design.scss */
   .game-box, .startMenu, .pselect, .pgselect, .ingame {
     color: white;
     outline-width: 10px;
@@ -464,7 +587,7 @@ body {
     outline-style: ridge;
   }
 
-  /* line 511, ../scss/design.scss */
+  /* line 643, ../scss/design.scss */
   .logoutMenu {
     background-image: url("../img/logout_screen.png");
     background-position-x: 0px;
@@ -474,21 +597,21 @@ body {
     font-family: 'myfont', serif;
     color: #d5b961;
   }
-  /* line 519, ../scss/design.scss */
+  /* line 651, ../scss/design.scss */
   .logoutMenu h1 {
     font-weight: bold;
   }
-  /* line 522, ../scss/design.scss */
+  /* line 654, ../scss/design.scss */
   .logoutMenu a {
     color: greenyellow;
   }
-  /* line 524, ../scss/design.scss */
+  /* line 656, ../scss/design.scss */
   .logoutMenu a:hover {
     text-decoration: underline greenyellow;
     color: greenyellow;
   }
 
-  /* line 531, ../scss/design.scss */
+  /* line 663, ../scss/design.scss */
   .startMenu {
     background-image: url("../img/menu_neu.png");
     background-position-x: 0px;
@@ -497,7 +620,7 @@ body {
     outline-style: ridge;
   }
 
-  /* line 538, ../scss/design.scss */
+  /* line 670, ../scss/design.scss */
   .pgselect {
     background-image: url("../img/playgroundselect-bg.png");
     background-size: cover;
@@ -509,7 +632,7 @@ body {
     outline-style: ridge;
   }
 
-  /* line 550, ../scss/design.scss */
+  /* line 681, ../scss/design.scss */
   .ingame {
     background-image: url("../img/game-bg.png");
     background-repeat: no-repeat;
@@ -521,30 +644,30 @@ body {
     outline-width: 10px;
     outline-color: #56791e;
     outline-style: ridge;
-      /*
-      .game {
-        #plf {
-          background-color: $darkgreen;
-        }
-        #ef {
+    /*
+    .game {
+      #plf {
+        background-color: $darkgreen;
+      }
+      #ef {
 
-          background-color: $darkgreen;
+        background-color: $darkgreen;
 
-        }
-      }*/
+      }
+    }*/
   }
-  /* line 564, ../scss/design.scss */
+  /* line 695, ../scss/design.scss */
   .ingame .farmerPlayer, .ingame .farmerEnemy {
     background-image: url("../img/farmer.png");
     background-size: contain;
     background-repeat: no-repeat;
     color: white;
   }
-  /* line 570, ../scss/design.scss */
+  /* line 701, ../scss/design.scss */
   .ingame .farmerEnemy {
     background-image: url("../img/robo-farmer.png");
   }
-  /* line 585, ../scss/design.scss */
+  /* line 716, ../scss/design.scss */
   .ingame .sign {
     background-image: url("../img/blank-wood-sign-hi.png");
     background-repeat: no-repeat;
@@ -553,74 +676,74 @@ body {
     font-family: 'myfont', serif;
     color: black;
   }
-  /* line 595, ../scss/design.scss */
+  /* line 726, ../scss/design.scss */
   .ingame .game #ef {
     cursor: url("../img/crosshairblue.png") 15 15, auto;
   }
 
-  /* line 602, ../scss/design.scss */
+  /* line 733, ../scss/design.scss */
   .blocksign {
     display: none;
   }
 
   /*GameOver Screen*/
-  /* line 609, ../scss/design.scss */
+  /* line 739, ../scss/design.scss */
   #eg {
-    width: 80%;
-    height: 80%;
-    margin: auto;
-    border-radius: 40px;
-    background: rgba(0, 0, 0, 0.2);
+    background: url("../img/playerselect-bg.png");
   }
 
-  /* line 617, ../scss/design.scss */
+  /* line 744, ../scss/design.scss */
   .continue {
     width: 100%;
     height: auto;
     padding-top: 60px;
-    background: none;
   }
 
-  /* line 624, ../scss/design.scss */
+  /* line 751, ../scss/design.scss */
   .continue p {
     margin-top: 0px;
     margin-bottom: 0px;
-    font-size: 300px;
-    font-family: 'myfont', serif;
+    font-size: 150px;
+    font-family: 'Black Ops One', cursive;
     line-height: 120px;
     text-align: center;
     text-shadow: 5px 5px #000000;
     color: #ffffff;
   }
 
-  /* line 635, ../scss/design.scss */
-  .continue {
+  /* line 762, ../scss/design.scss */
+  .restart {
     width: 100%;
     height: auto;
-    padding-top: 40px;
+    padding-top: 60px;
   }
 
-  /* line 641, ../scss/design.scss */
-  .continue p {
+  /* line 768, ../scss/design.scss */
+  .restart p {
     margin-top: 0px;
     margin-bottom: 0px;
+    font-size: 100px;
+    font-family: 'Black Ops One', cursive;
+    line-height: 120px;
     text-align: center;
-    font-size: 40px;
-    font-weight: bold;
-    font-family: corbel;
+    text-shadow: 5px 5px #000000;
     color: #ffffff;
-    text-shadow: 2.5px 2.5px #000000;
   }
 
-  /* line 652, ../scss/design.scss */
+  /* line 779, ../scss/design.scss */
   .decisions {
-    width: 80%;
+    width: 50%;
     height: auto;
     padding-top: 50px;
     margin: auto;
   }
 
-  /* line 659, ../scss/design.scss */
+  /* line 787, ../scss/design.scss */
+  .decisions div {
+    display: inline-block;
+  }
+
+  /* line 792, ../scss/design.scss */
   .btnyes {
     text-align: center;
     font-size: 30px;
@@ -633,24 +756,10 @@ body {
     border: 1px solid #000000;
     border-radius: 20px;
     background: #006400;
-    margin-right: 30px;
     float: left;
   }
 
-  /* line 675, ../scss/design.scss */
-  .btnyes:hover {
-    animation: pulse 0.8s linear infinite alternate;
-  }
-
-  @keyframes pulse {
-    from {
-      transform: scale(1);
-    }
-    to {
-      transform: scale(1.1);
-    }
-  }
-  /* line 688, ../scss/design.scss */
+  /* line 808, ../scss/design.scss */
   .btnno {
     text-align: center;
     font-size: 30px;
@@ -663,9 +772,23 @@ body {
     border-radius: 20px;
     background: #000000;
     float: right;
+    margin-top: 0px;
   }
 
-  /* line 702, ../scss/design.scss */
+  /* line 824, ../scss/design.scss */
+  .btnyes:hover {
+    animation: pulse 0.8s linear infinite alternate;
+  }
+
+  @keyframes pulse {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.1);
+    }
+  }
+  /* line 837, ../scss/design.scss */
   .btnno:hover {
     animation: shiver 0.15s linear infinite alternate;
   }
@@ -687,7 +810,7 @@ body {
       transform: translate(5px, 0px);
     }
   }
-  /* line 725, ../scss/design.scss */
+  /* line 860, ../scss/design.scss */
   .scoreboard {
     background-image: url("../img/playerselect-bg.png");
     color: white;
@@ -695,26 +818,26 @@ body {
     outline-color: #56791e;
     outline-style: ridge;
   }
-  /* line 732, ../scss/design.scss */
+  /* line 867, ../scss/design.scss */
   .scoreboard h1 {
     color: brown;
     font-family: myfont, serif;
     font-weight: bold;
   }
-  /* line 737, ../scss/design.scss */
+  /* line 872, ../scss/design.scss */
   .scoreboard thead {
     background-color: #56791e;
     color: white;
     font-family: myfont, serif;
     font-size: 20px;
   }
-  /* line 743, ../scss/design.scss */
+  /* line 878, ../scss/design.scss */
   .scoreboard tbody {
     color: black;
     font-weight: bold;
     font-size: 14px;
   }
-  /* line 748, ../scss/design.scss */
+  /* line 883, ../scss/design.scss */
   .scoreboard .returnMenuButton {
     border-radius: 5px;
     background-color: #77522e;

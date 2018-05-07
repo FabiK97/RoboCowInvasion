@@ -21,6 +21,8 @@
     <script src="js/switchToPlayerSelect.js" type="text/javascript"></script>
     <script src="js/sound.js" type="text/javascript"></script>
     <script src="js/scoreboard.js" type="text/javascript"></script>
+    <link href='https://fonts.googleapis.com/css?family=Black+Ops+One' rel='stylesheet' type='text/css'>
+
 </head>
 <body>
 <div class="game-box">
@@ -29,7 +31,7 @@
         <div id="musicButton">
            <img id= "soundSymbol" src="img/music_off.png" onclick="changeSoundSymbol()">
         </div>
-        <div class="showUser">
+        <div class="showUser">x
             <div id="helloUser">
         <p>Hallo <strong class="username"><?php echo $this->username; ?></strong> | </p>
             </div>
@@ -121,7 +123,7 @@
             <p> VICTORY </p>
         </div>
 
-        <div class="continue"> <p> RESTART? </p> </div>
+        <div class="restart"> <p> RESTART? </p> </div>
 
         <div class="decisions">
             <a href="index" id="restart"><div class="btnyes">  YES  </div></a>

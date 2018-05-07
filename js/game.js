@@ -215,7 +215,7 @@ function gameCycle(element) {
         setTimeout(function(){
             console.log("enemy is thinking...");
             enemyAttack();
-        }, 1500);
+        }, 500);
     }
 
 
@@ -232,9 +232,11 @@ function gameOver(playerHasWon) {
     saveScore(playerShots, accuracy);
     show(endgame, pselect,inGame,scoreboard, pgselect, menu);
     if(playerHasWon) {
+        victorySound.play();
         document.getElementById("victory").style.display = 'block';
         document.getElementById("gameover").style.display = 'none';
     }else{
+        gameOverSound.play();
         document.getElementById("victory").style.display = 'none';
         document.getElementById("gameover").style.display = 'block';
     }
