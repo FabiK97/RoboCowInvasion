@@ -115,6 +115,7 @@ function shoot(field) {
                 if(hitCowfamily === true){
                     hitCounter ++;
                 }
+
                 console.log("hitcounter: " + hitCounter);
                 if(hitCounter > 1){
                     tempx = randomx;
@@ -132,12 +133,14 @@ function shoot(field) {
                     hitCowfamily = false;
                     hitCounter = 0;
                     rightDir = false;
-                    console.log("setze rightDir auf false");
                 }
 
                 enemyHit = true;
 
                 console.log("Feld getroffen");
+                enemyShots++;
+
+                checkAllSunk();
                 gameCycle();
 
             } else {
@@ -154,6 +157,7 @@ function shoot(field) {
                 changeFarmerDivs(playerFarmer[0], enemyFarmer[0]);
                 enemyHit = false;
                 enemyMiss ++;
+                enemyShots ++;
                 updateField();
             }
 
@@ -180,5 +184,20 @@ function changeDir(){
     }
 }
 
+function checkAllSunk() {
+    //Prüfe ob alle gesunken
+    var count = 0;
+    for(var cf of cowFamiliesToPlace){
+        if(cf.isSunk === true){
+            count ++;
+        }
+    }
+
+    //Wenn alle gesunken --> Spiel vorbei
+    if(count === enemyCowFamilies.length){
+        running = false;
+        gameOver(false);
+    }
+}
 
 

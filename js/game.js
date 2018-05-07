@@ -6,7 +6,7 @@ var randomPlacex;
 var randomPlacey;
 var randomDirection;
 
-var playerWin = false;
+
 
 var running;
 var playersTurn;
@@ -16,9 +16,11 @@ var enemyHit = false;
 
 var playerHits = 0;
 var playerMiss = 0;
+var playerShots = 0;
 
 var enemyHits = 0;
 var enemyMiss = 0;
+var enemyShots = 0;
 
 var playerHitsSign = document.getElementsByClassName("sign playerHits");
 var playerLeftSign = document.getElementsByClassName("sign playerLeft");
@@ -169,6 +171,7 @@ function updateEnemyField(){
 function gameCycle(element) {
 
     if(running && !enemyHit && playersTurn){ //wenn Spiel läuft
+        playerShots++;
         if(element.isCowFamily){ //wenn getroffen
             playerHit = true;
             playerHits ++;
@@ -186,21 +189,23 @@ function gameCycle(element) {
         }
 
         //Prüfe ob alle gesunken
-        for(var cf in enemyCowFamilies){
-            var count = 0;
-            if(cf.isSunk === true){
+        var count = 0;
+        for(var cf of enemyCowFamilies){
+            if(cf.isSunk){
+                console.log("count up!");
                 count ++;
             }
         }
-
+        console.log("count: " + count);
         //Wenn alle gesunken --> Spiel vorbei
         if((count === enemyCowFamilies.length)){
             running = false;
-            playerWin = true;
-            gameOver();
+
+
+
+            gameOver(true);
 
         }
-        saveScore(playerHits, 14 - playerHits);
 
     }
     updateSigns();
@@ -217,9 +222,14 @@ function gameCycle(element) {
 
 }
 
-function gameOver() {
-    show(endgame, pgselect, pselect, menu, inGame, scoreboard);
-    if(playerwin === true){
+
+
+
+function gameOver(playerHasWon) {
+    //wenn Spiel vorbei dann
+    console.log("-------------Game-Over!-------------");
+    saveScore(playerHits, 14 - playerHits);
+    if(playerHasWon) {
         document.getElementById("victory").style.display = 'block';
         document.getElementById("gameover").style.display = 'none';
 
@@ -227,10 +237,8 @@ function gameOver() {
         document.getElementById("victory").style.display = 'none';
         document.getElementById("gameover").style.display = 'block';
     }
-
     restartButton.onclick = function() {show(pselect, pgselect, inGame, menu, endgame, scoreboard);};
     goToScoreButton.onclick = function() {show(scoreboard, pgselect, inGame, menu, endgame, pselect);};
-
 
 }
 
