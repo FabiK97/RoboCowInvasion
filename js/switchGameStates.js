@@ -13,6 +13,9 @@ var clickSound;
 var muhSound;
 var explosionSound;
 var targetingSound;
+var victorySound;
+var gameOverSound;
+var missSound;
 
 var player;
 var enemy;
@@ -54,12 +57,15 @@ window.onload = function() {
     roboFarmerButton = document.getElementById("roboFarmer");
 
     musicButton = document.getElementById("musicButton");
-    backgroundMusic = new sound("./musik/RoyalEntrance.mp3");
+    backgroundMusic = new sound("./musik/RoyalEntrance.wav");
 
     clickSound = new sound("./musik/click.mp3");
     muhSound = new sound("./musik/muh.mp3");
     explosionSound = new sound("./musik/cowExplosion.wav");
+    missSound = new sound("./musik/splatSound.wav");
     targetingSound = new sound("./musik/targetingSound.wav");
+    victorySound = new sound("./musik/VictoryFanfare.wav");
+    gameOverSound = new sound("./musik/SadTrombone.wav");
 
     playerFarmer = document.getElementsByClassName("farmerPlayer");
     enemyFarmer = document.getElementsByClassName("farmerEnemy");
