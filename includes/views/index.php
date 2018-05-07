@@ -63,7 +63,7 @@
         <div id="helpoverlay" class="overlay">
             <div class="overlay-box">
                 <div class="overlay-content">
-                    <h4>RoboCow Invasion</h4> <br>
+                    <h4>Robo Cow Invasion</h4> <br>
                     <p>Roboterbauern greifen die Farmen der Erde an! Der Bauer Farmario beschützt sein Eigentum und kämpft mit seinen Kühen gegen maschinelle Kühe. <br><br>
                         Wähle eine Seite und lass den Kampf um die Erde beginnen!</p><br><br>
 

@@ -693,20 +693,22 @@ body {
   }
 
   /*GameOver Screen*/
-  /* line 740, ../scss/design.scss */
-  #eg {
+  /* line 739, ../scss/design.scss */
+  .endgame {
+    color: white;
+    outline-width: 10px;
+    outline-color: #56791e;
+    outline-style: ridge;
     background: url("../img/playerselect-bg.png");
   }
-
   /* line 745, ../scss/design.scss */
-  .continue {
+  .endgame .continue {
     width: 100%;
     height: auto;
     padding-top: 60px;
   }
-
-  /* line 752, ../scss/design.scss */
-  .continue p {
+  /* line 749, ../scss/design.scss */
+  .endgame .continue p {
     margin-top: 0px;
     margin-bottom: 0px;
     font-size: 150px;
@@ -716,16 +718,14 @@ body {
     text-shadow: 5px 5px #000000;
     color: #ffffff;
   }
-
-  /* line 763, ../scss/design.scss */
-  .restart {
+  /* line 760, ../scss/design.scss */
+  .endgame .restart {
     width: 100%;
     height: auto;
     padding-top: 60px;
   }
-
-  /* line 769, ../scss/design.scss */
-  .restart p {
+  /* line 764, ../scss/design.scss */
+  .endgame .restart p {
     margin-top: 0px;
     margin-bottom: 0px;
     font-size: 100px;
@@ -735,22 +735,19 @@ body {
     text-shadow: 5px 5px #000000;
     color: #ffffff;
   }
-
-  /* line 781, ../scss/design.scss */
-  .decisions {
+  /* line 775, ../scss/design.scss */
+  .endgame .decisions {
     width: 50%;
     height: auto;
     padding-top: 50px;
     margin: auto;
   }
-
-  /* line 789, ../scss/design.scss */
-  .decisions div {
+  /* line 780, ../scss/design.scss */
+  .endgame .decisions div {
     display: inline-block;
   }
-
-  /* line 794, ../scss/design.scss */
-  .btnyes {
+  /* line 783, ../scss/design.scss */
+  .endgame .decisions .btnyes {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
@@ -764,9 +761,12 @@ body {
     background: #006400;
     float: left;
   }
-
-  /* line 813, ../scss/design.scss */
-  .btnno {
+  /* line 796, ../scss/design.scss */
+  .endgame .decisions .btnyes:hover {
+    animation: pulse 0.8s linear infinite alternate;
+  }
+  /* line 800, ../scss/design.scss */
+  .endgame .decisions .btnno {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
@@ -780,12 +780,11 @@ body {
     float: right;
     margin-top: 0px;
   }
+  /* line 813, ../scss/design.scss */
+  .endgame .decisions .btnno:hover {
+    animation: shiver 0.15s linear infinite alternate;
+  }
 }
-/* line 832, ../scss/design.scss */
-.btnyes:hover {
-  animation: pulse 0.8s linear infinite alternate;
-}
-
 @keyframes pulse {
   from {
     transform: scale(1);
@@ -794,11 +793,6 @@ body {
     transform: scale(1.1);
   }
 }
-/* line 845, ../scss/design.scss */
-.btnno:hover {
-  animation: shiver 0.15s linear infinite alternate;
-}
-
 @keyframes shiver {
   0% {
     transform: translate(-5px, 0px);
