@@ -149,7 +149,7 @@ function checkMouseEvent(mouseEvent, element){
         }
             break;
         case 2: if(playersTurn) { //wenn Spieler an der Reihe
-            if(element.state !== 2){
+            if(element.state !== 2 && element.state !== 3){
                 gameCycle(element); //wenn das Feld geklickt wird, soll es den Spielzyklus starten
             }
         }
@@ -216,7 +216,7 @@ function gameCycle(element) {
         setTimeout(function(){
             console.log("enemy is thinking...");
             enemyAttack();
-        }, 500);
+        }, 1250);
     }
 
 
@@ -230,10 +230,11 @@ function gameOver(playerHasWon) {
 
     accuracy = playerHits/playerShots;
 
-    saveScore(playerShots, accuracy);
+
     show(endgame, pselect,inGame,scoreboard, pgselect, menu);
     if(playerHasWon) {
         victorySound.play();
+        saveScore(playerShots, accuracy);
         document.getElementById("victory").style.display = 'block';
         document.getElementById("gameover").style.display = 'none';
     }else{
