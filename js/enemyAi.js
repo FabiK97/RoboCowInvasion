@@ -13,7 +13,7 @@ function enemyAttack() {
         randomx = Math.floor(Math.random() * 12);
         randomy = Math.floor(Math.random() * 7);
     }
-    console.log(randomx + ' - ' + randomy);
+    console.log("enemyAttack at " + randomx + ' - ' + randomy);
 
     scanField(playfieldArray[randomy][randomx]);
 }
@@ -21,24 +21,21 @@ function enemyAttack() {
 //Scannen ob Feld frei ist mit Angriff
 
 function scanField(field) {
-    console.log("hitcounter: " + hitCounter);
 
     if (field.state === 0 || field.state === 3) {  //Grundstatus
-            shoot(field);
+        shoot(field);
     }
     else if (field.state === 4 && rightDir) {
-        if(hitCounter > 1) {
+        if (hitCounter > 1) {
             hitCounter = 0;
             changeDir();
             randomx = tempx;
             randomy = tempy;
-            console.log("Setze gespeicherte Variablen: x: " + randomx + " y: " + randomy);
         }
-        console.log("greife an!" + rightDir);
         enemyAttack();
     }
     else if (field.state === 6 || field.state === 4) {
-            enemyAttack();
+        enemyAttack();
     }
     else if (field.state === 5) {
         scanNeighbor(field);
@@ -47,139 +44,148 @@ function scanField(field) {
 }
 
 function scanNeighbor() {
-    if(!rightDir){
+    if (!rightDir) {
         randomDir = Math.floor(Math.random() * 4) + 1;
-        console.log("generiere eine zufällige Richtung");
     } else {
         console.log("gespeicherte Dir: " + randomDir);
     }
 
 
-        switch (randomDir) {
-            case (1): //unten
-                if(rightDir){
-                    randomy ++;
-                }
-                if (randomy < FY - 1) {
-                    scanField(playfieldArray[randomy + 1][randomx]);
-                } else {
-                    scanField(playfieldArray[randomy - 1][randomx]);
-                }
-                break;
+    switch (randomDir) {
+        case (1): //unten
+            if (rightDir) {
+                randomy++;
+                console.log("ry: " + randomy);
+            }
+            if (randomy < FY - 1) {
+                scanField(playfieldArray[randomy + 1][randomx]);
+            } else {
+                changeDir();
+                scanField(playfieldArray[randomy][randomx]);
+            }
+            break;
 
-            case (2): //rechts
-                if(rightDir){
-                    randomx ++;
-                }
-                if (randomx < FX - 1) {
-                    scanField(playfieldArray[randomy][randomx + 1]);
-                } else {
-                    scanField(playfieldArray[randomy][randomx - 1]);
-                }
-                break;
-            case (3): //oben
-                if(rightDir){
-                    randomy --;
-                }
-                if (randomy > 0) {
-                    scanField(playfieldArray[randomy - 1][randomx]);
-                } else {
-                    scanField(playfieldArray[randomy + 1][randomx]);
-                }
-                break;
-            case (4): //links
-                if(rightDir){
-                    randomx --;
-                }
-                if (randomx > 0) {
-                    scanField(playfieldArray[randomy][randomx - 1]);
-                } else {
-                    scanField(playfieldArray[randomy][randomx + 1]);
-                }
-                break;
-        }
+        case (2): //rechts
+            if (rightDir) {
+                randomx++;
+            }
+            if (randomx < FX - 1) {
+                scanField(playfieldArray[randomy][randomx + 1]);
+            } else {
+                changeDir();
+                scanField(playfieldArray[randomy][randomx]);
+            }
+            break;
+        case (3): //oben
+            if (rightDir) {
+                randomy--;
+            }
+            if (randomy > 0) {
+                scanField(playfieldArray[randomy - 1][randomx]);
+            } else {
+                changeDir();
+                scanField(playfieldArray[randomy][randomx]);
+            }
+            break;
+        case (4): //links
+            if (rightDir) {
+                randomx--;
+            }
+            if (randomx > 0) {
+                scanField(playfieldArray[randomy][randomx - 1]);
+            } else {
+                changeDir();
+                scanField(playfieldArray[randomy][randomx]);
+            }
+            break;
+    }
 }
 
 function shoot(field) {
-            console.log(field.posX + ' - ' + field.posY);
-            if (field.isCowFamily === true) {
-                //wenn getroffen dann markieren
-                targetingSound.play();
-                field.state = 5;
-                updateField();
+    console.log("Schieße auf: " + field.posX + ' - ' + field.posY);
+    if (field.isCowFamily === true) {
+        //wenn getroffen dann markieren
+        targetingSound.play();
+        field.state = 5;
+        updateField();
 
-                enemyHits ++;
+        enemyHits++;
 
-                hitCowfamily = true;
+        hitCowfamily = true;
 
-                if(hitCowfamily === true){
-                    hitCounter ++;
-                }
+        if (hitCowfamily === true) {
+            hitCounter++;
+        }
 
-                console.log("hitcounter: " + hitCounter);
-                if(hitCounter > 1){
-                    tempx = randomx;
-                    tempy = randomy;
-                    rightDir = true;
-                    console.log("setzt rightDir auf true");
-                }
 
-                for(var i = 0; i < enemyCowFamilies.length; i++) {
-                    cowFamiliesToPlace[i].checkPlayerSunk();
-                }
-                updateField();
+        if (hitCounter > 1) {
+            tempx = randomx;
+            tempy = randomy;
+            rightDir = true;
 
-                if(field.sunk) {
-                    hitCowfamily = false;
-                    hitCounter = 0;
-                    rightDir = false;
-                }
+        }
 
-                enemyHit = true;
+        for (var i = 0; i < enemyCowFamilies.length; i++) {
+            cowFamiliesToPlace[i].checkPlayerSunk();
+        }
+        updateField();
 
-                console.log("Feld getroffen");
-                enemyShots++;
+        if (field.sunk) {
+            hitCowfamily = false;
+            hitCounter = 0;
+            rightDir = false;
+        }
 
-                checkAllSunk();
-                gameCycle();
+        enemyHit = true;
 
-            } else {
-                if(hitCounter > 1) {
-                    hitCounter = 0;
-                    changeDir();
-                    randomx = tempx;
-                    randomy = tempy;
-                    console.log("speichere x: " + tempx + "speichere y: " + tempy);
-                }
 
-                field.state = 4;
-                playersTurn = true;
-                changeFarmerDivs(playerFarmer[0], enemyFarmer[0]);
-                enemyHit = false;
-                enemyMiss ++;
-                enemyShots ++;
-                updateField();
-            }
+        enemyShots++;
+
+        checkAllSunk();
+        gameCycle();
+
+    } else {
+        if (hitCounter > 1) {
+            hitCounter = 0;
+            changeDir();
+            randomx = tempx;
+            randomy = tempy;
+
+        }
+
+        field.state = 4;
+        playersTurn = true;
+        changeFarmerDivs(playerFarmer[0], enemyFarmer[0]);
+        enemyHit = false;
+        enemyMiss++;
+        enemyShots++;
+        missSound.play();
+        updateField();
+    }
 
 }
 
-function changeDir(){
-    switch(randomDir) {
-        case 1: console.log("Dir von Up zu Down" + randomDir);
-                randomDir = 3;
-                tempy ++;
+function changeDir() {
+    switch (randomDir) {
+        case 1:
+            console.log("Dir von Up zu Down" + randomDir);
+            randomDir = 3;
+            tempy++;
             break;
-        case 2: console.log("Dir von Right zu Left" + randomDir);
-                randomDir = 4;
-                tempx ++;
+        case 2:
+            console.log("Dir von Right zu Left" + randomDir);
+            randomDir = 4;
+            tempx++;
             break;
-        case 3: console.log("Dir von Down zu Up" + randomDir);
-                randomDir = 1;
-                tempy --;
+        case 3:
+            console.log("Dir von Down zu Up" + randomDir);
+            randomDir = 1;
+            tempy--;
             break;
-        case 4: console.log("Dir von Left zu Right" + randomDir);
-                randomDir = 2;
-                tempx --;
+        case 4:
+            console.log("Dir von Left zu Right" + randomDir);
+            randomDir = 2;
+            tempx--;
             break;
     }
 }
@@ -187,14 +193,14 @@ function changeDir(){
 function checkAllSunk() {
     //Prüfe ob alle gesunken
     var count = 0;
-    for(var cf of cowFamiliesToPlace){
-        if(cf.isSunk === true){
-            count ++;
+    for (var cf of cowFamiliesToPlace) {
+        if (cf.isSunk === true) {
+            count++;
         }
     }
 
     //Wenn alle gesunken --> Spiel vorbei
-    if(count === enemyCowFamilies.length){
+    if (count === enemyCowFamilies.length) {
         running = false;
         gameOver(false);
     }

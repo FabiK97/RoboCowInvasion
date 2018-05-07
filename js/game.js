@@ -17,6 +17,7 @@ var enemyHit = false;
 var playerHits = 0;
 var playerMiss = 0;
 var playerShots = 0;
+var accuracy = 0;
 
 var enemyHits = 0;
 var enemyMiss = 0;
@@ -178,6 +179,7 @@ function gameCycle(element) {
             targetingSound.play();
             element.state = 3;
         } else { //wenn nicht getroffen
+            missSound.play();
             playerHit = false;
             playerMiss ++;
             element.state = 2;
@@ -201,8 +203,6 @@ function gameCycle(element) {
         if((count === enemyCowFamilies.length)){
             running = false;
 
-
-
             gameOver(true);
 
         }
@@ -216,7 +216,7 @@ function gameCycle(element) {
         setTimeout(function(){
             console.log("enemy is thinking...");
             enemyAttack();
-        }, 1500);
+        }, 500);
     }
 
 
@@ -227,14 +227,17 @@ function gameCycle(element) {
 
 function gameOver(playerHasWon) {
     //wenn Spiel vorbei dann
-    console.log("-------------Game-Over!-------------");
-    saveScore(playerHits, 14 - playerHits);
+
+    accuracy = playerHits/playerShots;
+
+    saveScore(playerShots, accuracy);
     show(endgame, pselect,inGame,scoreboard, pgselect, menu);
     if(playerHasWon) {
+        victorySound.play();
         document.getElementById("victory").style.display = 'block';
         document.getElementById("gameover").style.display = 'none';
-
     }else{
+        gameOverSound.play();
         document.getElementById("victory").style.display = 'none';
         document.getElementById("gameover").style.display = 'block';
     }
@@ -286,12 +289,12 @@ function createExplosion(field, divBox){
 
 }
 
-function saveScore(hits, cowsLeft) {
+function saveScore(playerShots, accuracy) {
 
     $.ajax({
         'url': 'index',
         'method': 'post',
-        'data': {'hits': hits, 'cowsLeft': cowsLeft, 'action': 'saveScore'},
+        'data': {'playerShots': playerShots, 'accuracy': accuracy, 'action': 'saveScore'},
         'success': function(receivedData) {
             if(receivedData.result) {
                 //alles gut - reload der seite

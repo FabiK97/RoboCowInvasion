@@ -602,7 +602,7 @@ body {
 
 /*Desktop*/
 
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 1200px) {
   .header {
     font-size: 3em;
     background-image: url("../img/logograss.png");
@@ -628,10 +628,7 @@ body {
         font-family: sans-serif;
         color: $lightgreen;
         box-shadow: 0 5px 8px 0 $lightgrey, 0 6px 20px 0 $lightgrey;
-        &:hover {
-          width: 108px;
-          height: 38px;
-        }
+
       }
     }
   }
@@ -643,98 +640,100 @@ body {
     outline-style: ridge;
   }
 
-      .logoutMenu {
-      background-image: url("../img/logout_screen.png");
-      background-position-x: 0px;
-      outline-width: 10px;
-      outline-color: $outline_darkgreen;
-      outline-style: ridge;
-      font-family: 'myfont', serif;
-      color: $lightsand;
-      h1 {
-        font-weight: bold;
-      }
-      a {
+  .logoutMenu {
+    background-image: url("../img/logout_screen.png");
+    background-position-x: 0px;
+    outline-width: 10px;
+    outline-color: $outline_darkgreen;
+    outline-style: ridge;
+    font-family: 'myfont', serif;
+    color: $lightsand;
+    h1 {
+      font-weight: bold;
+    }
+    a {
+      color: greenyellow;
+      &:hover {
+        text-decoration: underline greenyellow;
         color: greenyellow;
-        &:hover {
-          text-decoration: underline greenyellow;
-          color: greenyellow;
-        }
+      }
+    }
+  }
+
+  .startMenu {
+    background-image: url("../img/menu_neu.png");
+    background-position-x: 0px;
+    outline-width: 10px;
+    outline-color: $outline_darkgreen;
+    outline-style: ridge;
+  }
+  .pgselect {
+    background-image: url("../img/playgroundselect-bg.png");
+    background-size: cover;
+    display: none;
+    background-position-x: 0px;
+
+    color: white;
+    outline-width: 10px;
+    outline-color: $outline_darkgreen;
+    outline-style: ridge;
+  }
+  .ingame {
+    background-image: url("../img/game-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: none;
+
+    background-position-x: 0px;
+    background-position-y: 0px;
+
+    color: white;
+    outline-width: 10px;
+    outline-color: $outline_darkgreen;
+    outline-style: ridge;
+
+    .farmerPlayer {
+      background-image: url("../img/farmer.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      color: $white;
+    }
+    .farmerEnemy {
+      @extend .farmerPlayer;
+      background-image: url("../img/robo-farmer.png");
+    }
+    /*
+    .game {
+      #plf {
+        background-color: $darkgreen;
+      }
+      #ef {
+
+        background-color: $darkgreen;
+
+      }
+    }*/
+    .sign {
+      background-image: url("../img/blank-wood-sign-hi.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      font-size: 2em;
+      font-family: 'myfont', serif;
+      color: $black;
+    }
+    .game {
+      #ef {
+        cursor: url('../img/crosshairblue.png') 15 15, auto;
       }
     }
 
-    .startMenu {
-      background-image: url("../img/menu_neu.png");
-      background-position-x: 0px;
-      outline-width: 10px;
-      outline-color: $outline_darkgreen;
-      outline-style: ridge;
-    }
-    .pgselect {
-      background-image: url("../img/playgroundselect-bg.png");
-      background-size: cover;
-      display: none;
-      background-position-x: 0px;
-
-
-      color: white;
-      outline-width: 10px;
-      outline-color: $outline_darkgreen;
-      outline-style: ridge;
-    }
-    .ingame {
-      background-image: url("../img/game-bg.png");
-      background-repeat:no-repeat;
-      background-size: cover;
-      display:none;
-
-      background-position-x: 0px;
-      background-position-y: 0px;
-
-      color: white;
-      outline-width: 10px;
-      outline-color: $outline_darkgreen;
-      outline-style: ridge;
-
-      .farmerPlayer {
-        background-image: url("../img/farmer.png");
-        background-size: contain;
-        background-repeat: no-repeat;
-        color: $white;
-      }
-      .farmerEnemy {
-        @extend .farmerPlayer;
-        background-image: url("../img/robo-farmer.png");
-      }
-      /*
-      .game {
-        #plf {
-          background-color: $darkgreen;
-        }
-        #ef {
-
-          background-color: $darkgreen;
-
-        }
-      }*/
-      .sign {
-        background-image: url("../img/blank-wood-sign-hi.png");
-        background-repeat: no-repeat;
-        background-size: contain;
-
-        font-size: 2em;
-        font-family: 'myfont', serif;
-        color: $black;
-      }
-    }
+  }
 
   .blocksign {
     display: none;
   }
-  .customCursor{
-    cursor: url('../img/crosshairblue.png') +15 +15 , auto;
 
-  }
   /*GameOver Screen*/
 .endgame{
   color: white;
@@ -818,20 +817,14 @@ body {
   }
 }
 
-
-
-
+  @keyframes pulse {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.1);
+    }
   }
-
-
-@keyframes pulse {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.1);
-  }
-}
 
   @keyframes shiver {
     0% {
@@ -850,6 +843,40 @@ body {
       transform: translate(5px, 0px);
     }
   }
+
+  .scoreboard {
+    background-image: url("../img/playerselect-bg.png");
+    color: white;
+    outline-width: 10px;
+    outline-color: $outline_darkgreen;
+    outline-style: ridge;
+
+    h1 {
+      color: $brown_red;
+      font-family: myfont, serif;
+      font-weight: bold;
+    }
+    thead {
+      background-color: $outline_darkgreen;
+      color: white;
+      font-family: myfont, serif;
+      font-size: 20px;
+    }
+    tbody {
+      color: $black;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .returnMenuButton {
+      border-radius: 5px;
+      background-color: $brown;
+      font-family: sans-serif;
+      color: $lightgreen;
+      box-shadow: 0 5px 8px 0 $lightgrey, 0 6px 20px 0 $lightgrey;
+    }
+  }
+}
+
 
 
 /*GameStates*/

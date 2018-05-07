@@ -20,7 +20,7 @@
     <script src="js/overlay_help.js" type="text/javascript"></script>
     <script src="js/switchToPlayerSelect.js" type="text/javascript"></script>
     <script src="js/sound.js" type="text/javascript"></script>
-
+    <script src="js/scoreboard.js" type="text/javascript"></script>
     <link href='https://fonts.googleapis.com/css?family=Black+Ops+One' rel='stylesheet' type='text/css'>
 
 </head>
@@ -35,10 +35,10 @@
             <div id="helloUser">
         <p>Hallo <strong class="username"><?php echo $this->username; ?></strong> | </p>
             </div>
-        <a href="logout"><button id="logoutButton" type="button" class="btn"> logout </button></a>
+        <a href="logout"><button id="logoutButton" type="button" class="btn" onclick="clickSound.play()"> logout </button></a>
 
             <div id ="mobileDropdown">
-            <a href="logout"><button id="dropdownLogout" type="button" class="btn"></button></a>
+            <a href="logout"><button id="dropdownLogout" type="button" class="btn" onclick="clickSound.play()"></button></a>
             </div>
         </div>
     </div>
@@ -126,15 +126,12 @@
         <div class="restart"> <p> RESTART? </p> </div>
 
         <div class="decisions">
-            <div class="btnyes" id="restart">  YES  </div>
-            <div class="btnno" id="goToScore">  NO  </div>
+            <a href="index" id="restart"><div class="btnyes">  YES  </div></a>
+            <a href="scoreboard"  id="goToScore"><div class="btnno" >  NO  </div></a>
         </div>
     </div>
 
     <div id="sb" class="content scoreboard">
-        <h1>LEADERBOARD</h1>
-
-
     </div>
 </div>
 

@@ -310,13 +310,20 @@ body {
     width: 100px;
     height: 30px;
     float: right;
+    padding-bottom: 5px;
   }
   /* line 318, ../scss/layout.scss */
+  .header .showUser #logoutButton:hover {
+    margin-top: -4px;
+    width: 108px;
+    height: 38px;
+  }
+  /* line 324, ../scss/layout.scss */
   .header .showUser #dropdownLogout {
     display: none;
   }
 
-  /* line 324, ../scss/layout.scss */
+  /* line 330, ../scss/layout.scss */
   .content {
     width: 100%;
     height: 725px;
@@ -324,17 +331,17 @@ body {
     position: relative;
   }
 
-  /* line 333, ../scss/layout.scss */
+  /* line 339, ../scss/layout.scss */
   .logoutMenu h1 {
     margin-top: 270px;
     margin-left: 755px;
   }
-  /* line 337, ../scss/layout.scss */
+  /* line 343, ../scss/layout.scss */
   .logoutMenu p {
     margin-left: 755px;
   }
 
-  /* line 344, ../scss/layout.scss */
+  /* line 350, ../scss/layout.scss */
   .pselect .farmer {
     position: absolute;
     bottom: 60px;
@@ -342,7 +349,7 @@ body {
     height: 550px;
     width: 400px;
   }
-  /* line 352, ../scss/layout.scss */
+  /* line 358, ../scss/layout.scss */
   .pselect .roboFarmer {
     position: absolute;
     bottom: 60px;
@@ -351,7 +358,7 @@ body {
     width: 400px;
   }
 
-  /* line 363, ../scss/layout.scss */
+  /* line 369, ../scss/layout.scss */
   .pgselect .playerfield {
     width: 540px;
     height: 315px;
@@ -359,12 +366,12 @@ body {
     top: 195px;
     left: 115px;
   }
-  /* line 372, ../scss/layout.scss */
+  /* line 378, ../scss/layout.scss */
   .pgselect .infobox {
     display: block;
   }
 
-  /* line 380, ../scss/layout.scss */
+  /* line 386, ../scss/layout.scss */
   .ingame .farmerPlayer {
     width: 200px;
     height: 250px;
@@ -373,7 +380,7 @@ body {
     bottom: 10px;
     left: 10px;
   }
-  /* line 390, ../scss/layout.scss */
+  /* line 396, ../scss/layout.scss */
   .ingame .farmerEnemy {
     width: 200px;
     height: 250px;
@@ -382,7 +389,7 @@ body {
     top: 10px;
     right: 10px;
   }
-  /* line 400, ../scss/layout.scss */
+  /* line 406, ../scss/layout.scss */
   .ingame .sign {
     position: absolute;
     text-align: center;
@@ -391,27 +398,27 @@ body {
     width: 150px;
     height: 150px;
   }
-  /* line 410, ../scss/layout.scss */
+  /* line 416, ../scss/layout.scss */
   .ingame .playerHits {
     top: 20px;
     left: 10px;
   }
-  /* line 414, ../scss/layout.scss */
+  /* line 420, ../scss/layout.scss */
   .ingame .playerLeft {
     top: 200px;
     left: 10px;
   }
-  /* line 418, ../scss/layout.scss */
+  /* line 424, ../scss/layout.scss */
   .ingame .enemyHits {
     bottom: 200px;
     right: 10px;
   }
-  /* line 422, ../scss/layout.scss */
+  /* line 428, ../scss/layout.scss */
   .ingame .enemyLeft {
     bottom: 20px;
     right: 10px;
   }
-  /* line 426, ../scss/layout.scss */
+  /* line 432, ../scss/layout.scss */
   .ingame .game {
     width: 540px;
     height: 675px;
@@ -419,18 +426,50 @@ body {
     top: 25px;
     left: 330px;
   }
-  /* line 434, ../scss/layout.scss */
+  /* line 440, ../scss/layout.scss */
   .ingame .game #plf {
     position: absolute;
     width: 540px;
     height: 315px;
     top: 350px;
   }
-  /* line 440, ../scss/layout.scss */
+  /* line 446, ../scss/layout.scss */
   .ingame .game #ef {
     position: absolute;
     width: 540px;
     height: 315px;
+  }
+
+  /* line 456, ../scss/layout.scss */
+  .scoreboard .lbh1 {
+    padding-top: 30px;
+    text-align: center;
+  }
+  /* line 460, ../scss/layout.scss */
+  .scoreboard .table {
+    width: 800px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* line 466, ../scss/layout.scss */
+  .scoreboard .returnMenuButton {
+    float: right;
+    margin-right: 30px;
+    padding-top: 5px;
+    width: 120px;
+    height: 35px;
+    text-align: center;
+    padding: auto;
+  }
+  /* line 474, ../scss/layout.scss */
+  .scoreboard .returnMenuButton:hover {
+    font-size: 18px;
+    margin-right: 20px;
+    margin-top: -7.5px;
+    padding-top: 13px;
+    width: 140px;
+    height: 50px;
   }
 }
 /*menu                  GameState: 0*/

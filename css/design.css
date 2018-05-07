@@ -578,13 +578,8 @@ body {
     color: #dff99a;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
   }
-  /* line 631, ../scss/design.scss */
-  .header .showUser #logoutButton:hover {
-    width: 108px;
-    height: 38px;
-  }
 
-  /* line 639, ../scss/design.scss */
+  /* line 636, ../scss/design.scss */
   .game-box, .startMenu, .pselect, .pgselect, .ingame {
     color: white;
     outline-width: 10px;
@@ -592,7 +587,7 @@ body {
     outline-style: ridge;
   }
 
-  /* line 646, ../scss/design.scss */
+  /* line 643, ../scss/design.scss */
   .logoutMenu {
     background-image: url("../img/logout_screen.png");
     background-position-x: 0px;
@@ -602,21 +597,21 @@ body {
     font-family: 'myfont', serif;
     color: #d5b961;
   }
-  /* line 654, ../scss/design.scss */
+  /* line 651, ../scss/design.scss */
   .logoutMenu h1 {
     font-weight: bold;
   }
-  /* line 657, ../scss/design.scss */
+  /* line 654, ../scss/design.scss */
   .logoutMenu a {
     color: greenyellow;
   }
-  /* line 659, ../scss/design.scss */
+  /* line 656, ../scss/design.scss */
   .logoutMenu a:hover {
     text-decoration: underline greenyellow;
     color: greenyellow;
   }
 
-  /* line 666, ../scss/design.scss */
+  /* line 663, ../scss/design.scss */
   .startMenu {
     background-image: url("../img/menu_neu.png");
     background-position-x: 0px;
@@ -625,7 +620,7 @@ body {
     outline-style: ridge;
   }
 
-  /* line 673, ../scss/design.scss */
+  /* line 670, ../scss/design.scss */
   .pgselect {
     background-image: url("../img/playgroundselect-bg.png");
     background-size: cover;
@@ -637,7 +632,7 @@ body {
     outline-style: ridge;
   }
 
-  /* line 685, ../scss/design.scss */
+  /* line 681, ../scss/design.scss */
   .ingame {
     background-image: url("../img/game-bg.png");
     background-repeat: no-repeat;
@@ -649,30 +644,30 @@ body {
     outline-width: 10px;
     outline-color: #56791e;
     outline-style: ridge;
-      /*
-      .game {
-        #plf {
-          background-color: $darkgreen;
-        }
-        #ef {
+    /*
+    .game {
+      #plf {
+        background-color: $darkgreen;
+      }
+      #ef {
 
-          background-color: $darkgreen;
+        background-color: $darkgreen;
 
-        }
-      }*/
+      }
+    }*/
   }
-  /* line 699, ../scss/design.scss */
+  /* line 695, ../scss/design.scss */
   .ingame .farmerPlayer, .ingame .farmerEnemy {
     background-image: url("../img/farmer.png");
     background-size: contain;
     background-repeat: no-repeat;
     color: white;
   }
-  /* line 705, ../scss/design.scss */
+  /* line 701, ../scss/design.scss */
   .ingame .farmerEnemy {
     background-image: url("../img/robo-farmer.png");
   }
-  /* line 720, ../scss/design.scss */
+  /* line 716, ../scss/design.scss */
   .ingame .sign {
     background-image: url("../img/blank-wood-sign-hi.png");
     background-repeat: no-repeat;
@@ -681,19 +676,18 @@ body {
     font-family: 'myfont', serif;
     color: black;
   }
+  /* line 726, ../scss/design.scss */
+  .ingame .game #ef {
+    cursor: url("../img/crosshairblue.png") 15 15, auto;
+  }
 
-  /* line 731, ../scss/design.scss */
+  /* line 733, ../scss/design.scss */
   .blocksign {
     display: none;
   }
 
-  /* line 734, ../scss/design.scss */
-  .customCursor {
-    cursor: url("../img/crosshairblue.png")1515, auto;
-  }
-
   /*GameOver Screen*/
-  /* line 739, ../scss/design.scss */
+  /* line 738, ../scss/design.scss */
   .endgame {
     color: white;
     outline-width: 10px;
@@ -701,13 +695,13 @@ body {
     outline-style: ridge;
     background: url("../img/playerselect-bg.png");
   }
-  /* line 745, ../scss/design.scss */
+  /* line 744, ../scss/design.scss */
   .endgame .continue {
     width: 100%;
     height: auto;
     padding-top: 60px;
   }
-  /* line 749, ../scss/design.scss */
+  /* line 748, ../scss/design.scss */
   .endgame .continue p {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -718,13 +712,13 @@ body {
     text-shadow: 5px 5px #000000;
     color: #ffffff;
   }
-  /* line 760, ../scss/design.scss */
+  /* line 759, ../scss/design.scss */
   .endgame .restart {
     width: 100%;
     height: auto;
     padding-top: 60px;
   }
-  /* line 764, ../scss/design.scss */
+  /* line 763, ../scss/design.scss */
   .endgame .restart p {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -735,18 +729,18 @@ body {
     text-shadow: 5px 5px #000000;
     color: #ffffff;
   }
-  /* line 775, ../scss/design.scss */
+  /* line 774, ../scss/design.scss */
   .endgame .decisions {
     width: 50%;
     height: auto;
     padding-top: 50px;
     margin: auto;
   }
-  /* line 780, ../scss/design.scss */
+  /* line 779, ../scss/design.scss */
   .endgame .decisions div {
     display: inline-block;
   }
-  /* line 783, ../scss/design.scss */
+  /* line 782, ../scss/design.scss */
   .endgame .decisions .btnyes {
     text-align: center;
     font-size: 30px;
@@ -761,11 +755,11 @@ body {
     background: #006400;
     float: left;
   }
-  /* line 796, ../scss/design.scss */
+  /* line 795, ../scss/design.scss */
   .endgame .decisions .btnyes:hover {
     animation: pulse 0.8s linear infinite alternate;
   }
-  /* line 800, ../scss/design.scss */
+  /* line 799, ../scss/design.scss */
   .endgame .decisions .btnno {
     text-align: center;
     font-size: 30px;
@@ -780,34 +774,70 @@ body {
     float: right;
     margin-top: 0px;
   }
-  /* line 813, ../scss/design.scss */
+  /* line 812, ../scss/design.scss */
   .endgame .decisions .btnno:hover {
     animation: shiver 0.15s linear infinite alternate;
   }
-}
-@keyframes pulse {
-  from {
-    transform: scale(1);
+
+  @keyframes pulse {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.1);
+    }
   }
-  to {
-    transform: scale(1.1);
+  @keyframes shiver {
+    0% {
+      transform: translate(-5px, 0px);
+    }
+    25% {
+      transform: translate(-2.5px, 0px);
+    }
+    50% {
+      transform: translate(0px, 0px);
+    }
+    75% {
+      transform: translate(2.5px, 0px);
+    }
+    100% {
+      transform: translate(5px, 0px);
+    }
   }
-}
-@keyframes shiver {
-  0% {
-    transform: translate(-5px, 0px);
+  /* line 847, ../scss/design.scss */
+  .scoreboard {
+    background-image: url("../img/playerselect-bg.png");
+    color: white;
+    outline-width: 10px;
+    outline-color: #56791e;
+    outline-style: ridge;
   }
-  25% {
-    transform: translate(-2.5px, 0px);
+  /* line 854, ../scss/design.scss */
+  .scoreboard h1 {
+    color: brown;
+    font-family: myfont, serif;
+    font-weight: bold;
   }
-  50% {
-    transform: translate(0px, 0px);
+  /* line 859, ../scss/design.scss */
+  .scoreboard thead {
+    background-color: #56791e;
+    color: white;
+    font-family: myfont, serif;
+    font-size: 20px;
   }
-  75% {
-    transform: translate(2.5px, 0px);
+  /* line 865, ../scss/design.scss */
+  .scoreboard tbody {
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
   }
-  100% {
-    transform: translate(5px, 0px);
+  /* line 870, ../scss/design.scss */
+  .scoreboard .returnMenuButton {
+    border-radius: 5px;
+    background-color: #77522e;
+    font-family: sans-serif;
+    color: #dff99a;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
   }
 }
 /*GameStates*/

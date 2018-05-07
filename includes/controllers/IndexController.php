@@ -23,18 +23,26 @@ class IndexController extends Controller
     {
         if(isset($_POST['action']) && $_POST['action'] == 'saveScore')
         {
-            $hits = $_POST['hits'];
-            $cowsLeft = $_POST['cowsLeft'];
+            $playerShots = $_POST['playerShots'];
+            $accuracy = $_POST['accuracy'];
 
             //var_dump($this->user);
 
-            GameModel::saveScore($this->user->id, $hits, $cowsLeft);
+            GameModel::saveScore($this->user->id, $playerShots, $accuracy);
 
 
             $json = new JSON();
             $json->result = true;
             $json->setMessage('habs gespeichert');
             $json->send();
+        } else if(isset($_POST['action']) && $_POST['action'] == 'getScore') {
+            $this->view->scores = GameModel::getScoreboardData();
+
+            $json = new JSON();
+            $json->result = true;
+            $json->setMessage('habs bekommen');
+            $json->send();
+
         }
     }
 

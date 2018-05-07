@@ -13,6 +13,9 @@ var clickSound;
 var muhSound;
 var explosionSound;
 var targetingSound;
+var victorySound;
+var gameOverSound;
+var missSound;
 
 var player;
 var enemy;
@@ -22,8 +25,10 @@ var playButton;
 var scoreButton;
 var helpButton;
 var helpBackButton;
-var restartButton;
-var goToScoreButton;
+
+var noButton;
+var yesButton;
+var backToMenuButton;
 
 var farmerButton;
 var roboFarmerButton;
@@ -47,8 +52,9 @@ window.onload = function() {
     scoreButton = document.getElementById("score");
     helpButton = document.getElementById("help");
     helpBackButton = document.getElementById("helpBack");
-    restartButton = document.getElementById("restart");
-    goToScoreButton = document.getElementById("goToScore");
+    noButton = document.getElementById("goToScore");
+    yesButton = document.getElementById("restart");
+    backToMenuButton = document.getElementById("btm");
 
     farmerButton = document.getElementById("farmer");
     roboFarmerButton = document.getElementById("roboFarmer");
@@ -59,7 +65,10 @@ window.onload = function() {
     clickSound = new sound("./musik/click.mp3");
     muhSound = new sound("./musik/muh.mp3");
     explosionSound = new sound("./musik/cowExplosion.wav");
+    missSound = new sound("./musik/splatSound.wav");
     targetingSound = new sound("./musik/targetingSound.wav");
+    victorySound = new sound("./musik/VictoryFanfare.wav");
+    gameOverSound = new sound("./musik/SadTrombone.wav");
 
     playerFarmer = document.getElementsByClassName("farmerPlayer");
     enemyFarmer = document.getElementsByClassName("farmerEnemy");
@@ -83,8 +92,12 @@ window.onload = function() {
     scoreButton.onclick = function () {show(scoreboard, pgselect, inGame, menu, endgame, pselect);};
     helpButton.onclick = function() {help_on(); clickSound.play();};
     helpBackButton.onclick = function() {help_off(); clickSound.play();};
-    restartButton.onclick = function() {location.reload();};
-    goToScoreButton.onclick = function() {show(scoreboard, pgselect, inGame, menu, endgame, pselect);};
+    scoreButton.onclick = function() {clickSound.play(); window.location.href = "scoreboard"};
+    noButton = function() {clickSound.play(); window.location.href = "scoreboard";};
+    yesButton = function() {clickSound.play(); window.location.href = "index";};
+    backToMenuButton = function() {clickSound.play(); window.location.href = "index";};
+
+
 
 
 };
