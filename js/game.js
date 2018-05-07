@@ -216,7 +216,7 @@ function gameCycle(element) {
         setTimeout(function(){
             console.log("enemy is thinking...");
             enemyAttack();
-        }, 1500);
+        }, 500);
     }
 
 
