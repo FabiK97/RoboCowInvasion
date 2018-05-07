@@ -229,6 +229,7 @@ function gameOver(playerHasWon) {
     //wenn Spiel vorbei dann
     console.log("-------------Game-Over!-------------");
     saveScore(playerHits, 14 - playerHits);
+    show(endgame, pselect,inGame,scoreboard, pgselect, menu);
     if(playerHasWon) {
         document.getElementById("victory").style.display = 'block';
         document.getElementById("gameover").style.display = 'none';
@@ -237,8 +238,6 @@ function gameOver(playerHasWon) {
         document.getElementById("victory").style.display = 'none';
         document.getElementById("gameover").style.display = 'block';
     }
-    restartButton.onclick = function() {show(pselect, pgselect, inGame, menu, endgame, scoreboard);};
-    goToScoreButton.onclick = function() {show(scoreboard, pgselect, inGame, menu, endgame, pselect);};
 
 }
 

@@ -61,7 +61,7 @@ function checkStatusPgselect() {
 }
 
 function changeToIngame() {
-    show(inGame, pgselect, pselect, menu);
+    show( inGame, pgselect, pselect, menu, endgame, scoreboard);
     setupGame();
 }
 

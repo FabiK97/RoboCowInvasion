@@ -111,6 +111,28 @@
 
         </div>
     </div>
+    <div id="eg" class="content endgame">
+        <div id="gameover" class="continue">
+            <p> GAME </p>
+            <p> OVER </p>
+        </div>
+        <div id="victory" class="continue">
+            <p> VICTORY </p>
+        </div>
+
+        <div class="continue"> <p> RESTART? </p> </div>
+
+        <div class="decisions">
+            <div class="btnyes" id="restart">  YES  </div>
+            <div class="btnnno" id="goToScore">  NO  </div>
+        </div>
+    </div>
+
+    <div id="sb" class="content scoreboard">
+        <h1>LEADERBOARD</h1>
+
+
+    </div>
 </div>
 
 
