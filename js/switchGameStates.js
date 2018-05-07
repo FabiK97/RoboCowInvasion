@@ -60,7 +60,7 @@ window.onload = function() {
     roboFarmerButton = document.getElementById("roboFarmer");
 
     musicButton = document.getElementById("musicButton");
-    backgroundMusic = new sound("./musik/RoyalEntrance.wav");
+    backgroundMusic = new sound("./musik/RoyalEntrance.mp3");
 
     clickSound = new sound("./musik/click.mp3");
     muhSound = new sound("./musik/muh.mp3");

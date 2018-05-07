@@ -31,7 +31,7 @@
         <div id="musicButton">
            <img id= "soundSymbol" src="img/music_off.png" onclick="changeSoundSymbol()">
         </div>
-        <div class="showUser">x
+        <div class="showUser">
             <div id="helloUser">
         <p>Hallo <strong class="username"><?php echo $this->username; ?></strong> | </p>
             </div>

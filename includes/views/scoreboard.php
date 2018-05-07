@@ -30,7 +30,7 @@
         </div>
     </div>
     <div id="sb" class="content scoreboard">
-        <h1 class="lbh1">LEADERBOARD</h1>
+        <h1 class="lbh1">Scoreboard</h1>
 
         <?php if($this->scores): ?>
         <table class="table table-striped">
@@ -48,7 +48,7 @@
                     <td><?php echo $this->rank; ?></td>
                     <td><?php echo $score->username; ?></td>
                     <td><?php echo $score->clicks; ?></td>
-                    <td><?php echo $score->accuracy; ?></td>
+                    <td><?php echo $score->accuracy*100; ?> %</td>
                 </tr>
             <?php endforeach; ?>
             </tbody>

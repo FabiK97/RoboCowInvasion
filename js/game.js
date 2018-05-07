@@ -179,6 +179,7 @@ function gameCycle(element) {
             targetingSound.play();
             element.state = 3;
         } else { //wenn nicht getroffen
+            missSound.play();
             playerHit = false;
             playerMiss ++;
             element.state = 2;
@@ -227,7 +228,7 @@ function gameCycle(element) {
 function gameOver(playerHasWon) {
     //wenn Spiel vorbei dann
 
-    accuracy = playerHits/playerShots * 100;
+    accuracy = playerHits/playerShots;
 
     saveScore(playerShots, accuracy);
     show(endgame, pselect,inGame,scoreboard, pgselect, menu);

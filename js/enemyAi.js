@@ -159,6 +159,7 @@ function shoot(field) {
         enemyHit = false;
         enemyMiss++;
         enemyShots++;
+        missSound.play();
         updateField();
     }
 
