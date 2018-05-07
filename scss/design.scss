@@ -593,15 +593,18 @@ body {
         font-family: myfont, serif;
         color: $black;
       }
+      .game {
+        #ef {
+          cursor: url('../img/crosshairblue.png') 15 15 , auto;
+        }
+      }
+
     }
 
   .blocksign {
     display: none;
   }
-  .customCursor{
-    cursor: url('../img/crosshairblue.png') +15 +15 , auto;
 
-  }
 
 }
 

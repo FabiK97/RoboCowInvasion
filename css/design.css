@@ -558,15 +558,14 @@ body {
     font-family: myfont, serif;
     color: black;
   }
-
-  /* line 598, ../scss/design.scss */
-  .blocksign {
-    display: none;
+  /* line 597, ../scss/design.scss */
+  .ingame .game #ef {
+    cursor: url("../img/crosshairblue.png") 15 15, auto;
   }
 
-  /* line 601, ../scss/design.scss */
-  .customCursor {
-    cursor: url("../img/crosshairblue.png")1515, auto;
+  /* line 604, ../scss/design.scss */
+  .blocksign {
+    display: none;
   }
 }
 /*GameStates*/
