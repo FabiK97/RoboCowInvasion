@@ -20,6 +20,7 @@
     <script src="js/overlay_help.js" type="text/javascript"></script>
     <script src="js/switchToPlayerSelect.js" type="text/javascript"></script>
     <script src="js/sound.js" type="text/javascript"></script>
+    <script src="js/scoreboard.js" type="text/javascript"></script>
 </head>
 <body>
 <div class="game-box">
@@ -32,10 +33,10 @@
             <div id="helloUser">
         <p>Hallo <strong class="username"><?php echo $this->username; ?></strong> | </p>
             </div>
-        <a href="logout"><button id="logoutButton" type="button" class="btn"> logout </button></a>
+        <a href="logout"><button id="logoutButton" type="button" class="btn" onclick="clickSound.play()"> logout </button></a>
 
             <div id ="mobileDropdown">
-            <a href="logout"><button id="dropdownLogout" type="button" class="btn"></button></a>
+            <a href="logout"><button id="dropdownLogout" type="button" class="btn" onclick="clickSound.play()"></button></a>
             </div>
         </div>
     </div>
@@ -110,6 +111,25 @@
             <div class="s2 enemyLeft">Left: 0</div>
 
         </div>
+    </div>
+    <div id="eg" class="content endgame">
+        <div id="gameover" class="continue">
+            <p> GAME </p>
+            <p> OVER </p>
+        </div>
+        <div id="victory" class="continue">
+            <p> VICTORY </p>
+        </div>
+
+        <div class="continue"> <p> RESTART? </p> </div>
+
+        <div class="decisions">
+            <a href="index" id="restart"><div class="btnyes">  YES  </div></a>
+            <a href="scoreboard"  id="goToScore"><div class="btnno" >  NO  </div></a>
+        </div>
+    </div>
+
+    <div id="sb" class="content scoreboard">
     </div>
 </div>
 

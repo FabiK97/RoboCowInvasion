@@ -314,6 +314,12 @@ body {
         width: 100px;
         height: 30px;
         float: right;
+        padding-bottom: 5px;
+        &:hover {
+          margin-top: -4px;
+          width: 108px;
+          height: 38px;
+        }
       }
       #dropdownLogout {
         display: none;
@@ -441,6 +447,37 @@ body {
         position: absolute;
         width: 540px;
         height: 315px;
+      }
+    }
+  }
+
+  .scoreboard{
+
+    .lbh1{
+      padding-top: 30px;
+      text-align: center;
+    }
+    .table {
+      width: 800px;
+      margin-top: 30px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .returnMenuButton {
+      float: right;
+      margin-right: 30px;
+      padding-top: 5px;
+      width: 120px;
+      height: 35px;
+      text-align: center;
+      padding: auto;
+      &:hover {
+        font-size: 18px;
+        margin-right: 20px;
+        margin-top: -7.5px;
+        padding-top: 13px;
+        width: 140px;
+        height: 50px;
       }
     }
   }

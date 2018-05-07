@@ -6,6 +6,8 @@ var randomPlacex;
 var randomPlacey;
 var randomDirection;
 
+
+
 var running;
 var playersTurn;
 var playerHit = false;
@@ -15,6 +17,7 @@ var enemyHit = false;
 var playerHits = 0;
 var playerMiss = 0;
 var playerShots = 0;
+var accuracy = 0;
 
 var enemyHits = 0;
 var enemyMiss = 0;
@@ -24,11 +27,6 @@ var playerHitsSign = document.getElementsByClassName("sign playerHits");
 var playerLeftSign = document.getElementsByClassName("sign playerLeft");
 var enemyHitsSign = document.getElementsByClassName("sign enemyHits");
 var enemyLeftSign = document.getElementsByClassName("sign enemyLeft");
-
-var playerHitsResponsive = document.getElementsByClassName("s1 playerHits");
-var playerLeftResponsive = document.getElementsByClassName("s1 playerLeft");
-var enemyHitsResponsive = document.getElementsByClassName("s2 enemyHits");
-var enemyLeftResponsive = document.getElementsByClassName("s2 enemyLeft");
 
 var explosionDiv = document.createElement("div");
 
@@ -143,18 +141,18 @@ function checkMouseEvent(mouseEvent, element){
 
     switch(mouseEvent){
         case 0: if(playersTurn){ //wenn Spieler an der Reihe
-                    element.state = 0; //wenn die Maus das Feld verlässt, soll es wieder nichts Anzeigen
-                }
+            element.state = 0; //wenn die Maus das Feld verlässt, soll es wieder nichts Anzeigen
+        }
             break;
         case 1: if(playersTurn) { //wenn Spieler an der Reihe
-                    element.state = 1; //wenn die Maus das Feld "betretet", soll es den Hover-Zustand bekommen
-                }
+            element.state = 1; //wenn die Maus das Feld "betretet", soll es den Hover-Zustand bekommen
+        }
             break;
         case 2: if(playersTurn) { //wenn Spieler an der Reihe
-                if(element.state !== 2){
-                        gameCycle(element); //wenn das Feld geklickt wird, soll es den Spielzyklus starten
-                    }
-                }
+            if(element.state !== 2){
+                gameCycle(element); //wenn das Feld geklickt wird, soll es den Spielzyklus starten
+            }
+        }
             break;
     }
 
@@ -201,13 +199,15 @@ function gameCycle(element) {
         }
         console.log("count: " + count);
         //Wenn alle gesunken --> Spiel vorbei
-        if(count === enemyCowFamilies.length){
+        if((count === enemyCowFamilies.length)){
             running = false;
+
             gameOver(true);
+
         }
 
     }
-        updateSigns();
+    updateSigns();
 
     if(running && !playerHit) {
         turn = 1;
@@ -215,21 +215,30 @@ function gameCycle(element) {
         setTimeout(function(){
             console.log("enemy is thinking...");
             enemyAttack();
-            }, 1500);
+        }, 1500);
     }
 
 
 }
 
+
+
+
 function gameOver(playerHasWon) {
     //wenn Spiel vorbei dann
-    console.log("-------------Game-Over!-------------");
-    saveScore(playerHits, 14 - playerHits);
+
+    accuracy = playerHits/playerShots * 100;
+
+    saveScore(playerShots, accuracy);
+    show(endgame, pselect,inGame,scoreboard, pgselect, menu);
     if(playerHasWon) {
-        //lose-Screen anzeigen
-    } else {
-        //win-Screen anzeigen
+        document.getElementById("victory").style.display = 'block';
+        document.getElementById("gameover").style.display = 'none';
+    }else{
+        document.getElementById("victory").style.display = 'none';
+        document.getElementById("gameover").style.display = 'block';
     }
+
 }
 
 function updateSigns() {
@@ -237,34 +246,28 @@ function updateSigns() {
     playerHitsSign[0].innerHTML = "Hits: " + playerHits;
     playerLeftSign[0].innerHTML = "Left: " + (NumberOfCows - playerHits) ;
     enemyHitsSign[0].innerHTML = "Hits: " + enemyHits;
-    enemyLeftSign[0].innerHTML = "Left: " + (NumberOfCows - enemyHits);
-
-    playerHitsResponsive[0].innerHTML = "Hits: " + playerHits;
-    playerLeftResponsive[0].innerHTML = "Left: " + (NumberOfCows - playerHits) ;
-    enemyHitsResponsive[0].innerHTML = "Hits: " + enemyHits;
-    enemyLeftResponsive[0].innerHTML = "Left: " + (NumberOfCows - enemyHits);
-    
+    enemyLeftSign[0].innerHTML = "Hits: " + (NumberOfCows - enemyHits);
 }
 
 function sinkanimation(Array, iPCF){
-        explosionDiv.style.display = "none";
+    explosionDiv.style.display = "none";
 
-        if(intervallCounter === -1) {
-            intervallCounter = Array.length - 1;
-        }
-        if(iPCF) {
-            //Wenn Player
-            Array[intervallCounter].state = 6;
-            createExplosion(Array[intervallCounter], playerFieldBox);
-        } else {
-            //Wenn Enemy
-            Array[intervallCounter].state = 4;
-            createExplosion(Array[intervallCounter], enemyFieldBox);
-        }
-        explosionSound.play();
-        Array[intervallCounter].update();
-        console.log(Array[intervallCounter]);
-        intervallCounter--;
+    if(intervallCounter === -1) {
+        intervallCounter = Array.length - 1;
+    }
+    if(iPCF) {
+        //Wenn Player
+        Array[intervallCounter].state = 6;
+        createExplosion(Array[intervallCounter], playerFieldBox);
+    } else {
+        //Wenn Enemy
+        Array[intervallCounter].state = 4;
+        createExplosion(Array[intervallCounter], enemyFieldBox);
+    }
+    explosionSound.play();
+    Array[intervallCounter].update();
+    console.log(Array[intervallCounter]);
+    intervallCounter--;
 
 }
 
@@ -283,18 +286,18 @@ function createExplosion(field, divBox){
 
 }
 
-function saveScore(hits, cowsLeft) {
+function saveScore(playerShots, accuracy) {
 
     $.ajax({
-       'url': 'index',
-       'method': 'post',
-       'data': {'hits': hits, 'cowsLeft': cowsLeft, 'action': 'saveScore'},
-       'success': function(receivedData) {
-           if(receivedData.result) {
-               //alles gut - reload der seite
-               //anzeigen des scoreboards...
-           }
-       }
+        'url': 'index',
+        'method': 'post',
+        'data': {'playerShots': playerShots, 'accuracy': accuracy, 'action': 'saveScore'},
+        'success': function(receivedData) {
+            if(receivedData.result) {
+                //alles gut - reload der seite
+                //anzeigen des scoreboards...
+            }
+        }
     });
 }
 
