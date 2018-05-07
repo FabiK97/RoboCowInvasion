@@ -124,7 +124,7 @@
 
         <div class="decisions">
             <div class="btnyes" id="restart">  YES  </div>
-            <div class="btnnno" id="goToScore">  NO  </div>
+            <div class="btnno" id="goToScore">  NO  </div>
         </div>
     </div>
 

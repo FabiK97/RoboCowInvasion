@@ -426,6 +426,7 @@ body {
   }
 }
 
+
 /*
 .ingame .farmerPlayer {
     background-image: url(".../img/farmer.png");
@@ -516,7 +517,7 @@ body {
       outline-width: 10px;
       outline-color: $outline_darkgreen;
       outline-style: ridge;
-      font-family: myfont;
+      font-family: 'myfont', serif;
       color: $lightsand;
       h1 {
         font-weight: bold;
@@ -590,7 +591,7 @@ body {
         background-size: contain;
 
         font-size: 2em;
-        font-family: myfont, serif;
+        font-family: 'myfont', serif;
         color: $black;
       }
     }
@@ -602,8 +603,124 @@ body {
     cursor: url('../img/crosshairblue.png') +15 +15 , auto;
 
   }
+  /*GameOver Screen*/
 
-}
+  #eg {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    border-radius: 40px;
+    background: $lightgrey;
+  }
+
+  .continue {
+    width: 100%;
+    height: auto;
+    padding-top: 60px;
+    background: none;
+  }
+
+  .continue p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 300px;
+    font-family: 'myfont', serif;
+    line-height: 120px;
+    text-align: center;
+    text-shadow: 5px 5px #000000;
+    color: #ffffff;
+  }
+
+  .continue {
+    width: 100%;
+    height: auto;
+    padding-top: 40px;
+  }
+
+  .continue p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: corbel;
+    color: #ffffff;
+    text-shadow: 2.5px 2.5px #000000;
+  }
+
+  .decisions {
+    width: 80%;
+    height: auto;
+    padding-top: 50px;
+    margin: auto;
+  }
+
+  .btnyes  {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: corbel;
+    color: #ffffff;
+    text-decoration: none;
+    text-shadow: 2.5px 2.5px #000000;
+    padding: 25px 110px 25px 110px;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    background: #006400;
+    margin-right: 30px;
+    float: left;
+  }
+
+  .btnyes:hover {
+    animation: pulse 0.8s linear infinite alternate;
+  }
+
+  @keyframes pulse {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.1);
+    }
+  }
+
+  .btnno  {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: corbel;
+    color: #ffffff;
+    text-decoration: none;
+    text-shadow: 1.5px 1.5px #FB3733;
+    padding: 25px 100px 25px 100px;
+    border-radius: 20px;
+    background: #000000;
+    float: right;}
+  }
+
+  .btnno:hover {
+
+    animation: shiver 0.15s linear infinite alternate;
+  }
+
+  @keyframes shiver {
+    0% {
+      transform: translate(-5px, 0px);
+    }
+    25% {
+      transform: translate(-2.5px, 0px);
+    }
+    50% {
+      transform: translate(0px, 0px);
+    }
+    75% {
+      transform: translate(2.5px, 0px);
+    }
+    100% {
+      transform: translate(5px, 0px);
+    }
+  }
+
 
 /*GameStates*/
 

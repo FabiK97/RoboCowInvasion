@@ -65,6 +65,8 @@ window.onload = function() {
     enemyFarmer = document.getElementsByClassName("farmerEnemy");
     //backgroundMusic.play();
 
+    show(menu, pselect, pgselect, inGame, endgame, scoreboard);
+
     farmerButton.onclick = function() {farmer();};
     roboFarmerButton.onclick = function() {robofarmer();};
 
