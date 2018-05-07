@@ -687,20 +687,22 @@ body {
   }
 
   /*GameOver Screen*/
-  /* line 739, ../scss/design.scss */
-  #eg {
+  /* line 738, ../scss/design.scss */
+  .endgame {
+    color: white;
+    outline-width: 10px;
+    outline-color: #56791e;
+    outline-style: ridge;
     background: url("../img/playerselect-bg.png");
   }
-
   /* line 744, ../scss/design.scss */
-  .continue {
+  .endgame .continue {
     width: 100%;
     height: auto;
     padding-top: 60px;
   }
-
-  /* line 751, ../scss/design.scss */
-  .continue p {
+  /* line 748, ../scss/design.scss */
+  .endgame .continue p {
     margin-top: 0px;
     margin-bottom: 0px;
     font-size: 150px;
@@ -710,16 +712,14 @@ body {
     text-shadow: 5px 5px #000000;
     color: #ffffff;
   }
-
-  /* line 762, ../scss/design.scss */
-  .restart {
+  /* line 759, ../scss/design.scss */
+  .endgame .restart {
     width: 100%;
     height: auto;
     padding-top: 60px;
   }
-
-  /* line 768, ../scss/design.scss */
-  .restart p {
+  /* line 763, ../scss/design.scss */
+  .endgame .restart p {
     margin-top: 0px;
     margin-bottom: 0px;
     font-size: 100px;
@@ -729,22 +729,19 @@ body {
     text-shadow: 5px 5px #000000;
     color: #ffffff;
   }
-
-  /* line 779, ../scss/design.scss */
-  .decisions {
+  /* line 774, ../scss/design.scss */
+  .endgame .decisions {
     width: 50%;
     height: auto;
     padding-top: 50px;
     margin: auto;
   }
-
-  /* line 787, ../scss/design.scss */
-  .decisions div {
+  /* line 779, ../scss/design.scss */
+  .endgame .decisions div {
     display: inline-block;
   }
-
-  /* line 792, ../scss/design.scss */
-  .btnyes {
+  /* line 782, ../scss/design.scss */
+  .endgame .decisions .btnyes {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
@@ -758,9 +755,12 @@ body {
     background: #006400;
     float: left;
   }
-
-  /* line 808, ../scss/design.scss */
-  .btnno {
+  /* line 795, ../scss/design.scss */
+  .endgame .decisions .btnyes:hover {
+    animation: pulse 0.8s linear infinite alternate;
+  }
+  /* line 799, ../scss/design.scss */
+  .endgame .decisions .btnno {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
@@ -774,10 +774,9 @@ body {
     float: right;
     margin-top: 0px;
   }
-
-  /* line 824, ../scss/design.scss */
-  .btnyes:hover {
-    animation: pulse 0.8s linear infinite alternate;
+  /* line 812, ../scss/design.scss */
+  .endgame .decisions .btnno:hover {
+    animation: shiver 0.15s linear infinite alternate;
   }
 
   @keyframes pulse {
@@ -788,11 +787,6 @@ body {
       transform: scale(1.1);
     }
   }
-  /* line 837, ../scss/design.scss */
-  .btnno:hover {
-    animation: shiver 0.15s linear infinite alternate;
-  }
-
   @keyframes shiver {
     0% {
       transform: translate(-5px, 0px);
@@ -810,7 +804,7 @@ body {
       transform: translate(5px, 0px);
     }
   }
-  /* line 860, ../scss/design.scss */
+  /* line 847, ../scss/design.scss */
   .scoreboard {
     background-image: url("../img/playerselect-bg.png");
     color: white;
@@ -818,26 +812,26 @@ body {
     outline-color: #56791e;
     outline-style: ridge;
   }
-  /* line 867, ../scss/design.scss */
+  /* line 854, ../scss/design.scss */
   .scoreboard h1 {
     color: brown;
     font-family: myfont, serif;
     font-weight: bold;
   }
-  /* line 872, ../scss/design.scss */
+  /* line 859, ../scss/design.scss */
   .scoreboard thead {
     background-color: #56791e;
     color: white;
     font-family: myfont, serif;
     font-size: 20px;
   }
-  /* line 878, ../scss/design.scss */
+  /* line 865, ../scss/design.scss */
   .scoreboard tbody {
     color: black;
     font-weight: bold;
     font-size: 14px;
   }
-  /* line 883, ../scss/design.scss */
+  /* line 870, ../scss/design.scss */
   .scoreboard .returnMenuButton {
     border-radius: 5px;
     background-color: #77522e;
@@ -1119,7 +1113,7 @@ body {
     opacity: 0.5;
 }
 
-.pgselect .überschrift {
+.pgselect .├╝berschrift {
     font-size: 3em;
     font-family: myfont, serif;
     color: brown;
