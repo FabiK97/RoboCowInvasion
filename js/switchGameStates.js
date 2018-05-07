@@ -80,6 +80,7 @@ window.onload = function() {
     };
 
     playButton.onclick = function() {show(pselect, pgselect, inGame, menu, endgame, scoreboard); clickSound.play();};
+    scoreButton.onclick = function () {show(scoreboard, pgselect, inGame, menu, endgame, pselect);};
     helpButton.onclick = function() {help_on(); clickSound.play();};
     helpBackButton.onclick = function() {help_off(); clickSound.play();};
     restartButton.onclick = function() {location.reload();};
