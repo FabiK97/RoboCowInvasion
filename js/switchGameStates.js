@@ -5,6 +5,8 @@ var menu;
 var playfieldSet;
 var backgroundMusic;
 var musicButton;
+var endgame;
+var scoreboard;
 
 //sounds
 var clickSound;
@@ -20,6 +22,8 @@ var playButton;
 var scoreButton;
 var helpButton;
 var helpBackButton;
+var restartButton;
+var goToScoreButton;
 
 var farmerButton;
 var roboFarmerButton;
@@ -36,11 +40,15 @@ window.onload = function() {
     pgselect = document.getElementById("pgs");
     pselect = document.getElementById("ps");
     menu = document.getElementById("m");
+    endgame = document.getElementById("eg");
+    scoreboard = document.getElementById("sb");
 
     playButton = document.getElementById("play");
     scoreButton = document.getElementById("score");
     helpButton = document.getElementById("help");
     helpBackButton = document.getElementById("helpBack");
+    restartButton = document.getElementById("restart");
+    goToScoreButton = document.getElementById("goToScore");
 
     farmerButton = document.getElementById("farmer");
     roboFarmerButton = document.getElementById("roboFarmer");
@@ -69,22 +77,24 @@ window.onload = function() {
 
     };
 
-    playButton.onclick = function() {show(pselect, pgselect, inGame, menu); clickSound.play();};
+    playButton.onclick = function() {show(pselect, pgselect, inGame, menu, endgame, scoreboard); clickSound.play();};
     helpButton.onclick = function() {help_on(); clickSound.play();};
     helpBackButton.onclick = function() {help_off(); clickSound.play();};
 
 };
 
-function show(el1, el2, el3, el4) {
+function show(el1, el2, el3, el4, el5, el6) {
     console.log("click");
         el1.style.display = 'block';
         el2.style.display = 'none';
         el3.style.display = 'none';
         el4.style.display = 'none';
+        el5.style.display = 'none';
+        el6.style.display = 'none';
 }
 
 function farmer () {
-    show(pgselect, inGame, pselect, menu);
+    show(pgselect, inGame, pselect, menu, endgame, scoreboard);
     player = humanAnimSet;
     enemy = robotAnimSet;
 
@@ -96,7 +106,7 @@ function farmer () {
 }
 
 function robofarmer () {
-    show(pgselect, inGame, pselect, menu);
+    show(pgselect, inGame, pselect, menu, endgame, scoreboard);
 
     player = robotAnimSet;
     enemy = humanAnimSet;
