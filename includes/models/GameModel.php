@@ -22,4 +22,11 @@ class GameModel
 		$sql = "DELETE FROM address WHERE id=".intval($id);
 		$db->query($sql);
 	}
+
+	public static function getScoreboardData(){
+
+
+
+
+    }
 }

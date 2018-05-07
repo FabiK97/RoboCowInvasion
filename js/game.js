@@ -14,9 +14,11 @@ var enemyHit = false;
 
 var playerHits = 0;
 var playerMiss = 0;
+var playerShots = 0;
 
 var enemyHits = 0;
 var enemyMiss = 0;
+var enemyShots = 0;
 
 var playerHitsSign = document.getElementsByClassName("sign playerHits");
 var playerLeftSign = document.getElementsByClassName("sign playerLeft");
@@ -172,6 +174,7 @@ function updateEnemyField(){
 function gameCycle(element) {
 
     if(running && !enemyHit && playersTurn){ //wenn Spiel läuft
+        playerShots++;
         if(element.isCowFamily){ //wenn getroffen
             playerHit = true;
             playerHits ++;
@@ -189,20 +192,19 @@ function gameCycle(element) {
         }
 
         //Prüfe ob alle gesunken
-        for(var cf in enemyCowFamilies){
-            var count = 0;
-            if(cf.isSunk === true){
+        var count = 0;
+        for(var cf of enemyCowFamilies){
+            if(cf.isSunk){
+                console.log("count up!");
                 count ++;
             }
         }
-
+        console.log("count: " + count);
         //Wenn alle gesunken --> Spiel vorbei
         if(count === enemyCowFamilies.length){
             running = false;
-
-            //gameOver();
+            gameOver(true);
         }
-        saveScore(playerHits, 14 - playerHits);
 
     }
         updateSigns();
@@ -219,8 +221,15 @@ function gameCycle(element) {
 
 }
 
-function gameOver() {
+function gameOver(playerHasWon) {
     //wenn Spiel vorbei dann
+    console.log("-------------Game-Over!-------------");
+    saveScore(playerHits, 14 - playerHits);
+    if(playerHasWon) {
+        //lose-Screen anzeigen
+    } else {
+        //win-Screen anzeigen
+    }
 }
 
 function updateSigns() {
